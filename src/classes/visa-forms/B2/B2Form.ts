@@ -25,7 +25,7 @@ export class B2Form extends VisaForm implements IB2Form {
 
   // MAIN METHODS (OVERRIDE)
 
-  getProperties(): VisaFormSections {
+  getSections(): VisaFormSections {
     return {
       personal: this.personal,
       travel: this.travel,

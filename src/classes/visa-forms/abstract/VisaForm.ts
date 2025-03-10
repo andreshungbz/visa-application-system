@@ -20,7 +20,7 @@ export abstract class VisaForm implements IVisaForm {
 
   // MAIN METHODS
 
-  getProperties(): VisaFormSections {
+  getSections(): VisaFormSections {
     return {
       personal: this.personal,
       travel: this.travel,

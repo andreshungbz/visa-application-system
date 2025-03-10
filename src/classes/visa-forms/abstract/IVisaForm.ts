@@ -14,7 +14,7 @@ export interface IVisaForm {
 
   // MAIN METHODS
 
-  getProperties(): VisaFormSections;
+  getSections(): VisaFormSections;
   insertRecord(): boolean;
 
   // GETTERS/SETTERS

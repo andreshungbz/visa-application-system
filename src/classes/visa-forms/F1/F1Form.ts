@@ -25,7 +25,7 @@ export class F1Form extends VisaForm implements IF1Form {
 
   // MAIN METHODS (OVERRIDE)
 
-  getProperties(): VisaFormSections {
+  getSections(): VisaFormSections {
     return {
       personal: this.personal,
       travel: this.travel,
