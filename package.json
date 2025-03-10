@@ -1,0 +1,35 @@
+{
+  "name": "visa-application-system",
+  "version": "1.0.0",
+  "description": "A Web Application that Simulates a Simplified Visa Application Process",
+  "homepage": "https://github.com/andreshungbz/visa-application-system#readme",
+  "bugs": {
+    "url": "https://github.com/andreshungbz/visa-application-system/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/andreshungbz/visa-application-system.git"
+  },
+  "license": "ISC",
+  "author": "Andres Hung, Darwin Ramos",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf build",
+    "build": "npm run clean && tsc && tsc-alias",
+    "start": "node build/app.js",
+    "dev": "tsc && tsc-alias && concurrently -k -n \"TS,ALIAS,SERVER\" -c \"cyan,yellow,green\" \"tsc --watch\" \"tsc-alias --watch\" \"node --watch build/app.js\""
+  },
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.13.10",
+    "concurrently": "^9.1.2",
+    "tsc-alias": "^1.8.11",
+    "typescript": "^5.8.2"
+  }
+}
