@@ -1,7 +1,21 @@
-// Visa Form Interface
+// Visa Form Interface (Header)
+
+import { VisaFormSections } from '../../types/VisaFormSections';
 
 export interface IVisaForm {
+  // PROPERTIES (DATA MEMBERS)
+  // these are commented so that the implementation can apply protected/private access specifiers
+  // specifying these properties in the interface would mean the implementation properties would have to be public
+
+  // personal: PersonalSection;
+  // travel: TravelSection;
+  // work: WorkSection;
+  // security: SecuritySection;
+
   // MAIN METHODS
+
+  getProperties(): VisaFormSections;
+  insertRecord(): boolean;
 
   // GETTERS/SETTERS
 
@@ -11,6 +25,7 @@ export interface IVisaForm {
   p_getLastName(): string;
   p_getEmail(): string;
   p_getPhone(): string;
+  p_getCity(): string;
   p_getAddress(): string;
   p_getPassportNumber(): string;
   p_getCountry(): string;
@@ -21,6 +36,7 @@ export interface IVisaForm {
   p_setLastName(lastName: string): boolean;
   p_setEmail(email: string): boolean;
   p_setPhone(phone: string): boolean;
+  p_setCity(city: string): boolean;
   p_setAddress(address: string): boolean;
   p_setPassportNumber(passportNumber: string): boolean;
   p_setCountry(country: string): boolean;
