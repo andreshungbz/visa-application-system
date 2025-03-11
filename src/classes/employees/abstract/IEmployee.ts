@@ -11,6 +11,7 @@ export interface IEmployee {
   // ssn: string;
   // password: string;
   // salary: number;
+  // employed: boolean;
 
   // MAIN METHODS
 
@@ -25,6 +26,7 @@ export interface IEmployee {
   getSSN(): string;
   getPassword(): string;
   getSalary(): number;
+  getEmployed(): boolean;
 
   setEmployeeNumber(employeeNumber: number): boolean;
   setFirstName(firstName: string): boolean;
@@ -32,4 +34,5 @@ export interface IEmployee {
   setSSN(ssn: string): boolean;
   setPassword(password: string): boolean;
   setSalary(salary: number): boolean;
+  setEmployed(checked: boolean): boolean;
 }

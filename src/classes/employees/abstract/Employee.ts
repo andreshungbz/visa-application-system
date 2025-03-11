@@ -11,7 +11,8 @@ export abstract class Employee implements IEmployee {
     protected lastName: string,
     protected ssn: string,
     protected password: string,
-    protected salary: number
+    protected salary: number,
+    protected employed: boolean = true
   ) {}
 
   // MAIN METHODS
@@ -43,6 +44,9 @@ export abstract class Employee implements IEmployee {
   getSalary(): number {
     return this.salary;
   }
+  getEmployed(): boolean {
+    return this.employed;
+  }
 
   setEmployeeNumber(employeeNumber: number): boolean {
     this.employeeNumber = employeeNumber;
@@ -66,6 +70,10 @@ export abstract class Employee implements IEmployee {
   }
   setSalary(salary: number): boolean {
     this.salary = salary;
+    return true;
+  }
+  setEmployed(checked: boolean): boolean {
+    this.employed = checked;
     return true;
   }
 }
