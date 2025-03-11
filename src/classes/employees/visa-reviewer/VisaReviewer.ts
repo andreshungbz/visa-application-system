@@ -1,4 +1,4 @@
-// Visa Reviwer Concrete Class (Implementation)
+// Visa Reviewer Concrete Class (Implementation)
 
 import { Employee } from '../abstract/Employee';
 import { IVisaReviewer } from './IVisaReviewer';
