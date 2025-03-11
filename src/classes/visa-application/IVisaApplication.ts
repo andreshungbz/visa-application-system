@@ -1,9 +1,9 @@
 // Visa Application Interface (Header)
 
-import { VisaType } from '../enums/visa-type';
-import { VisaStatus } from '../enums/visa-status';
+import { VisaType } from '../../enums/visa-type';
+import { VisaStatus } from '../../enums/visa-status';
 import { VisaForm } from '../visa-forms/abstract/VisaForm';
-import { VisaApplicationType } from '../types/VisaApplicationType';
+import { VisaApplicationType } from '../../types/VisaApplicationType';
 
 export interface IVisaApplication {
   // PROPERTIES (DATA MEMBERS)

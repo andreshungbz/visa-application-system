@@ -3,12 +3,12 @@
 import { VisaForm } from '../abstract/VisaForm';
 import { IF1Form } from './IF1Form';
 
-import { PersonalSection } from '../../types/sections/PersonalSection';
-import { TravelSection } from '../../types/sections/TravelSection';
-import { WorkSection } from '../../types/sections/WorkSection';
-import { SecuritySection } from '../../types/sections/SecuritySection';
-import { StudentSection } from '../../types/sections/StudentSection';
-import { VisaFormSections } from '../../types/VisaFormSections';
+import { PersonalSection } from '../../../types/sections/PersonalSection';
+import { TravelSection } from '../../../types/sections/TravelSection';
+import { WorkSection } from '../../../types/sections/WorkSection';
+import { SecuritySection } from '../../../types/sections/SecuritySection';
+import { StudentSection } from '../../../types/sections/StudentSection';
+import { VisaFormSections } from '../../../types/VisaFormSections';
 
 export class F1Form extends VisaForm implements IF1Form {
   // CONSTRUCTOR

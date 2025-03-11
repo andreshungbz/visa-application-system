@@ -2,11 +2,11 @@
 
 import { IVisaApplication } from './IVisaApplication';
 
-import { VisaType } from '../enums/visa-type';
-import { VisaStatus } from '../enums/visa-status';
+import { VisaType } from '../../enums/visa-type';
+import { VisaStatus } from '../../enums/visa-status';
 import { VisaForm } from '../visa-forms/abstract/VisaForm';
-import { ReviewerNotes } from '../types/ReviwerNotes';
-import { VisaApplicationType } from '../types/VisaApplicationType';
+import { ReviewerNotes } from '../../types/ReviwerNotes';
+import { VisaApplicationType } from '../../types/VisaApplicationType';
 
 export class VisaApplication implements IVisaApplication {
   // CONSTRUCTOR

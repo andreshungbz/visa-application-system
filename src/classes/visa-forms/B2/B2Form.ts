@@ -3,12 +3,12 @@
 import { VisaForm } from '../abstract/VisaForm';
 import { IB2Form } from './IB2Form';
 
-import { PersonalSection } from '../../types/sections/PersonalSection';
-import { TravelSection } from '../../types/sections/TravelSection';
-import { WorkSection } from '../../types/sections/WorkSection';
-import { SecuritySection } from '../../types/sections/SecuritySection';
-import { TouristSection } from '../../types/sections/TouristSection';
-import { VisaFormSections } from '../../types/VisaFormSections';
+import { PersonalSection } from '../../../types/sections/PersonalSection';
+import { TravelSection } from '../../../types/sections/TravelSection';
+import { WorkSection } from '../../../types/sections/WorkSection';
+import { SecuritySection } from '../../../types/sections/SecuritySection';
+import { TouristSection } from '../../../types/sections/TouristSection';
+import { VisaFormSections } from '../../../types/VisaFormSections';
 
 export class B2Form extends VisaForm implements IB2Form {
   // CONSTRUCTOR

@@ -1,6 +1,6 @@
 // Visa Form Interface (Header)
 
-import { VisaFormSections } from '../../types/VisaFormSections';
+import { VisaFormSections } from '../../../types/VisaFormSections';
 
 export interface IVisaForm {
   // PROPERTIES (DATA MEMBERS)

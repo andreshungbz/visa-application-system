@@ -4,7 +4,7 @@ import { Employee } from '../abstract/Employee';
 import { IVisaReviewer } from './IVisaReviewer';
 
 import { VisaApplication } from '../../visa-application/VisaApplication';
-import { VisaStatus } from '../../enums/visa-status';
+import { VisaStatus } from '../../../enums/visa-status';
 
 export class VisaReviewer extends Employee implements IVisaReviewer {
   // CONSTRUCTOR

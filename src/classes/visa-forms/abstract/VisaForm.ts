@@ -2,11 +2,11 @@
 
 import { IVisaForm } from './IVisaForm';
 
-import { PersonalSection } from '../../types/sections/PersonalSection';
-import { TravelSection } from '../../types/sections/TravelSection';
-import { WorkSection } from '../../types/sections/WorkSection';
-import { SecuritySection } from '../../types/sections/SecuritySection';
-import { VisaFormSections } from '../../types/VisaFormSections';
+import { PersonalSection } from '../../../types/sections/PersonalSection';
+import { TravelSection } from '../../../types/sections/TravelSection';
+import { WorkSection } from '../../../types/sections/WorkSection';
+import { SecuritySection } from '../../../types/sections/SecuritySection';
+import { VisaFormSections } from '../../../types/VisaFormSections';
 
 export abstract class VisaForm implements IVisaForm {
   // CONSTRUCTOR
