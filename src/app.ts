@@ -8,10 +8,14 @@ import { config } from './config/app.config';
 import { logger } from './middleware/logger';
 import { getLocalIPAddress } from './utils/getLocalIPAddress';
 
-import { initiateVisaSystem } from './utils/initiate';
+import {
+  initializeVisaSystem,
+  initializeEmployeeSystem,
+} from './utils/initialize';
 
 // load Visa System and export for use throughout application
-export const system = initiateVisaSystem();
+export const vs = initializeVisaSystem();
+export const es = initializeEmployeeSystem();
 
 const app = express();
 

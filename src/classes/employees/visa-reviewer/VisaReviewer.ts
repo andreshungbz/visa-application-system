@@ -3,8 +3,9 @@
 import { Employee } from '../abstract/Employee';
 import { IVisaReviewer } from './IVisaReviewer';
 
-import { VisaApplication } from '../../visa-application/VisaApplication';
 import { VisaStatus } from '../../../enums/visa-status';
+
+import { vs } from '../../../app';
 
 export class VisaReviewer extends Employee implements IVisaReviewer {
   // CONSTRUCTOR
@@ -22,35 +23,43 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
 
   // MAIN FUNCTIONS
 
-  approveApplicationStage(
-    application: VisaApplication,
-    notes: string
-  ): boolean {
+  approveApplicationStage(applicationNumber: number, notes: string): boolean {
+    const application = vs.getFullVisaApplication(applicationNumber);
+    if (!application) return false;
+
     switch (application.getStatus()) {
       case VisaStatus.InitialStage:
         application.setStatus(VisaStatus.InterviewStage);
         application.setS1Reviewer(String(this.getEmployeeNumber()));
         application.setS1Notes(notes);
-        return true;
+        break;
       case VisaStatus.InterviewStage:
         application.setStatus(VisaStatus.FinalStage);
         application.setS2Reviewer(String(this.getEmployeeNumber()));
         application.setS2Notes(notes);
-        return true;
+        break;
       case VisaStatus.FinalStage:
         application.setStatus(VisaStatus.Accepted);
         application.setS3Reviewer(String(this.getEmployeeNumber()));
         application.setS3Notes(notes);
-        return true;
-      default:
-        return false;
+        break;
     }
+
+    application.updateVARecord();
+
+    return true;
   }
 
-  rejectApplication(application: VisaApplication, notes: string): boolean {
+  rejectApplication(applicationNumber: number, notes: string): boolean {
+    const application = vs.getFullVisaApplication(applicationNumber);
+    if (!application) return false;
+
     application.setStatus(VisaStatus.Rejected);
     application.setS3Reviewer(String(this.getEmployeeNumber()));
     application.setS3Notes(notes);
+
+    application.updateVARecord();
+
     return true;
   }
 }

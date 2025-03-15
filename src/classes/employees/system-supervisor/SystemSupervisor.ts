@@ -3,9 +3,10 @@
 import { Employee } from '../abstract/Employee';
 import { ISystemSupervisor } from './ISystemSupervisor';
 
-import { deleteEmployee } from '../../../models/employee-model';
 import { EmployeeType } from '../../../enums/employee-type';
 import { VisaReviewer } from '../visa-reviewer/VisaReviewer';
+
+import { es, vs } from '../../../app';
 
 export class SystemSupervisor extends Employee implements ISystemSupervisor {
   // CONSTRUCTOR
@@ -55,18 +56,21 @@ export class SystemSupervisor extends Employee implements ISystemSupervisor {
     }
 
     if (newEmployee) {
-      newEmployee.syncERecord();
+      es.addEmployee(newEmployee);
     }
 
     return true;
   }
 
   removeEmployee(employeeNumber: number): boolean {
-    deleteEmployee(employeeNumber);
+    es.removeEmployee(employeeNumber);
     return true;
   }
 
-  generateSystemStatistics(): {} {
-    return {};
+  generateStatisticsReport(): {} {
+    return {
+      vs: vs.generateStatistics(),
+      es: es.generateStatistics(),
+    };
   }
 }

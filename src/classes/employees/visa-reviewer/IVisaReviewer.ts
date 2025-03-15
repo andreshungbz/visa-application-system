@@ -2,8 +2,6 @@
 
 import { IEmployee } from '../abstract/IEmployee';
 
-import { VisaApplication } from '../../visa-application/VisaApplication';
-
 export interface IVisaReviewer extends IEmployee {
   // PROPERTIES (DATA MEMBERS)
   // these are commented so that the implementation can apply protected/private access specifiers
@@ -13,6 +11,6 @@ export interface IVisaReviewer extends IEmployee {
 
   // MAIN METHODS
 
-  approveApplicationStage(application: VisaApplication, notes: string): boolean;
-  rejectApplication(application: VisaApplication, notes: string): boolean;
+  approveApplicationStage(applicationNumber: number, notes: string): boolean;
+  rejectApplication(applicationNumber: number, notes: string): boolean;
 }

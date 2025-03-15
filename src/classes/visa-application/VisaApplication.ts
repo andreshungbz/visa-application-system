@@ -7,7 +7,8 @@ import { VisaStatus } from '../../enums/visa-status';
 import { VisaForm } from '../visa-forms/abstract/VisaForm';
 import { ReviewerNotes } from '../../types/ReviwerNotes';
 import { VisaApplicationType } from '../../types/VisaApplicationType';
-import { createVA } from '../../models/visa-application-model';
+
+import { createVA, updateVA } from '../../models/visa-application-model';
 
 export class VisaApplication implements IVisaApplication {
   // CONSTRUCTOR
@@ -37,6 +38,12 @@ export class VisaApplication implements IVisaApplication {
   syncVARecord(): boolean {
     createVA(this);
     this.form.syncVFRecord(this.getApplicationNumber());
+
+    return true;
+  }
+
+  updateVARecord(): boolean {
+    updateVA(this);
 
     return true;
   }

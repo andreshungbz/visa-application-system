@@ -2,7 +2,6 @@
 
 import { IVisaSystem } from './IVisaSystem';
 
-import { Employee } from '../employees/abstract/Employee';
 import { VisaApplication } from '../visa-application/VisaApplication';
 import { VisaStatus } from '../../enums/visa-status';
 
@@ -11,12 +10,10 @@ import {
   readS2VisaApplications,
   readS3VisaApplications,
 } from '../../models/visa-application-model';
-import { readEmployees } from '../../models/employee-model';
 
 export class VisaSystem implements IVisaSystem {
   // PROPERTIES (DATA MEMBERS)
 
-  private employees: Employee[];
   private initialQueue: VisaApplication[];
   private interviewQueue: VisaApplication[];
   private finalQueue: VisaApplication[];
@@ -24,7 +21,6 @@ export class VisaSystem implements IVisaSystem {
   // CONSTRUCTOR
 
   constructor() {
-    this.employees = readEmployees();
     this.initialQueue = readS1VisaApplications();
     this.interviewQueue = readS2VisaApplications();
     this.finalQueue = readS3VisaApplications();
@@ -32,11 +28,16 @@ export class VisaSystem implements IVisaSystem {
 
   // MAIN METHODS
 
-  authenticate(employeeNumber: number, password: string): boolean {
-    // TODO: implement
-    console.log(employeeNumber, password);
+  getInitialQueue(): VisaApplication[] {
+    return this.initialQueue;
+  }
 
-    return true;
+  getInterviewQueue(): VisaApplication[] {
+    return this.interviewQueue;
+  }
+
+  getFinalQueue(): VisaApplication[] {
+    return this.finalQueue;
   }
 
   addVisaApplication(application: VisaApplication): boolean {
@@ -98,23 +99,7 @@ export class VisaSystem implements IVisaSystem {
     return null;
   }
 
-  getInitialQueue(): VisaApplication[] {
-    return this.initialQueue;
-  }
-
-  getInterviewQueue(): VisaApplication[] {
-    return this.interviewQueue;
-  }
-
-  getFinalQueue(): VisaApplication[] {
-    return this.finalQueue;
-  }
-
-  getEmployeeDetails(employeeNumber: number): Employee | null {
-    const employeeIndex = this.employees.findIndex(
-      (e) => employeeNumber === e.getEmployeeNumber()
-    );
-
-    return employeeIndex !== -1 ? this.employees[employeeIndex] : null;
+  generateStatistics(): {} {
+    return {};
   }
 }

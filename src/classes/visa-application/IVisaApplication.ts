@@ -22,6 +22,7 @@ export interface IVisaApplication {
 
   getApplication(): VisaApplicationType;
   syncVARecord(): boolean;
+  updateVARecord(): boolean;
 
   // GETTERS/SETTERS
 

@@ -25,3 +25,12 @@ export const readS2VisaApplications = (): VisaApplication[] => {
 export const readS3VisaApplications = (): VisaApplication[] => {
   return [];
 };
+
+// UPDATE FUNCTIONS
+
+export const updateVA = (application: VisaApplication): boolean => {
+  // TODO: update database table
+  console.log(application);
+
+  return true;
+};

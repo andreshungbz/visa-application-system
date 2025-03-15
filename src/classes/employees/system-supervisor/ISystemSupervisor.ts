@@ -22,8 +22,7 @@ export interface ISystemSupervisor extends IEmployee {
     password: string,
     salary: number
   ): boolean;
-
   removeEmployee(employeeNumber: number): boolean;
 
-  generateSystemStatistics(): {};
+  generateStatisticsReport(): {};
 }
