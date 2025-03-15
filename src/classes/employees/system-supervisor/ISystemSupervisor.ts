@@ -2,6 +2,8 @@
 
 import { IEmployee } from '../abstract/IEmployee';
 
+import { EmployeeType } from '../../../enums/employee-type';
+
 export interface ISystemSupervisor extends IEmployee {
   // PROPERTIES (DATA MEMBERS)
   // these are commented so that the implementation can apply protected/private access specifiers
@@ -11,7 +13,9 @@ export interface ISystemSupervisor extends IEmployee {
 
   // MAIN METHODS
 
-  addVisaReviewer(
+  addEmployee(
+    type: EmployeeType,
+    employeeNumber: number,
     firstName: string,
     lastName: string,
     ssn: string,
@@ -19,7 +23,7 @@ export interface ISystemSupervisor extends IEmployee {
     salary: number
   ): boolean;
 
-  removeVisaReviewer(employeeNumber: number): boolean;
+  removeEmployee(employeeNumber: number): boolean;
 
   generateSystemStatistics(): {};
 }

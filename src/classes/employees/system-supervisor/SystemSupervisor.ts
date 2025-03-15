@@ -3,6 +3,8 @@
 import { Employee } from '../abstract/Employee';
 import { ISystemSupervisor } from './ISystemSupervisor';
 
+import { deleteEmployee } from '../../../models/employee-model';
+import { EmployeeType } from '../../../enums/employee-type';
 import { VisaReviewer } from '../visa-reviewer/VisaReviewer';
 
 export class SystemSupervisor extends Employee implements ISystemSupervisor {
@@ -19,37 +21,48 @@ export class SystemSupervisor extends Employee implements ISystemSupervisor {
     super(employeeNumber, firstName, lastName, ssn, password, salary);
   }
 
-  // OVERRIDES
-
-  syncERecord(): boolean {
-    return true;
-  }
-
   // MAIN FUNCTIONS
 
-  addVisaReviewer(
+  addEmployee(
+    type: EmployeeType,
+    employeeNumber: number,
     firstName: string,
     lastName: string,
     ssn: string,
     password: string,
     salary: number
   ): boolean {
-    const nextEmployeeIdFromDB = 10;
-    const vr = new VisaReviewer(
-      nextEmployeeIdFromDB,
-      firstName,
-      lastName,
-      ssn,
-      password,
-      salary
-    );
+    let newEmployee: Employee | null = null;
 
-    vr.syncERecord();
+    if (type === EmployeeType.VisaReviwer) {
+      newEmployee = new VisaReviewer(
+        employeeNumber,
+        firstName,
+        lastName,
+        ssn,
+        password,
+        salary
+      );
+    } else if (type === EmployeeType.SystemSupervisor) {
+      newEmployee = new SystemSupervisor(
+        employeeNumber,
+        firstName,
+        lastName,
+        ssn,
+        password,
+        salary
+      );
+    }
+
+    if (newEmployee) {
+      newEmployee.syncERecord();
+    }
 
     return true;
   }
 
-  removeVisaReviewer(_employeeNumber: number): boolean {
+  removeEmployee(employeeNumber: number): boolean {
+    deleteEmployee(employeeNumber);
     return true;
   }
 

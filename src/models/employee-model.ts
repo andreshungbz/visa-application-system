@@ -9,7 +9,7 @@ import { EmployeeType } from '../enums/employee-type';
 
 // CREATE FUNCTIONS
 
-export const upsertEmployee = (employee: Employee): boolean => {
+export const createEmployee = (employee: Employee): boolean => {
   // TODO: write to database
   let employeeType: EmployeeType | null;
 
@@ -30,4 +30,13 @@ export const upsertEmployee = (employee: Employee): boolean => {
 
 export const readEmployees = (): Employee[] => {
   return [];
+};
+
+// DELETE FUNCTIONS
+
+export const deleteEmployee = (employeeNumber: number): boolean => {
+  // TODO: change employed to false in database
+  console.log(employeeNumber);
+
+  return true;
 };

@@ -20,12 +20,6 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
     super(employeeNumber, firstName, lastName, ssn, password, salary);
   }
 
-  // OVERRIDES
-
-  syncERecord(): boolean {
-    return true;
-  }
-
   // MAIN FUNCTIONS
 
   approveApplicationStage(
