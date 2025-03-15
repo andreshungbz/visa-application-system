@@ -8,7 +8,7 @@ import { config } from './config/app.config';
 import { logger } from './middleware/logger';
 import { getLocalIPAddress } from './utils/getLocalIPAddress';
 
-import { initiateVisaSystem } from './utils/initiateVisaSystem';
+import { initiateVisaSystem } from './utils/initiate';
 
 // load Visa System and export for use throughout application
 export const system = initiateVisaSystem();
