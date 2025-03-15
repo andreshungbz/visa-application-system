@@ -6,6 +6,13 @@ import { Employee } from '../employees/abstract/Employee';
 import { VisaApplication } from '../visa-application/VisaApplication';
 import { VisaStatus } from '../../enums/visa-status';
 
+import {
+  getEmployees,
+  getS1VisaApplications,
+  getS2VisaApplications,
+  getS3VisaApplications,
+} from '../../models/visa-application-model';
+
 export class VisaSystem implements IVisaSystem {
   // PROPERTIES (DATA MEMBERS)
 
@@ -17,10 +24,10 @@ export class VisaSystem implements IVisaSystem {
   // CONSTRUCTOR
 
   constructor() {
-    this.employees = [];
-    this.initialQueue = [];
-    this.interviewQueue = [];
-    this.finalQueue = [];
+    this.employees = getEmployees();
+    this.initialQueue = getS1VisaApplications();
+    this.interviewQueue = getS2VisaApplications();
+    this.finalQueue = getS3VisaApplications();
   }
 
   // MAIN METHODS
@@ -88,19 +95,19 @@ export class VisaSystem implements IVisaSystem {
     return null;
   }
 
-  getS1VisaApplications(): VisaApplication[] {
+  getInitialQueue(): VisaApplication[] {
     return this.initialQueue;
   }
 
-  getS2VisaApplications(): VisaApplication[] {
+  getInterviewQueue(): VisaApplication[] {
     return this.interviewQueue;
   }
 
-  getS3VisaApplications(): VisaApplication[] {
+  getFinalQueue(): VisaApplication[] {
     return this.finalQueue;
   }
 
-  getEmployeeDetials(employeeNumber: number): Employee | null {
+  getEmployeeDetails(employeeNumber: number): Employee | null {
     const employeeIndex = this.employees.findIndex(
       (e) => employeeNumber === e.getEmployeeNumber()
     );

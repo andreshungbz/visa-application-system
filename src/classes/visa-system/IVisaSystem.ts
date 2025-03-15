@@ -20,8 +20,8 @@ export interface IVisaSystem {
   addVisaApplication(application: VisaApplication): boolean;
   getVisaApplicationStatus(applicationNumber: number): VisaStatus | null;
   getFullVisaApplication(applicationNumber: number): VisaApplication | null;
-  getS1VisaApplications(): VisaApplication[];
-  getS2VisaApplications(): VisaApplication[];
-  getS3VisaApplications(): VisaApplication[];
-  getEmployeeDetials(employeeNumber: number): Employee | null;
+  getInitialQueue(): VisaApplication[];
+  getInterviewQueue(): VisaApplication[];
+  getFinalQueue(): VisaApplication[];
+  getEmployeeDetails(employeeNumber: number): Employee | null;
 }
