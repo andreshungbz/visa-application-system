@@ -41,7 +41,11 @@ export class VisaSystem implements IVisaSystem {
   }
 
   addVisaApplication(application: VisaApplication): boolean {
+    // ADD TO CLASS MEMORY
     this.initialQueue.push(application);
+    // WRITE TO DATABASE
+    application.syncVARecord();
+
     return true;
   }
 

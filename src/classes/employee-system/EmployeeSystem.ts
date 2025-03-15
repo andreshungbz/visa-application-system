@@ -31,11 +31,8 @@ export class EmployeeSystem implements IEmployeeSystem {
 
   addEmployee(employee: Employee): boolean {
     // ADD TO CLASS MEMORY
-
     this.employees.push(employee);
-
     // WRITE TO DATABASE
-
     employee.syncERecord();
 
     return true;
@@ -54,7 +51,6 @@ export class EmployeeSystem implements IEmployeeSystem {
     }
 
     // UPDATE DATABASE
-
     deleteEmployee(employeeNumber);
 
     return false;
