@@ -9,6 +9,7 @@ export interface IVisaSystem {
   // these are commented so that the implementation can apply protected/private access specifiers
   // specifying these properties in the interface would mean the implementation properties would have to be public
 
+  // nextApplicationNumber: number;
   // employees: Employee[];
   // initialQueue: VisaApplication[];
   // interviewQueue: VisaApplication[];

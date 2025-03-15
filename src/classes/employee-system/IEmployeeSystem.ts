@@ -7,6 +7,7 @@ export interface IEmployeeSystem {
   // these are commented so that the implementation can apply protected/private access specifiers
   // specifying these properties in the interface would mean the implementation properties would have to be public
 
+  // nextEmployeeNumber: number;
   // employees: Employee[];
 
   // MAIN METHODS
