@@ -15,6 +15,8 @@ export interface IVisaApplication {
   // status: VisaStatus;
   // form: VisaForm;
   // notes: ReviewerNotes;
+  // createdAt: Date;
+  // updatedAt: Date;
 
   // MAIN METHODS
 
@@ -33,6 +35,8 @@ export interface IVisaApplication {
   getS2Notes(): string;
   getS3Reviewer(): string;
   getS3Notes(): string;
+  getCreatedAt(): Date;
+  getUpdatedAt(): Date;
 
   setApplicationNumber(applicationNumber: number): boolean;
   setType(type: VisaType): boolean;

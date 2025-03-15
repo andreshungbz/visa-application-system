@@ -17,7 +17,9 @@ export class VisaApplication implements IVisaApplication {
     protected type: VisaType,
     protected status: VisaStatus,
     protected form: VisaForm,
-    protected notes: ReviewerNotes
+    protected notes: ReviewerNotes,
+    protected createdAt: Date = new Date(),
+    protected updatedAt: Date = new Date()
   ) {}
 
   // MAIN METHODS
@@ -70,6 +72,12 @@ export class VisaApplication implements IVisaApplication {
   }
   getS3Notes(): string {
     return this.notes.final.notes || '';
+  }
+  getCreatedAt(): Date {
+    return this.createdAt;
+  }
+  getUpdatedAt(): Date {
+    return this.updatedAt;
   }
 
   setApplicationNumber(applicationNumber: number): boolean {
