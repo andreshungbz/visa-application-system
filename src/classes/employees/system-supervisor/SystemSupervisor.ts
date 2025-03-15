@@ -21,7 +21,7 @@ export class SystemSupervisor extends Employee implements ISystemSupervisor {
 
   // OVERRIDES
 
-  insertRecord(): boolean {
+  syncERecord(): boolean {
     return true;
   }
 
@@ -44,7 +44,7 @@ export class SystemSupervisor extends Employee implements ISystemSupervisor {
       salary
     );
 
-    vr.insertRecord();
+    vr.syncERecord();
 
     return true;
   }

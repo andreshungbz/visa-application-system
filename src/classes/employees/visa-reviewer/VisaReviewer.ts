@@ -22,7 +22,7 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
 
   // OVERRIDES
 
-  insertRecord(): boolean {
+  syncERecord(): boolean {
     return true;
   }
 

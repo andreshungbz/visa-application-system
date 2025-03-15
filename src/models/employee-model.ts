@@ -3,11 +3,25 @@
 
 import { Employee } from '../classes/employees/abstract/Employee';
 
+import { SystemSupervisor } from '../classes/employees/system-supervisor/SystemSupervisor';
+import { VisaReviewer } from '../classes/employees/visa-reviewer/VisaReviewer';
+import { EmployeeType } from '../enums/employee-type';
+
 // CREATE FUNCTIONS
 
-export const createEmployee = (employee: Employee): boolean => {
+export const upsertEmployee = (employee: Employee): boolean => {
   // TODO: write to database
-  console.log(employee);
+  let employeeType: EmployeeType | null;
+
+  if (employee instanceof VisaReviewer) {
+    employeeType = EmployeeType.VisaReviwer;
+  } else if (employee instanceof SystemSupervisor) {
+    employeeType = EmployeeType.SystemSupervisor;
+  } else {
+    employeeType = null;
+  }
+
+  console.log(employeeType);
 
   return true;
 };

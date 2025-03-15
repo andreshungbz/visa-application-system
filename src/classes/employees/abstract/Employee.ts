@@ -2,6 +2,8 @@
 
 import { IEmployee } from './IEmployee';
 
+import { upsertEmployee } from '../../../models/employee-model';
+
 export abstract class Employee implements IEmployee {
   // CONSTRUCTOR
 
@@ -20,7 +22,8 @@ export abstract class Employee implements IEmployee {
   getFullName(): string {
     return `${this.getFirstName} ${this.getLastName}`;
   }
-  insertRecord(): boolean {
+  syncERecord(): boolean {
+    upsertEmployee(this);
     return true;
   }
 
