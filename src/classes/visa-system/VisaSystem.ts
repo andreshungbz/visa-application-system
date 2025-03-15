@@ -30,10 +30,20 @@ export class VisaSystem implements IVisaSystem {
   // CONSTRUCTOR
 
   constructor() {
-    this.nextApplicationNumber = readNextApplicationNumber();
-    this.initialQueue = readS1VisaApplications();
-    this.interviewQueue = readS2VisaApplications();
-    this.finalQueue = readS3VisaApplications();
+    this.nextApplicationNumber = 0;
+    this.initialQueue = [];
+    this.interviewQueue = [];
+    this.finalQueue = [];
+
+    // Call the async initialization method
+    this.initialize();
+  }
+
+  private async initialize() {
+    this.nextApplicationNumber = await readNextApplicationNumber();
+    this.initialQueue = await readS1VisaApplications();
+    this.interviewQueue = await readS2VisaApplications();
+    this.finalQueue = await readS3VisaApplications();
   }
 
   // MAIN METHODS

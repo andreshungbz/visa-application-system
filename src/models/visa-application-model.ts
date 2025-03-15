@@ -5,7 +5,9 @@ import { VisaApplication } from '../classes/visa-application/VisaApplication';
 
 // CREATE FUNCTIONS
 
-export const createVA = (application: VisaApplication): boolean => {
+export const createVA = async (
+  application: VisaApplication
+): Promise<boolean> => {
   // TODO: write to database
   console.log(application);
 
@@ -14,25 +16,27 @@ export const createVA = (application: VisaApplication): boolean => {
 
 // READ FUNCTIONS
 
-export const readNextApplicationNumber = (): number => {
+export const readNextApplicationNumber = async (): Promise<number> => {
   return 1;
 };
 
-export const readS1VisaApplications = (): VisaApplication[] => {
+export const readS1VisaApplications = async (): Promise<VisaApplication[]> => {
   return [];
 };
 
-export const readS2VisaApplications = (): VisaApplication[] => {
+export const readS2VisaApplications = async (): Promise<VisaApplication[]> => {
   return [];
 };
 
-export const readS3VisaApplications = (): VisaApplication[] => {
+export const readS3VisaApplications = async (): Promise<VisaApplication[]> => {
   return [];
 };
 
 // UPDATE FUNCTIONS
 
-export const updateVA = (application: VisaApplication): boolean => {
+export const updateVA = async (
+  application: VisaApplication
+): Promise<boolean> => {
   // TODO: update database table
   console.log(application);
 

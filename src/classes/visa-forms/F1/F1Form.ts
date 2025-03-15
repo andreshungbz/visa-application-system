@@ -36,7 +36,7 @@ export class F1Form extends VisaForm implements IF1Form {
     };
   }
 
-  syncVFRecord(applicationNumber: number): boolean {
+  async syncVFRecord(applicationNumber: number): Promise<boolean> {
     super.syncVFRecord(applicationNumber);
     createVFStudent(applicationNumber, this.student);
 

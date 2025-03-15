@@ -9,7 +9,7 @@ import { EmployeeType } from '../enums/employee-type';
 
 // CREATE FUNCTIONS
 
-export const createEmployee = (employee: Employee): boolean => {
+export const createEmployee = async (employee: Employee): Promise<boolean> => {
   // TODO: write to database
   let employeeType: EmployeeType | null;
 
@@ -28,17 +28,19 @@ export const createEmployee = (employee: Employee): boolean => {
 
 // READ FUNCTIONS
 
-export const readNextEmployeeNumber = (): number => {
+export const readNextEmployeeNumber = async (): Promise<number> => {
   return 1;
 };
 
-export const readEmployees = (): Employee[] => {
+export const readEmployees = async (): Promise<Employee[]> => {
   return [];
 };
 
 // DELETE FUNCTIONS
 
-export const deleteEmployee = (employeeNumber: number): boolean => {
+export const deleteEmployee = async (
+  employeeNumber: number
+): Promise<boolean> => {
   // TODO: change employed to false in database
   console.log(employeeNumber);
 

@@ -36,7 +36,7 @@ export class B2Form extends VisaForm implements IB2Form {
     };
   }
 
-  syncVFRecord(applicationNumber: number): boolean {
+  async syncVFRecord(applicationNumber: number): Promise<boolean> {
     super.syncVFRecord(applicationNumber);
     createVFTourist(applicationNumber, this.tourist);
 

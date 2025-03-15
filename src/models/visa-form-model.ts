@@ -11,70 +11,70 @@ import { StudentSection } from '../types/sections/StudentSection';
 
 // CREATE FUNCTIONS
 
-export const createVFPersonal = (
+export const createVFPersonal = async (
   applicationNumber: number,
   values: PersonalSection
-): boolean => {
+): Promise<boolean> => {
   // TODO: write to database
   console.log(applicationNumber, values);
 
   return true;
 };
 
-export const createVFTravel = (
+export const createVFTravel = async (
   applicationNumber: number,
   values: TravelSection
-): boolean => {
+): Promise<boolean> => {
   // TODO: write to database
   console.log(applicationNumber, values);
 
   return true;
 };
 
-export const createVFWork = (
+export const createVFWork = async (
   applicationNumber: number,
   values: WorkSection
-): boolean => {
+): Promise<boolean> => {
   // TODO: write to database
   console.log(applicationNumber, values);
 
   return true;
 };
 
-export const createVFSecurity = (
+export const createVFSecurity = async (
   applicationNumber: number,
   values: SecuritySection
-): boolean => {
+): Promise<boolean> => {
   // TODO: write to database
   console.log(applicationNumber, values);
 
   return true;
 };
 
-export const createVFBusiness = (
+export const createVFBusiness = async (
   applicationNumber: number,
   values: BusinessSection
-): boolean => {
+): Promise<boolean> => {
   // TODO: write to database
   console.log(applicationNumber, values);
 
   return true;
 };
 
-export const createVFTourist = (
+export const createVFTourist = async (
   applicationNumber: number,
   values: TouristSection
-): boolean => {
+): Promise<boolean> => {
   // TODO: write to database
   console.log(applicationNumber, values);
 
   return true;
 };
 
-export const createVFStudent = (
+export const createVFStudent = async (
   applicationNumber: number,
   values: StudentSection
-): boolean => {
+): Promise<boolean> => {
   // TODO: write to database
   console.log(applicationNumber, values);
 
@@ -83,7 +83,9 @@ export const createVFStudent = (
 
 // READ FUNCTIONS
 
-export const readVFPersonal = (applicationNumber: number): PersonalSection => {
+export const readVFPersonal = async (
+  applicationNumber: number
+): Promise<PersonalSection> => {
   // TODO: read from database
   console.log(applicationNumber);
 
@@ -101,7 +103,9 @@ export const readVFPersonal = (applicationNumber: number): PersonalSection => {
   };
 };
 
-export const readVFTravel = (applicationNumber: number): TravelSection => {
+export const readVFTravel = async (
+  applicationNumber: number
+): Promise<TravelSection> => {
   // TODO: read from database
   console.log(applicationNumber);
 
@@ -113,7 +117,9 @@ export const readVFTravel = (applicationNumber: number): TravelSection => {
   };
 };
 
-export const readVFWork = (applicationNumber: number): WorkSection => {
+export const readVFWork = async (
+  applicationNumber: number
+): Promise<WorkSection> => {
   // TODO: read from database
   console.log(applicationNumber);
 
@@ -125,7 +131,9 @@ export const readVFWork = (applicationNumber: number): WorkSection => {
   };
 };
 
-export const readVFSecurity = (applicationNumber: number): SecuritySection => {
+export const readVFSecurity = async (
+  applicationNumber: number
+): Promise<SecuritySection> => {
   // TODO: read from database
   console.log(applicationNumber);
 
@@ -138,7 +146,9 @@ export const readVFSecurity = (applicationNumber: number): SecuritySection => {
   };
 };
 
-export const readVFBusiness = (applicationNumber: number): BusinessSection => {
+export const readVFBusiness = async (
+  applicationNumber: number
+): Promise<BusinessSection> => {
   // TODO: read from database
   console.log(applicationNumber);
 
@@ -150,7 +160,9 @@ export const readVFBusiness = (applicationNumber: number): BusinessSection => {
   };
 };
 
-export const readVFTourist = (applicationNumber: number): TouristSection => {
+export const readVFTourist = async (
+  applicationNumber: number
+): Promise<TouristSection> => {
   // TODO: read from database
   console.log(applicationNumber);
 
@@ -159,7 +171,9 @@ export const readVFTourist = (applicationNumber: number): TouristSection => {
   };
 };
 
-export const readVFStudent = (applicationNumber: number): StudentSection => {
+export const readVFStudent = async (
+  applicationNumber: number
+): Promise<StudentSection> => {
   // TODO: read from database
   console.log(applicationNumber);
 

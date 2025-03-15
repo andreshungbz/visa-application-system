@@ -18,8 +18,15 @@ export class EmployeeSystem implements IEmployeeSystem {
   // CONSTRUCTOR
 
   constructor() {
-    this.nextEmployeeNumber = readNextEmployeeNumber();
-    this.employees = readEmployees();
+    this.nextEmployeeNumber = 0;
+    this.employees = [];
+
+    this.initialize();
+  }
+
+  private async initialize() {
+    this.nextEmployeeNumber = await readNextEmployeeNumber();
+    this.employees = await readEmployees();
   }
 
   // MAIN METHODS

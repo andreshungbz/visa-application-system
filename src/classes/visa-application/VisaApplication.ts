@@ -39,14 +39,14 @@ export class VisaApplication implements IVisaApplication {
     };
   }
 
-  syncVARecord(): boolean {
+  async syncVARecord(): Promise<boolean> {
     createVA(this);
     this.form.syncVFRecord(this.getApplicationNumber());
 
     return true;
   }
 
-  updateVARecord(): boolean {
+  async updateVARecord(): Promise<boolean> {
     updateVA(this);
 
     return true;
