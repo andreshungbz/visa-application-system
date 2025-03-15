@@ -7,11 +7,11 @@ import { VisaApplication } from '../visa-application/VisaApplication';
 import { VisaStatus } from '../../enums/visa-status';
 
 import {
-  getEmployees,
-  getS1VisaApplications,
-  getS2VisaApplications,
-  getS3VisaApplications,
+  readS1VisaApplications,
+  readS2VisaApplications,
+  readS3VisaApplications,
 } from '../../models/visa-application-model';
+import { readEmployees } from '../../models/employee-model';
 
 export class VisaSystem implements IVisaSystem {
   // PROPERTIES (DATA MEMBERS)
@@ -24,15 +24,18 @@ export class VisaSystem implements IVisaSystem {
   // CONSTRUCTOR
 
   constructor() {
-    this.employees = getEmployees();
-    this.initialQueue = getS1VisaApplications();
-    this.interviewQueue = getS2VisaApplications();
-    this.finalQueue = getS3VisaApplications();
+    this.employees = readEmployees();
+    this.initialQueue = readS1VisaApplications();
+    this.interviewQueue = readS2VisaApplications();
+    this.finalQueue = readS3VisaApplications();
   }
 
   // MAIN METHODS
 
-  authenticate(_employeeNumber: number, _password: string): boolean {
+  authenticate(employeeNumber: number, password: string): boolean {
+    // TODO: implement
+    console.log(employeeNumber, password);
+
     return true;
   }
 

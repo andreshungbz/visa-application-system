@@ -7,6 +7,7 @@ import { VisaStatus } from '../../enums/visa-status';
 import { VisaForm } from '../visa-forms/abstract/VisaForm';
 import { ReviewerNotes } from '../../types/ReviwerNotes';
 import { VisaApplicationType } from '../../types/VisaApplicationType';
+import { createVA } from '../../models/visa-application-model';
 
 export class VisaApplication implements IVisaApplication {
   // CONSTRUCTOR
@@ -31,7 +32,10 @@ export class VisaApplication implements IVisaApplication {
     };
   }
 
-  insertRecord(): boolean {
+  syncVARecord(): boolean {
+    createVA(this);
+    this.form.syncVFRecord(this.getApplicationNumber());
+
     return true;
   }
 
@@ -50,22 +54,22 @@ export class VisaApplication implements IVisaApplication {
     return this.form;
   }
   getS1Reviewer(): string {
-    return this.notes.initial.reviewer;
+    return this.notes.initial.reviewer || '';
   }
   getS1Notes(): string {
-    return this.notes.initial.notes;
+    return this.notes.initial.notes || '';
   }
   getS2Reviewer(): string {
-    return this.notes.interview.reviewer;
+    return this.notes.interview.reviewer || '';
   }
   getS2Notes(): string {
-    return this.notes.interview.notes;
+    return this.notes.interview.notes || '';
   }
   getS3Reviewer(): string {
-    return this.notes.final.reviewer;
+    return this.notes.final.reviewer || '';
   }
   getS3Notes(): string {
-    return this.notes.final.notes;
+    return this.notes.final.notes || '';
   }
 
   setApplicationNumber(applicationNumber: number): boolean {

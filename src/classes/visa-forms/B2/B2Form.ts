@@ -9,6 +9,7 @@ import { WorkSection } from '../../../types/sections/WorkSection';
 import { SecuritySection } from '../../../types/sections/SecuritySection';
 import { TouristSection } from '../../../types/sections/TouristSection';
 import { VisaFormSections } from '../../../types/VisaFormSections';
+import { createVFTourist } from '../../../models/visa-form-model';
 
 export class B2Form extends VisaForm implements IB2Form {
   // CONSTRUCTOR
@@ -35,7 +36,10 @@ export class B2Form extends VisaForm implements IB2Form {
     };
   }
 
-  insertRecord(): boolean {
+  syncVFRecord(applicationNumber: number): boolean {
+    super.syncVFRecord(applicationNumber);
+    createVFTourist(applicationNumber, this.tourist);
+
     return true;
   }
 

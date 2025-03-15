@@ -9,6 +9,7 @@ import { WorkSection } from '../../../types/sections/WorkSection';
 import { SecuritySection } from '../../../types/sections/SecuritySection';
 import { StudentSection } from '../../../types/sections/StudentSection';
 import { VisaFormSections } from '../../../types/VisaFormSections';
+import { createVFStudent } from '../../../models/visa-form-model';
 
 export class F1Form extends VisaForm implements IF1Form {
   // CONSTRUCTOR
@@ -35,7 +36,10 @@ export class F1Form extends VisaForm implements IF1Form {
     };
   }
 
-  insertRecord(): boolean {
+  syncVFRecord(applicationNumber: number): boolean {
+    super.syncVFRecord(applicationNumber);
+    createVFStudent(applicationNumber, this.student);
+
     return true;
   }
 

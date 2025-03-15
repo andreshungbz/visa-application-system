@@ -19,7 +19,7 @@ export interface IVisaApplication {
   // MAIN METHODS
 
   getApplication(): VisaApplicationType;
-  insertRecord(): boolean;
+  syncVARecord(): boolean;
 
   // GETTERS/SETTERS
 

@@ -8,6 +8,13 @@ import { WorkSection } from '../../../types/sections/WorkSection';
 import { SecuritySection } from '../../../types/sections/SecuritySection';
 import { VisaFormSections } from '../../../types/VisaFormSections';
 
+import {
+  createVFPersonal,
+  createVFSecurity,
+  createVFTravel,
+  createVFWork,
+} from '../../../models/visa-form-model';
+
 export abstract class VisaForm implements IVisaForm {
   // CONSTRUCTOR
 
@@ -29,7 +36,12 @@ export abstract class VisaForm implements IVisaForm {
     };
   }
 
-  insertRecord(): boolean {
+  syncVFRecord(applicationNumber: number): boolean {
+    createVFPersonal(applicationNumber, this.personal);
+    createVFTravel(applicationNumber, this.travel);
+    createVFWork(applicationNumber, this.work);
+    createVFSecurity(applicationNumber, this.security);
+
     return true;
   }
 
