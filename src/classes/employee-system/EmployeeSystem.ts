@@ -3,16 +3,22 @@
 import { IEmployeeSystem } from './IEmployeeSystem';
 import { Employee } from '../employees/abstract/Employee';
 
-import { deleteEmployee, readEmployees } from '../../models/employee-model';
+import {
+  deleteEmployee,
+  readEmployees,
+  readNextEmployeeNumber,
+} from '../../models/employee-model';
 
 export class EmployeeSystem implements IEmployeeSystem {
   // PROPERTIES (DATA MEMBERS)
 
+  nextEmployeeNumber: number;
   private employees: Employee[];
 
   // CONSTRUCTOR
 
   constructor() {
+    this.nextEmployeeNumber = readNextEmployeeNumber();
     this.employees = readEmployees();
   }
 

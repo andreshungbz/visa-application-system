@@ -9,10 +9,12 @@ import { VisaStatus } from '../../enums/visa-status';
 import { VisaType } from '../../enums/visa-type';
 
 import {
+  readNextApplicationNumber,
   readS1VisaApplications,
   readS2VisaApplications,
   readS3VisaApplications,
 } from '../../models/visa-application-model';
+
 import { B1Form } from '../visa-forms/B1/B1Form';
 import { B2Form } from '../visa-forms/B2/B2Form';
 import { F1Form } from '../visa-forms/F1/F1Form';
@@ -20,6 +22,7 @@ import { F1Form } from '../visa-forms/F1/F1Form';
 export class VisaSystem implements IVisaSystem {
   // PROPERTIES (DATA MEMBERS)
 
+  nextApplicationNumber: number;
   private initialQueue: VisaApplication[];
   private interviewQueue: VisaApplication[];
   private finalQueue: VisaApplication[];
@@ -27,6 +30,7 @@ export class VisaSystem implements IVisaSystem {
   // CONSTRUCTOR
 
   constructor() {
+    this.nextApplicationNumber = readNextApplicationNumber();
     this.initialQueue = readS1VisaApplications();
     this.interviewQueue = readS2VisaApplications();
     this.finalQueue = readS3VisaApplications();

@@ -28,6 +28,10 @@ export const createEmployee = (employee: Employee): boolean => {
 
 // READ FUNCTIONS
 
+export const readNextEmployeeNumber = (): number => {
+  return 1;
+};
+
 export const readEmployees = (): Employee[] => {
   return [];
 };

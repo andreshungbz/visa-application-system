@@ -14,6 +14,10 @@ export const createVA = (application: VisaApplication): boolean => {
 
 // READ FUNCTIONS
 
+export const readNextApplicationNumber = (): number => {
+  return 1;
+};
+
 export const readS1VisaApplications = (): VisaApplication[] => {
   return [];
 };
