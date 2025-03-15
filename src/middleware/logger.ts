@@ -8,6 +8,6 @@ export const logger = (req: Request, _res: Response, next: NextFunction) => {
   // https://www.localeplanet.com/icu/en-BZ/index.html
   const now = new Date().toLocaleString('en-BZ', { hour12: true });
 
-  console.log(`[${now}] ${req.method} ${req.url}`);
+  console.log(`[VAS] [${now}] ${req.method} ${req.url}`);
   next();
 };

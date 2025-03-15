@@ -34,8 +34,6 @@ app.get('/', (_req, res) => {
 // server start
 app.listen(config.port, () => {
   console.log(
-    `Visa Application System running at http://${getLocalIPAddress()}:${
-      config.port
-    }`
+    `[VAS] Application started at http://${getLocalIPAddress()}:${config.port}`
   );
 });
