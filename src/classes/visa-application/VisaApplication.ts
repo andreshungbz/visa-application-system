@@ -18,7 +18,11 @@ export class VisaApplication implements IVisaApplication {
     protected type: VisaType,
     protected status: VisaStatus,
     protected form: VisaForm,
-    protected notes: ReviewerNotes,
+    protected notes: ReviewerNotes = {
+      initial: { reviewer: null, notes: null },
+      interview: { reviewer: null, notes: null },
+      final: { reviewer: null, notes: null },
+    },
     protected createdAt: Date = new Date(),
     protected updatedAt: Date = new Date()
   ) {}

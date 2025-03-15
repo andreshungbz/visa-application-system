@@ -1,6 +1,7 @@
 // Visa System Interface (Header)
 
 import { VisaApplication } from '../visa-application/VisaApplication';
+import { VisaForm } from '../visa-forms/abstract/VisaForm';
 import { VisaStatus } from '../../enums/visa-status';
 
 export interface IVisaSystem {
@@ -18,7 +19,7 @@ export interface IVisaSystem {
   getInitialQueue(): VisaApplication[];
   getInterviewQueue(): VisaApplication[];
   getFinalQueue(): VisaApplication[];
-  addVisaApplication(application: VisaApplication): boolean;
+  addVisaApplication(form: VisaForm): number;
   getVisaApplicationStatus(applicationNumber: number): VisaStatus | null;
   getFullVisaApplication(applicationNumber: number): VisaApplication | null;
 
