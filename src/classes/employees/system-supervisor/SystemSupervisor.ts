@@ -24,7 +24,7 @@ export class SystemSupervisor extends Employee implements ISystemSupervisor {
 
   // MAIN FUNCTIONS
 
-  addEmployee(
+  async addEmployee(
     type: EmployeeType,
     employeeNumber: number,
     firstName: string,
@@ -32,7 +32,7 @@ export class SystemSupervisor extends Employee implements ISystemSupervisor {
     ssn: string,
     password: string,
     salary: number
-  ): boolean {
+  ): Promise<boolean> {
     let newEmployee: Employee | null = null;
 
     if (type === EmployeeType.VisaReviwer) {
@@ -56,21 +56,21 @@ export class SystemSupervisor extends Employee implements ISystemSupervisor {
     }
 
     if (newEmployee) {
-      es.addEmployee(newEmployee);
+      await es.addEmployee(newEmployee);
     }
 
     return true;
   }
 
-  removeEmployee(employeeNumber: number): boolean {
-    es.removeEmployee(employeeNumber);
+  async removeEmployee(employeeNumber: number): Promise<boolean> {
+    await es.removeEmployee(employeeNumber);
     return true;
   }
 
-  generateStatisticsReport(): {} {
+  async generateStatisticsReport(): Promise<{}> {
     return {
-      vs: vs.generateStatistics(),
-      es: es.generateStatistics(),
+      vs: await vs.generateStatistics(),
+      es: await es.generateStatistics(),
     };
   }
 }

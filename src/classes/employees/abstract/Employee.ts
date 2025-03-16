@@ -22,8 +22,8 @@ export abstract class Employee implements IEmployee {
   getFullName(): string {
     return `${this.getFirstName} ${this.getLastName}`;
   }
-  syncERecord(): boolean {
-    createEmployee(this);
+  async syncERecord(): Promise<boolean> {
+    await createEmployee(this);
     return true;
   }
 

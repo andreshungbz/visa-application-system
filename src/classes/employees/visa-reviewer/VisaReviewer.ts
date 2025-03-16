@@ -23,7 +23,10 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
 
   // MAIN FUNCTIONS
 
-  approveApplicationStage(applicationNumber: number, notes: string): boolean {
+  async approveApplicationStage(
+    applicationNumber: number,
+    notes: string
+  ): Promise<boolean> {
     const application = vs.getFullVisaApplication(applicationNumber);
     if (!application) return false;
 
@@ -50,7 +53,10 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
     return true;
   }
 
-  rejectApplication(applicationNumber: number, notes: string): boolean {
+  async rejectApplication(
+    applicationNumber: number,
+    notes: string
+  ): Promise<boolean> {
     const application = vs.getFullVisaApplication(applicationNumber);
     if (!application) return false;
 
