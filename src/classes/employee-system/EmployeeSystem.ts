@@ -4,6 +4,7 @@ import { IEmployeeSystem } from './IEmployeeSystem';
 import { Employee } from '../employees/abstract/Employee';
 
 import {
+  createEmployee,
   deleteEmployee,
   readEmployees,
   readNextEmployeeNumber,
@@ -46,7 +47,7 @@ export class EmployeeSystem implements IEmployeeSystem {
     // ADD TO CLASS MEMORY
     this.employees.push(employee);
     // WRITE TO DATABASE
-    await employee.syncERecord();
+    await createEmployee(employee);
 
     return true;
   }

@@ -2,8 +2,6 @@
 
 import { IEmployee } from './IEmployee';
 
-import { createEmployee } from '../../../models/employee-model';
-
 export abstract class Employee implements IEmployee {
   // CONSTRUCTOR
 
@@ -21,10 +19,6 @@ export abstract class Employee implements IEmployee {
 
   getFullName(): string {
     return `${this.getFirstName} ${this.getLastName}`;
-  }
-  async syncERecord(): Promise<boolean> {
-    await createEmployee(this);
-    return true;
   }
 
   // GETTERS/SETTERS

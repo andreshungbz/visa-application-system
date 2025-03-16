@@ -16,7 +16,6 @@ export interface IEmployee {
   // MAIN METHODS
 
   getFullName(): string;
-  syncERecord(): Promise<boolean>;
 
   // GETTERS/SETTERS
 
