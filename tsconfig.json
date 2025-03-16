@@ -1,9 +1,6 @@
 {
   "include": ["src/**/*"],
   "exclude": ["node_modules", "build"],
-  "tsc-alias": {
-    "resolveFullPaths": true
-  },
   "compilerOptions": {
     /* Additional Options */
     "noUnusedLocals": true,
