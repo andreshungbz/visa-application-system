@@ -31,9 +31,9 @@ export class VisaApplication implements IVisaApplication {
 
   getApplication(): VisaApplicationType {
     return {
-      applicationNumber: this.applicationNumber,
-      type: this.type,
-      status: this.status,
+      applicationNumber: this.getApplicationNumber(),
+      type: this.getType(),
+      status: this.getStatus(),
       form: this.form,
       notes: this.notes,
     };
