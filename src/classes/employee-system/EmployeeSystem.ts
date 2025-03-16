@@ -42,16 +42,16 @@ export class EmployeeSystem implements IEmployeeSystem {
     return this.employees;
   }
 
-  addEmployee(employee: Employee): boolean {
+  async addEmployee(employee: Employee): Promise<boolean> {
     // ADD TO CLASS MEMORY
     this.employees.push(employee);
     // WRITE TO DATABASE
-    employee.syncERecord();
+    await employee.syncERecord();
 
     return true;
   }
 
-  removeEmployee(employeeNumber: number): boolean {
+  async removeEmployee(employeeNumber: number): Promise<boolean> {
     // REMOVE FROM CLASS MEMORY
 
     const employeeIndex = this.employees.findIndex(
@@ -64,12 +64,12 @@ export class EmployeeSystem implements IEmployeeSystem {
     }
 
     // UPDATE DATABASE
-    deleteEmployee(employeeNumber);
+    await deleteEmployee(employeeNumber);
 
     return false;
   }
 
-  generateStatistics(): {} {
+  async generateStatistics(): Promise<{}> {
     return {};
   }
 }

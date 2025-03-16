@@ -60,7 +60,7 @@ export class VisaSystem implements IVisaSystem {
     return this.finalQueue;
   }
 
-  addVisaApplication(form: VisaForm): number {
+  async addVisaApplication(form: VisaForm): Promise<number> {
     let visaType: VisaType | null;
 
     if (form instanceof B1Form) {
@@ -88,7 +88,7 @@ export class VisaSystem implements IVisaSystem {
     this.initialQueue.push(application);
 
     // WRITE TO DATABASE
-    application.syncVARecord();
+    await application.syncVARecord();
 
     return 1;
   }
@@ -147,7 +147,7 @@ export class VisaSystem implements IVisaSystem {
     return null;
   }
 
-  generateStatistics(): {} {
+  async generateStatistics(): Promise<{}> {
     return {};
   }
 }

@@ -19,9 +19,9 @@ export interface IVisaSystem {
   getInitialQueue(): VisaApplication[];
   getInterviewQueue(): VisaApplication[];
   getFinalQueue(): VisaApplication[];
-  addVisaApplication(form: VisaForm): number;
+  addVisaApplication(form: VisaForm): Promise<number>;
   getVisaApplicationStatus(applicationNumber: number): VisaStatus | null;
   getFullVisaApplication(applicationNumber: number): VisaApplication | null;
 
-  generateStatistics(): {};
+  generateStatistics(): Promise<{}>;
 }
