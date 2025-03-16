@@ -42,7 +42,7 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
         application.setS2Notes(notes);
         break;
       case VisaStatus.FinalStage:
-        application.setStatus(VisaStatus.Accepted);
+        application.setStatus(VisaStatus.Approved);
         application.setS3Reviewer(String(this.getEmployeeNumber()));
         application.setS3Notes(notes);
         break;

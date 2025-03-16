@@ -172,7 +172,7 @@ enum VisaStatus {
   Initial
   Interview
   Final
-  Accepted
+  Approved
   Rejected
 }
 
