@@ -1,6 +1,6 @@
 // Visa Reviewer Interface (Header)
 
-import { IEmployee } from '../abstract/IEmployee';
+import { IEmployee } from '../abstract/IEmployee.js';
 
 export interface IVisaReviewer extends IEmployee {
   // PROPERTIES (DATA MEMBERS)

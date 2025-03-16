@@ -4,14 +4,14 @@
 import express from 'express';
 import path from 'node:path';
 
-import { config } from './config/app.config';
-import { logger } from './middleware/logger';
-import { getLocalIPAddress } from './utils/getLocalIPAddress';
+import { config } from './config/app.config.js';
+import { logger } from './middleware/logger.js';
+import { getLocalIPAddress } from './utils/getLocalIPAddress.js';
 
 import {
   initializeVisaSystem,
   initializeEmployeeSystem,
-} from './utils/initialize';
+} from './utils/initialize.js';
 
 // load Visa System and export for use throughout application
 export const vs = initializeVisaSystem();

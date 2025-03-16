@@ -1,14 +1,14 @@
 // Employee System Concrete Class (Implementation)
 
-import { IEmployeeSystem } from './IEmployeeSystem';
-import { Employee } from '../employees/abstract/Employee';
+import { IEmployeeSystem } from './IEmployeeSystem.js';
+import { Employee } from '../employees/abstract/Employee.js';
 
 import {
   createEmployee,
   deleteEmployee,
   readEmployees,
   readNextEmployeeNumber,
-} from '../../models/employee-model';
+} from '../../models/employee-model.js';
 
 export class EmployeeSystem implements IEmployeeSystem {
   // PROPERTIES (DATA MEMBERS)

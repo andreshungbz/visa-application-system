@@ -22,6 +22,7 @@
     "dev": "tsc && tsc-alias && concurrently -k -n \"TS,ALIAS,SERVER\" -c \"cyan,yellow,green\" \"tsc --watch\" \"wait-on build && tsc-alias --watch\" \"wait-on build/app.js && node --watch build/app.js\""
   },
   "dependencies": {
+    "argon2": "^0.41.1",
     "ejs": "^3.1.10",
     "express": "^4.21.2"
   },

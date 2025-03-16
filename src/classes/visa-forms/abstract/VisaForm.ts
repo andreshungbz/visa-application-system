@@ -1,19 +1,19 @@
 // Visa Form Abstract Class (Implementation)
 
-import { IVisaForm } from './IVisaForm';
+import { IVisaForm } from './IVisaForm.js';
 
-import { PersonalSection } from '../../../types/sections/PersonalSection';
-import { TravelSection } from '../../../types/sections/TravelSection';
-import { WorkSection } from '../../../types/sections/WorkSection';
-import { SecuritySection } from '../../../types/sections/SecuritySection';
-import { VisaFormSections } from '../../../types/VisaFormSections';
+import { PersonalSection } from '../../../types/sections/PersonalSection.js';
+import { TravelSection } from '../../../types/sections/TravelSection.js';
+import { WorkSection } from '../../../types/sections/WorkSection.js';
+import { SecuritySection } from '../../../types/sections/SecuritySection.js';
+import { VisaFormSections } from '../../../types/VisaFormSections.js';
 
 import {
   createVFPersonal,
   createVFSecurity,
   createVFTravel,
   createVFWork,
-} from '../../../models/visa-form-model';
+} from '../../../models/visa-form-model.js';
 
 export abstract class VisaForm implements IVisaForm {
   // CONSTRUCTOR

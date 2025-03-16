@@ -1,12 +1,12 @@
 // System Supervisor Concrete Class (Implementation)
 
-import { Employee } from '../abstract/Employee';
-import { ISystemSupervisor } from './ISystemSupervisor';
+import { Employee } from '../abstract/Employee.js';
+import { ISystemSupervisor } from './ISystemSupervisor.js';
 
-import { EmployeeType } from '../../../enums/employee-type';
-import { VisaReviewer } from '../visa-reviewer/VisaReviewer';
+import { EmployeeType } from '../../../enums/employee-type.js';
+import { VisaReviewer } from '../visa-reviewer/VisaReviewer.js';
 
-import { es, vs } from '../../../app';
+import { es, vs } from '../../../app.js';
 
 export class SystemSupervisor extends Employee implements ISystemSupervisor {
   // CONSTRUCTOR

@@ -1,6 +1,6 @@
 // B1 Business Visa Form Interface (Header)
 
-import { IVisaForm } from '../abstract/IVisaForm';
+import { IVisaForm } from '../abstract/IVisaForm.js';
 
 export interface IB1Form extends IVisaForm {
   // PROPERTIES (DATA MEMBERS)

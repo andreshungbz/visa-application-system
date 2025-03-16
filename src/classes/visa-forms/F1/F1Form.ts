@@ -1,15 +1,15 @@
 // F1 Student Visa Form Concrete Class (Implementation)
 
-import { VisaForm } from '../abstract/VisaForm';
-import { IF1Form } from './IF1Form';
+import { VisaForm } from '../abstract/VisaForm.js';
+import { IF1Form } from './IF1Form.js';
 
-import { PersonalSection } from '../../../types/sections/PersonalSection';
-import { TravelSection } from '../../../types/sections/TravelSection';
-import { WorkSection } from '../../../types/sections/WorkSection';
-import { SecuritySection } from '../../../types/sections/SecuritySection';
-import { StudentSection } from '../../../types/sections/StudentSection';
-import { VisaFormSections } from '../../../types/VisaFormSections';
-import { createVFStudent } from '../../../models/visa-form-model';
+import { PersonalSection } from '../../../types/sections/PersonalSection.js';
+import { TravelSection } from '../../../types/sections/TravelSection.js';
+import { WorkSection } from '../../../types/sections/WorkSection.js';
+import { SecuritySection } from '../../../types/sections/SecuritySection.js';
+import { StudentSection } from '../../../types/sections/StudentSection.js';
+import { VisaFormSections } from '../../../types/VisaFormSections.js';
+import { createVFStudent } from '../../../models/visa-form-model.js';
 
 export class F1Form extends VisaForm implements IF1Form {
   // CONSTRUCTOR

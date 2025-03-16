@@ -1,6 +1,6 @@
 // F1 Student Visa Form Interface (Header)
 
-import { IVisaForm } from '../abstract/IVisaForm';
+import { IVisaForm } from '../abstract/IVisaForm.js';
 
 export interface IF1Form extends IVisaForm {
   // PROPERTIES (DATA MEMBERS)

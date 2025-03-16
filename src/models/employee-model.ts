@@ -1,11 +1,11 @@
 // Filename: employee-model.ts
 // functions that interface with the employee database table
 
-import { Employee } from '../classes/employees/abstract/Employee';
+import { Employee } from '../classes/employees/abstract/Employee.js';
 
-import { SystemSupervisor } from '../classes/employees/system-supervisor/SystemSupervisor';
-import { VisaReviewer } from '../classes/employees/visa-reviewer/VisaReviewer';
-import { EmployeeType } from '../enums/employee-type';
+import { SystemSupervisor } from '../classes/employees/system-supervisor/SystemSupervisor.js';
+import { VisaReviewer } from '../classes/employees/visa-reviewer/VisaReviewer.js';
+import { EmployeeType } from '../enums/employee-type.js';
 
 // CREATE FUNCTIONS
 

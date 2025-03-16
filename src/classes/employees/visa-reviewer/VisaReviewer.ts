@@ -1,11 +1,11 @@
 // Visa Reviewer Concrete Class (Implementation)
 
-import { Employee } from '../abstract/Employee';
-import { IVisaReviewer } from './IVisaReviewer';
+import { Employee } from '../abstract/Employee.js';
+import { IVisaReviewer } from './IVisaReviewer.js';
 
-import { VisaStatus } from '../../../enums/visa-status';
+import { VisaStatus } from '../../../enums/visa-status.js';
 
-import { vs } from '../../../app';
+import { vs } from '../../../app.js';
 
 export class VisaReviewer extends Employee implements IVisaReviewer {
   // CONSTRUCTOR

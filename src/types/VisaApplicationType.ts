@@ -1,9 +1,9 @@
 // Visa Application Type
 
-import { VisaStatus } from '../enums/visa-status';
-import { VisaType } from '../enums/visa-type';
-import { VisaForm } from '../classes/visa-forms/abstract/VisaForm';
-import { ReviewerNotes } from './ReviwerNotes';
+import { VisaStatus } from '../enums/visa-status.js';
+import { VisaType } from '../enums/visa-type.js';
+import { VisaForm } from '../classes/visa-forms/abstract/VisaForm.js';
+import { ReviewerNotes } from './ReviwerNotes.js';
 
 export interface VisaApplicationType {
   applicationNumber: number;

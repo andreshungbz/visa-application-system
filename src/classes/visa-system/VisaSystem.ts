@@ -1,12 +1,12 @@
 // Visa System Concrete Class (Implementation)
 
-import { IVisaSystem } from './IVisaSystem';
+import { IVisaSystem } from './IVisaSystem.js';
 
-import { VisaApplication } from '../visa-application/VisaApplication';
-import { VisaForm } from '../visa-forms/abstract/VisaForm';
+import { VisaApplication } from '../visa-application/VisaApplication.js';
+import { VisaForm } from '../visa-forms/abstract/VisaForm.js';
 
-import { VisaStatus } from '../../enums/visa-status';
-import { VisaType } from '../../enums/visa-type';
+import { VisaStatus } from '../../enums/visa-status.js';
+import { VisaType } from '../../enums/visa-type.js';
 
 import {
   createVA,
@@ -15,11 +15,11 @@ import {
   readS2VisaApplications,
   readS3VisaApplications,
   updateVA,
-} from '../../models/visa-application-model';
+} from '../../models/visa-application-model.js';
 
-import { B1Form } from '../visa-forms/B1/B1Form';
-import { B2Form } from '../visa-forms/B2/B2Form';
-import { F1Form } from '../visa-forms/F1/F1Form';
+import { B1Form } from '../visa-forms/B1/B1Form.js';
+import { B2Form } from '../visa-forms/B2/B2Form.js';
+import { F1Form } from '../visa-forms/F1/F1Form.js';
 
 export class VisaSystem implements IVisaSystem {
   // PROPERTIES (DATA MEMBERS)

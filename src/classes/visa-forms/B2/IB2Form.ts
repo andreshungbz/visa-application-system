@@ -1,6 +1,6 @@
 // B2 Tourist/Medical Visa Form Interface (Header)
 
-import { IVisaForm } from '../abstract/IVisaForm';
+import { IVisaForm } from '../abstract/IVisaForm.js';
 
 export interface IB2Form extends IVisaForm {
   // PROPERTIES (DATA MEMBERS)

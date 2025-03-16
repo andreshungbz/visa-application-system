@@ -1,15 +1,15 @@
 // B2 Tourist/Medical Visa Form Concrete Class (Implementation)
 
-import { VisaForm } from '../abstract/VisaForm';
-import { IB2Form } from './IB2Form';
+import { VisaForm } from '../abstract/VisaForm.js';
+import { IB2Form } from './IB2Form.js';
 
-import { PersonalSection } from '../../../types/sections/PersonalSection';
-import { TravelSection } from '../../../types/sections/TravelSection';
-import { WorkSection } from '../../../types/sections/WorkSection';
-import { SecuritySection } from '../../../types/sections/SecuritySection';
-import { TouristSection } from '../../../types/sections/TouristSection';
-import { VisaFormSections } from '../../../types/VisaFormSections';
-import { createVFTourist } from '../../../models/visa-form-model';
+import { PersonalSection } from '../../../types/sections/PersonalSection.js';
+import { TravelSection } from '../../../types/sections/TravelSection.js';
+import { WorkSection } from '../../../types/sections/WorkSection.js';
+import { SecuritySection } from '../../../types/sections/SecuritySection.js';
+import { TouristSection } from '../../../types/sections/TouristSection.js';
+import { VisaFormSections } from '../../../types/VisaFormSections.js';
+import { createVFTourist } from '../../../models/visa-form-model.js';
 
 export class B2Form extends VisaForm implements IB2Form {
   // CONSTRUCTOR

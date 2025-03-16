@@ -1,8 +1,8 @@
 // Visa System Interface (Header)
 
-import { VisaApplication } from '../visa-application/VisaApplication';
-import { VisaForm } from '../visa-forms/abstract/VisaForm';
-import { VisaStatus } from '../../enums/visa-status';
+import { VisaApplication } from '../visa-application/VisaApplication.js';
+import { VisaForm } from '../visa-forms/abstract/VisaForm.js';
+import { VisaStatus } from '../../enums/visa-status.js';
 
 export interface IVisaSystem {
   // PROPERTIES (DATA MEMBERS)
@@ -22,7 +22,7 @@ export interface IVisaSystem {
   addVisaApplication(form: VisaForm): Promise<number>;
   getVisaApplicationStatus(applicationNumber: number): VisaStatus | null;
   getFullVisaApplication(applicationNumber: number): VisaApplication | null;
-  updateVisaApplication(application: VisaApplication): Promise<boolean>
+  updateVisaApplication(application: VisaApplication): Promise<boolean>;
 
   generateStatistics(): Promise<{}>;
 }

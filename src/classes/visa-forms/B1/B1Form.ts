@@ -1,15 +1,15 @@
 // B1 Business Visa Form Concrete Class (Implementation)
 
-import { VisaForm } from '../abstract/VisaForm';
-import { IB1Form } from './IB1Form';
+import { VisaForm } from '../abstract/VisaForm.js';
+import { IB1Form } from './IB1Form.js';
 
-import { PersonalSection } from '../../../types/sections/PersonalSection';
-import { TravelSection } from '../../../types/sections/TravelSection';
-import { WorkSection } from '../../../types/sections/WorkSection';
-import { SecuritySection } from '../../../types/sections/SecuritySection';
-import { BusinessSection } from '../../../types/sections/BusinessSection';
-import { VisaFormSections } from '../../../types/VisaFormSections';
-import { createVFBusiness } from '../../../models/visa-form-model';
+import { PersonalSection } from '../../../types/sections/PersonalSection.js';
+import { TravelSection } from '../../../types/sections/TravelSection.js';
+import { WorkSection } from '../../../types/sections/WorkSection.js';
+import { SecuritySection } from '../../../types/sections/SecuritySection.js';
+import { BusinessSection } from '../../../types/sections/BusinessSection.js';
+import { VisaFormSections } from '../../../types/VisaFormSections.js';
+import { createVFBusiness } from '../../../models/visa-form-model.js';
 
 export class B1Form extends VisaForm implements IB1Form {
   // CONSTRUCTOR

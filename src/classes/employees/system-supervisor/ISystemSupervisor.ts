@@ -1,8 +1,8 @@
 // System Supervisor Interface (Header)
 
-import { IEmployee } from '../abstract/IEmployee';
+import { IEmployee } from '../abstract/IEmployee.js';
 
-import { EmployeeType } from '../../../enums/employee-type';
+import { EmployeeType } from '../../../enums/employee-type.js';
 
 export interface ISystemSupervisor extends IEmployee {
   // PROPERTIES (DATA MEMBERS)

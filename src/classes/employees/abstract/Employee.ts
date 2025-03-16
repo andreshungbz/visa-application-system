@@ -1,6 +1,8 @@
 // Employee Abstract Class (Implementation)
 
-import { IEmployee } from './IEmployee';
+import argon2 from 'argon2';
+
+import { IEmployee } from './IEmployee.js';
 
 export abstract class Employee implements IEmployee {
   // CONSTRUCTOR
@@ -13,7 +15,13 @@ export abstract class Employee implements IEmployee {
     protected password: string,
     protected salary: number,
     protected employed: boolean = true
-  ) {}
+  ) {
+    this.hashPassword();
+  }
+
+  private async hashPassword() {
+    this.password = await argon2.hash(this.password);
+  }
 
   // MAIN METHODS
 
