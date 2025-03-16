@@ -20,18 +20,22 @@ export const createVA = async (
 // READ FUNCTIONS
 
 export const readNextApplicationNumber = async (): Promise<number> => {
+  // TODO: read from database
   return 1;
 };
 
 export const readS1VisaApplications = async (): Promise<VisaApplication[]> => {
+  // TODO: read from database
   return [];
 };
 
 export const readS2VisaApplications = async (): Promise<VisaApplication[]> => {
+  // TODO: read from database
   return [];
 };
 
 export const readS3VisaApplications = async (): Promise<VisaApplication[]> => {
+  // TODO: read from database
   return [];
 };
 

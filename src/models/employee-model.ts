@@ -10,7 +10,6 @@ import { EmployeeType } from '../enums/employee-type.js';
 // CREATE FUNCTIONS
 
 export const createEmployee = async (employee: Employee): Promise<boolean> => {
-  // TODO: write to database
   let employeeType: EmployeeType | null;
 
   if (employee instanceof VisaReviewer) {
@@ -21,6 +20,7 @@ export const createEmployee = async (employee: Employee): Promise<boolean> => {
     employeeType = null;
   }
 
+  // TODO: read from database
   console.log(employeeType);
 
   return true;
@@ -29,10 +29,12 @@ export const createEmployee = async (employee: Employee): Promise<boolean> => {
 // READ FUNCTIONS
 
 export const readNextEmployeeNumber = async (): Promise<number> => {
+  // TODO: read from database
   return 1;
 };
 
 export const readEmployees = async (): Promise<Employee[]> => {
+  // TODO: read from database
   return [];
 };
 
