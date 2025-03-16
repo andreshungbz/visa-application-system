@@ -1,5 +1,13 @@
 // Prisma Schema File
 
+// useful commands
+// npx prisma migrate dev --name <name> (makes changes w/ migration file)
+// npx prisma db push (make changes w/o migration file)
+// npx prisma generate (update client after running the above)
+
+// utilities
+// generate ERD at https://prisma-erd.simonknott.de/
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,4 +15,169 @@ generator client {
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
+}
+
+// Prisma Models
+
+// VISA SUBSYSTEM
+
+model VisaApplication {
+  @@map("visa_application")
+
+  applicationNumber Int @id @default(autoincrement())
+  type VisaType
+  status VisaStatus
+  s1Reviewer String?
+  s1Notes String?
+  s2Reviewer String?
+  s2Notes String?
+  s3Reviewer String?
+  s3Notes String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  personal PersonalSection?
+  travel TravelSection?
+  work WorkSection?
+  security SecuritySection?
+
+  business BusinessSection?
+  tourist TouristSection?
+  student StudentSection?
+}
+
+model PersonalSection {
+  @@map("s_personal")
+
+  applicationId Int @id @unique
+  firstName String
+  lastName String
+  email String
+  phone String
+  city String
+  address String
+  passportNumber String
+  country String
+  dob DateTime
+  gender String
+
+  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+}
+
+model TravelSection {
+  @@map("s_travel")
+
+  applicationId Int @id @unique
+  stayCity String
+  stayAddress String
+  intendedArrivalDate DateTime
+  intendedLengthOfStay Int
+
+  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+}
+
+model WorkSection {
+  @@map("s_work")
+
+  applicationId Int @id @unique
+  occupation String
+  phone String
+  city String
+  address String
+
+  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+}
+
+model SecuritySection {
+  @@map("s_security")
+
+  applicationId Int @id @unique
+  communicableDisease Boolean
+  moneyLaundering Boolean
+  drugConspiracy Boolean
+  arrestedConvicted Boolean
+  mentalPhysicalDisorder Boolean
+
+  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+}
+
+model BusinessSection {
+  @@map("s_business")
+
+  applicationId Int @id @unique
+  phone String
+  city String
+  address String
+  purpose String
+
+  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+}
+
+model TouristSection {
+  @@map("s_tourist")
+
+  applicationId Int @id @unique
+  purpose String
+
+  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+}
+
+model StudentSection {
+  @@map("s_student")
+
+  applicationId Int @id @unique
+  enrolledSchool String
+  schoolAddress String
+  enrollmentDate DateTime
+
+  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+}
+
+// EMPLOYEE SUBSYSTEM
+
+model EmployeeRole {
+  @@map("employee_role")
+
+  role EmployeeType @id @unique
+
+  employees Employee[]
+}
+
+model Employee {
+  @@map("employee")
+
+  employeeNumber Int @id @default(autoincrement())
+  role EmployeeType
+  firstName String
+  lastName String
+  ssn String
+  password String
+  salary Int
+  employed Boolean
+
+  employeeType EmployeeRole @relation(fields: [role], references: [role])
+}
+
+// ENUMERATIONS
+
+enum VisaType {
+  @@map("t_visa")
+  B1
+  B2
+  F1
+}
+
+enum VisaStatus {
+  @@map("t_visa_status")
+  Initial
+  Interview
+  Final
+  Accepted
+  Rejected
+}
+
+enum EmployeeType {
+  @@map("t_employee")
+  VisaReviewer
+  SystemSupervisor
 }
