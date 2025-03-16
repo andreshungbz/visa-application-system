@@ -9,10 +9,12 @@ import { VisaStatus } from '../../enums/visa-status';
 import { VisaType } from '../../enums/visa-type';
 
 import {
+  createVA,
   readNextApplicationNumber,
   readS1VisaApplications,
   readS2VisaApplications,
   readS3VisaApplications,
+  updateVA,
 } from '../../models/visa-application-model';
 
 import { B1Form } from '../visa-forms/B1/B1Form';
@@ -35,7 +37,6 @@ export class VisaSystem implements IVisaSystem {
     this.interviewQueue = [];
     this.finalQueue = [];
 
-    // Call the async initialization method
     this.initialize();
   }
 
@@ -88,7 +89,7 @@ export class VisaSystem implements IVisaSystem {
     this.initialQueue.push(application);
 
     // WRITE TO DATABASE
-    await application.syncVARecord();
+    await createVA(application);
 
     return 1;
   }
@@ -145,6 +146,11 @@ export class VisaSystem implements IVisaSystem {
     }
 
     return null;
+  }
+
+  async updateVisaApplication(application: VisaApplication): Promise<boolean> {
+    await updateVA(application);
+    return true;
   }
 
   async generateStatistics(): Promise<{}> {

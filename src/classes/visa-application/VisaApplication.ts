@@ -8,8 +8,6 @@ import { VisaForm } from '../visa-forms/abstract/VisaForm';
 import { ReviewerNotes } from '../../types/ReviwerNotes';
 import { VisaApplicationType } from '../../types/VisaApplicationType';
 
-import { createVA, updateVA } from '../../models/visa-application-model';
-
 export class VisaApplication implements IVisaApplication {
   // CONSTRUCTOR
 
@@ -37,19 +35,6 @@ export class VisaApplication implements IVisaApplication {
       form: this.form,
       notes: this.notes,
     };
-  }
-
-  async syncVARecord(): Promise<boolean> {
-    createVA(this);
-    this.form.syncVFRecord(this.getApplicationNumber());
-
-    return true;
-  }
-
-  async updateVARecord(): Promise<boolean> {
-    updateVA(this);
-
-    return true;
   }
 
   // GETTERS/SETTERS

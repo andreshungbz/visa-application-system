@@ -11,6 +11,9 @@ export const createVA = async (
   // TODO: write to database
   console.log(application);
 
+  // write sections to database
+  application.getForm().syncVFRecord(application.getApplicationNumber());
+
   return true;
 };
 

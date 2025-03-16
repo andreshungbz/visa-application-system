@@ -21,8 +21,6 @@ export interface IVisaApplication {
   // MAIN METHODS
 
   getApplication(): VisaApplicationType;
-  syncVARecord(): Promise<boolean>;
-  updateVARecord(): Promise<boolean>;
 
   // GETTERS/SETTERS
 

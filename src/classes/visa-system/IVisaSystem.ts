@@ -22,6 +22,7 @@ export interface IVisaSystem {
   addVisaApplication(form: VisaForm): Promise<number>;
   getVisaApplicationStatus(applicationNumber: number): VisaStatus | null;
   getFullVisaApplication(applicationNumber: number): VisaApplication | null;
+  updateVisaApplication(application: VisaApplication): Promise<boolean>
 
   generateStatistics(): Promise<{}>;
 }

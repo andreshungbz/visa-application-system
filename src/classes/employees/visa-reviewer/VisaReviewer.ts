@@ -48,7 +48,7 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
         break;
     }
 
-    application.updateVARecord();
+    vs.updateVisaApplication(application);
 
     return true;
   }
@@ -64,7 +64,7 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
     application.setS3Reviewer(String(this.getEmployeeNumber()));
     application.setS3Notes(notes);
 
-    application.updateVARecord();
+    vs.updateVisaApplication(application);
 
     return true;
   }
