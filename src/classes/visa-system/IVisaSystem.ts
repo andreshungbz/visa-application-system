@@ -10,7 +10,6 @@ export interface IVisaSystem {
   // specifying these properties in the interface would mean the implementation properties would have to be public
 
   // nextApplicationNumber: number;
-  // employees: Employee[];
   // initialQueue: VisaApplication[];
   // interviewQueue: VisaApplication[];
   // finalQueue: VisaApplication[];
