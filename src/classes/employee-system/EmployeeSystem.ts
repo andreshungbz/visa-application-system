@@ -1,6 +1,6 @@
 // Employee System Concrete Class (Implementation)
 
-import argon2 from 'argon2';
+import * as argon2 from 'argon2';
 
 import { IEmployeeSystem } from './IEmployeeSystem.js';
 import { Employee } from '../employees/abstract/Employee.js';

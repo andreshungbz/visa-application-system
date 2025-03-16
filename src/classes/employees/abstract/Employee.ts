@@ -1,6 +1,6 @@
 // Employee Abstract Class (Implementation)
 
-import argon2 from 'argon2';
+import * as argon2 from 'argon2';
 
 import { IEmployee } from './IEmployee.js';
 
