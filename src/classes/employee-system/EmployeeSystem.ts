@@ -1,5 +1,7 @@
 // Employee System Concrete Class (Implementation)
 
+import argon2 from 'argon2';
+
 import { IEmployeeSystem } from './IEmployeeSystem.js';
 import { Employee } from '../employees/abstract/Employee.js';
 
@@ -32,11 +34,19 @@ export class EmployeeSystem implements IEmployeeSystem {
 
   // MAIN METHODS
 
-  authenticate(employeeNumber: number, password: string): boolean {
-    // TODO: implement authentication checking
-    console.log(employeeNumber, password);
+  async authenticate(
+    employeeNumber: number,
+    password: string
+  ): Promise<boolean> {
+    const employee = this.employees.find(
+      (e) => e.getEmployeeNumber() === employeeNumber
+    );
 
-    return true;
+    if (!employee) {
+      return false;
+    }
+
+    return await argon2.verify(employee.getPassword(), password);
   }
 
   getEmployees(): Employee[] {

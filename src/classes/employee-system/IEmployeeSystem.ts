@@ -12,7 +12,7 @@ export interface IEmployeeSystem {
 
   // MAIN METHODS
 
-  authenticate(employeeNumber: number, password: string): boolean;
+  authenticate(employeeNumber: number, password: string): Promise<boolean>;
   getEmployees(): Employee[];
   addEmployee(employee: Employee): Promise<boolean>;
   removeEmployee(employeeNumber: number): Promise<boolean>;
