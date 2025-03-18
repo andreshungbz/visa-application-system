@@ -49,7 +49,7 @@ model VisaApplication {
 model PersonalSection {
   @@map("s_personal")
 
-  applicationId Int @id @unique
+  visaId Int @id @unique
   firstName String
   lastName String
   email String
@@ -61,76 +61,76 @@ model PersonalSection {
   dob DateTime
   gender String
 
-  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+  visaApplication VisaApplication @relation(fields: [visaId], references: [applicationNumber])
 }
 
 model TravelSection {
   @@map("s_travel")
 
-  applicationId Int @id @unique
+  visaId Int @id @unique
   stayCity String
   stayAddress String
   intendedArrivalDate DateTime
   intendedLengthOfStay Int
 
-  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+  visaApplication VisaApplication @relation(fields: [visaId], references: [applicationNumber])
 }
 
 model WorkSection {
   @@map("s_work")
 
-  applicationId Int @id @unique
+  visaId Int @id @unique
   occupation String
   phone String
   city String
   address String
 
-  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+  visaApplication VisaApplication @relation(fields: [visaId], references: [applicationNumber])
 }
 
 model SecuritySection {
   @@map("s_security")
 
-  applicationId Int @id @unique
+  visaId Int @id @unique
   communicableDisease Boolean
   moneyLaundering Boolean
   drugConspiracy Boolean
   arrestedConvicted Boolean
   mentalPhysicalDisorder Boolean
 
-  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+  visaApplication VisaApplication @relation(fields: [visaId], references: [applicationNumber])
 }
 
 model BusinessSection {
   @@map("s_business")
 
-  applicationId Int @id @unique
+  visaId Int @id @unique
   phone String
   city String
   address String
   purpose String
 
-  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+  visaApplication VisaApplication @relation(fields: [visaId], references: [applicationNumber])
 }
 
 model TouristSection {
   @@map("s_tourist")
 
-  applicationId Int @id @unique
+  visaId Int @id @unique
   purpose String
 
-  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+  visaApplication VisaApplication @relation(fields: [visaId], references: [applicationNumber])
 }
 
 model StudentSection {
   @@map("s_student")
 
-  applicationId Int @id @unique
+  visaId Int @id @unique
   enrolledSchool String
   schoolAddress String
   enrollmentDate DateTime
 
-  visaApplication VisaApplication @relation(fields: [applicationId], references: [applicationNumber])
+  visaApplication VisaApplication @relation(fields: [visaId], references: [applicationNumber])
 }
 
 // EMPLOYEE SUBSYSTEM
