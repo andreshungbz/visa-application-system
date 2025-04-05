@@ -76,3 +76,15 @@ export const testAdd = async (_req: Request, res: Response) => {
 
   res.send(`${id}`);
 };
+
+export const testGetStatus = (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+
+  res.json(vs.getVisaApplicationStatus(id));
+};
+
+export const testGetApplication = (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+
+  res.json(vs.getFullVisaApplication(id));
+};
