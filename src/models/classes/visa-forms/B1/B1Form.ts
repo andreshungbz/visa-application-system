@@ -38,11 +38,13 @@ export class B1Form extends VisaForm implements IB1Form {
     };
   }
 
-  async syncVFRecord(applicationNumber: number): Promise<boolean> {
-    super.syncVFRecord(applicationNumber);
-    createVFBusiness(applicationNumber, this.business);
-
-    return true;
+  async syncVFRecord(): Promise<void> {
+    try {
+      await super.syncVFRecord();
+      await createVFBusiness(this.business);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   // GETTERS/SETTERS

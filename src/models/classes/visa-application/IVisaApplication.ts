@@ -28,12 +28,12 @@ export interface IVisaApplication {
   getType(): VisaType;
   getStatus(): VisaStatus;
   getForm(): VisaForm;
-  getS1Reviewer(): string;
-  getS1Notes(): string;
-  getS2Reviewer(): string;
-  getS2Notes(): string;
-  getS3Reviewer(): string;
-  getS3Notes(): string;
+  getS1Reviewer(): string | null;
+  getS1Notes(): string | null;
+  getS2Reviewer(): string | null;
+  getS2Notes(): string | null;
+  getS3Reviewer(): string | null;
+  getS3Notes(): string | null;
   getCreatedAt(): Date;
   getUpdatedAt(): Date;
 

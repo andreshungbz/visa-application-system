@@ -1,7 +1,7 @@
 // Filename: visa-form-model.ts
 // functions that interface with the form database tables
 
-// import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 
 import {
   PersonalSection,
@@ -15,78 +15,78 @@ import {
 
 // import { VisaForm } from './classes/visa-forms/abstract/VisaForm.js';
 
-// const prisma = new PrismaClient();
+const prisma = new PrismaClient();
 
 // CREATE FUNCTIONS
 
-export const createVFPersonal = async (
-  applicationNumber: number,
-  values: PersonalSection
-): Promise<boolean> => {
-  // TODO: write to database
-  console.log(applicationNumber, values);
-
-  return true;
+export const createVFPersonal = async (values: PersonalSection) => {
+  try {
+    await prisma.personalSection.create({
+      data: { ...values },
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const createVFTravel = async (
-  applicationNumber: number,
-  values: TravelSection
-): Promise<boolean> => {
-  // TODO: write to database
-  console.log(applicationNumber, values);
-
-  return true;
+export const createVFTravel = async (values: TravelSection) => {
+  try {
+    await prisma.travelSection.create({
+      data: { ...values },
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const createVFWork = async (
-  applicationNumber: number,
-  values: WorkSection
-): Promise<boolean> => {
-  // TODO: write to database
-  console.log(applicationNumber, values);
-
-  return true;
+export const createVFWork = async (values: WorkSection) => {
+  try {
+    await prisma.workSection.create({
+      data: { ...values },
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const createVFSecurity = async (
-  applicationNumber: number,
-  values: SecuritySection
-): Promise<boolean> => {
-  // TODO: write to database
-  console.log(applicationNumber, values);
-
-  return true;
+export const createVFSecurity = async (values: SecuritySection) => {
+  try {
+    await prisma.securitySection.create({
+      data: { ...values },
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const createVFBusiness = async (
-  applicationNumber: number,
-  values: BusinessSection
-): Promise<boolean> => {
-  // TODO: write to database
-  console.log(applicationNumber, values);
-
-  return true;
+export const createVFBusiness = async (values: BusinessSection) => {
+  try {
+    await prisma.businessSection.create({
+      data: { ...values },
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const createVFTourist = async (
-  applicationNumber: number,
-  values: TouristSection
-): Promise<boolean> => {
-  // TODO: write to database
-  console.log(applicationNumber, values);
-
-  return true;
+export const createVFTourist = async (values: TouristSection) => {
+  try {
+    await prisma.touristSection.create({
+      data: { ...values },
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
-export const createVFStudent = async (
-  applicationNumber: number,
-  values: StudentSection
-): Promise<boolean> => {
-  // TODO: write to database
-  console.log(applicationNumber, values);
-
-  return true;
+export const createVFStudent = async (values: StudentSection) => {
+  try {
+    await prisma.studentSection.create({
+      data: { ...values },
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
 // READ FUNCTIONS

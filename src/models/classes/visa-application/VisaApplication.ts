@@ -53,23 +53,23 @@ export class VisaApplication implements IVisaApplication {
   getForm(): VisaForm {
     return this.form;
   }
-  getS1Reviewer(): string {
-    return this.notes.initial.reviewer || '';
+  getS1Reviewer(): string | null {
+    return this.notes.initial.reviewer;
   }
-  getS1Notes(): string {
-    return this.notes.initial.notes || '';
+  getS1Notes(): string | null {
+    return this.notes.initial.notes;
   }
-  getS2Reviewer(): string {
-    return this.notes.interview.reviewer || '';
+  getS2Reviewer(): string | null {
+    return this.notes.interview.reviewer;
   }
-  getS2Notes(): string {
-    return this.notes.interview.notes || '';
+  getS2Notes(): string | null {
+    return this.notes.interview.notes;
   }
-  getS3Reviewer(): string {
-    return this.notes.final.reviewer || '';
+  getS3Reviewer(): string | null {
+    return this.notes.final.reviewer;
   }
-  getS3Notes(): string {
-    return this.notes.final.notes || '';
+  getS3Notes(): string | null {
+    return this.notes.final.notes;
   }
   getCreatedAt(): Date {
     return this.createdAt;

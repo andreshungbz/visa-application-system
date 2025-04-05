@@ -15,7 +15,7 @@ export interface IVisaForm {
   // MAIN METHODS
 
   getSections(): VisaFormSections;
-  syncVFRecord(applicationNumber: number): Promise<boolean>;
+  syncVFRecord(): Promise<void>;
 
   // GETTERS/SETTERS
 

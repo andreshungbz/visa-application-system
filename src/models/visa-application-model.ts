@@ -14,16 +14,29 @@ const prisma = new PrismaClient();
 
 // CREATE FUNCTIONS
 
-export const createVA = async (
-  application: VisaApplication
-): Promise<boolean> => {
-  // TODO: write to database
-  console.log(application);
+export const createVisaApplication = async (application: VisaApplication) => {
+  try {
+    await prisma.visaApplication.create({
+      data: {
+        applicationNumber: application.getApplicationNumber(),
+        type: application.getType(),
+        status: application.getStatus(),
+        s1Reviewer: application.getS1Reviewer(),
+        s1Notes: application.getS1Notes(),
+        s2Reviewer: application.getS2Reviewer(),
+        s2Notes: application.getS2Notes(),
+        s3Reviewer: application.getS3Reviewer(),
+        s3Notes: application.getS3Notes(),
+        createdAt: application.getCreatedAt(),
+        updatedAt: application.getUpdatedAt(),
+      },
+    });
 
-  // write sections to database
-  application.getForm().syncVFRecord(application.getApplicationNumber());
-
-  return true;
+    // write sections to database
+    application.getForm().syncVFRecord();
+  } catch (error) {
+    throw error;
+  }
 };
 
 // READ FUNCTIONS

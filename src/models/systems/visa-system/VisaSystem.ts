@@ -8,7 +8,7 @@ import { VisaApplication } from '../../classes/visa-application/VisaApplication.
 import { VisaForm } from '../../classes/visa-forms/abstract/VisaForm.js';
 
 import {
-  createVA,
+  createVisaApplication,
   readNextApplicationNumber,
   readVisaApplications,
   updateVA,
@@ -59,25 +59,20 @@ export class VisaSystem implements IVisaSystem {
   }
 
   async addVisaApplication(form: VisaForm): Promise<number> {
-    let visaType: VisaType | null;
-
+    let type: VisaType;
     if (form instanceof B1Form) {
-      visaType = VisaType.B1;
+      type = VisaType.B1;
     } else if (form instanceof B2Form) {
-      visaType = VisaType.B2;
+      type = VisaType.B2;
     } else if (form instanceof F1Form) {
-      visaType = VisaType.F1;
+      type = VisaType.F1;
     } else {
-      visaType = null;
-    }
-
-    if (!visaType) {
-      return -1;
+      throw new Error('Visa Type does not exist.');
     }
 
     const application = new VisaApplication(
-      1,
-      visaType,
+      this.nextApplicationNumber++,
+      type,
       VisaStatus.Initial,
       form
     );
@@ -86,9 +81,13 @@ export class VisaSystem implements IVisaSystem {
     this.initialQueue.push(application);
 
     // WRITE TO DATABASE
-    await createVA(application);
+    try {
+      await createVisaApplication(application);
+    } catch (error) {
+      console.error(error);
+    }
 
-    return 1;
+    return application.getApplicationNumber();
   }
 
   getVisaApplicationStatus(applicationNumber: number): VisaStatus | null {

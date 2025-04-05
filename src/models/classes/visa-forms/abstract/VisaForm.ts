@@ -39,13 +39,15 @@ export abstract class VisaForm implements IVisaForm {
     };
   }
 
-  async syncVFRecord(applicationNumber: number): Promise<boolean> {
-    await createVFPersonal(applicationNumber, this.personal);
-    await createVFTravel(applicationNumber, this.travel);
-    await createVFWork(applicationNumber, this.work);
-    await createVFSecurity(applicationNumber, this.security);
-
-    return true;
+  async syncVFRecord(): Promise<void> {
+    try {
+      await createVFPersonal(this.personal);
+      await createVFTravel(this.travel);
+      await createVFWork(this.work);
+      await createVFSecurity(this.security);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   // GETTERS/SETTERS

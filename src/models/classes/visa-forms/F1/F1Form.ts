@@ -39,11 +39,13 @@ export class F1Form extends VisaForm implements IF1Form {
     };
   }
 
-  async syncVFRecord(applicationNumber: number): Promise<boolean> {
-    super.syncVFRecord(applicationNumber);
-    createVFStudent(applicationNumber, this.student);
-
-    return true;
+  async syncVFRecord(): Promise<void> {
+    try {
+      await super.syncVFRecord();
+      await createVFStudent(this.student);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   // GETTERS/SETTERS
