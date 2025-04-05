@@ -3,14 +3,14 @@
 import * as argon2 from 'argon2';
 
 import { IEmployeeSystem } from './IEmployeeSystem.js';
-import { Employee } from '../employees/abstract/Employee.js';
+import { Employee } from '../../classes/employees/abstract/Employee.js';
 
 import {
   createEmployee,
   deleteEmployee,
   readEmployees,
   readNextEmployeeNumber,
-} from '../../models/employee-model.js';
+} from '../../employee-model.js';
 
 export class EmployeeSystem implements IEmployeeSystem {
   // PROPERTIES (DATA MEMBERS)

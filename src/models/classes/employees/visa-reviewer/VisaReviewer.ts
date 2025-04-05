@@ -3,9 +3,9 @@
 import { Employee } from '../abstract/Employee.js';
 import { IVisaReviewer } from './IVisaReviewer.js';
 
-import { VisaStatus } from '../../../enums/visa-status.js';
+import { VisaStatus } from '../../../../lib/enums/visa-status.js';
 
-import { vs } from '../../../app.js';
+import { vs } from '../../../../app.js';
 
 export class VisaReviewer extends Employee implements IVisaReviewer {
   // CONSTRUCTOR

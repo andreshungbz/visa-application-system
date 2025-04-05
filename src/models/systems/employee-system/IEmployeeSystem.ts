@@ -1,6 +1,6 @@
 // Employee System Interface (Header)
 
-import { Employee } from '../employees/abstract/Employee.js';
+import { Employee } from '../../classes/employees/abstract/Employee.js';
 
 export interface IEmployeeSystem {
   // PROPERTIES (DATA MEMBERS)

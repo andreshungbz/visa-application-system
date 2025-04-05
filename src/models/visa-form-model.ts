@@ -1,13 +1,13 @@
 // Filename: visa-form-model.ts
 // functions that interface with the form database tables
 
-import { PersonalSection } from '../types/sections/PersonalSection.js';
-import { TravelSection } from '../types/sections/TravelSection.js';
-import { WorkSection } from '../types/sections/WorkSection.js';
-import { SecuritySection } from '../types/sections/SecuritySection.js';
-import { BusinessSection } from '../types/sections/BusinessSection.js';
-import { TouristSection } from '../types/sections/TouristSection.js';
-import { StudentSection } from '../types/sections/StudentSection.js';
+import { PersonalSection } from '../lib/types/sections/PersonalSection.js';
+import { TravelSection } from '../lib/types/sections/TravelSection.js';
+import { WorkSection } from '../lib/types/sections/WorkSection.js';
+import { SecuritySection } from '../lib/types/sections/SecuritySection.js';
+import { BusinessSection } from '../lib/types/sections/BusinessSection.js';
+import { TouristSection } from '../lib/types/sections/TouristSection.js';
+import { StudentSection } from '../lib/types/sections/StudentSection.js';
 
 // CREATE FUNCTIONS
 

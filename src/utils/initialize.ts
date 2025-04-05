@@ -1,8 +1,8 @@
 // Filename: initiateVisaSystem.ts
 // functions that creates VisaSystem instance
 
-import { EmployeeSystem } from '../classes/employee-system/EmployeeSystem.js';
-import { VisaSystem } from '../classes/visa-system/VisaSystem.js';
+import { EmployeeSystem } from '../models/systems/employee-system/EmployeeSystem.js';
+import { VisaSystem } from '../models/systems/visa-system/VisaSystem.js';
 
 export const initializeVisaSystem = (): VisaSystem => {
   console.time('[INIT] Visa System Initialization Loading Time');

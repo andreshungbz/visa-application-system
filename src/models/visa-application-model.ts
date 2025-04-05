@@ -1,7 +1,7 @@
 // Filename: visa-application-model.ts
 // functions that interface with the visa application database table
 
-import { VisaApplication } from '../classes/visa-application/VisaApplication.js';
+import { VisaApplication } from './classes/visa-application/VisaApplication.js';
 
 // CREATE FUNCTIONS
 
