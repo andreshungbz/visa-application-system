@@ -42,90 +42,101 @@ export const createVisaApplication = async (application: VisaApplication) => {
 // READ FUNCTIONS
 
 export const readNextApplicationNumber = async (): Promise<number> => {
-  const result = await prisma.visaApplication.findMany({
-    orderBy: {
-      applicationNumber: 'desc',
-    },
-    take: 1,
-  });
+  try {
+    const result = await prisma.visaApplication.findMany({
+      orderBy: {
+        applicationNumber: 'desc',
+      },
+      take: 1,
+    });
 
-  return result.length > 0 ? result[0].applicationNumber + 1 : 1;
+    return result.length > 0 ? result[0].applicationNumber + 1 : 1;
+  } catch (error) {
+    throw error;
+  }
 };
 
 export const readVisaApplications = async (
   status: VisaStatus
 ): Promise<VisaApplication[]> => {
-  const result = await prisma.visaApplication.findMany({
-    where: {
-      status: status,
-    },
-    orderBy: {
-      updatedAt: 'asc',
-    },
-    include: {
-      personal: true,
-      travel: true,
-      work: true,
-      security: true,
-      business: true,
-      tourist: true,
-      student: true,
-    },
-  });
-
-  return result.map((application) => {
-    const notes: ReviewerNotes = {
-      initial: { reviewer: application.s1Reviewer, notes: application.s1Notes },
-      interview: {
-        reviewer: application.s2Reviewer,
-        notes: application.s2Notes,
+  try {
+    const result = await prisma.visaApplication.findMany({
+      where: {
+        status: status,
       },
-      final: { reviewer: application.s3Reviewer, notes: application.s3Notes },
-    };
+      orderBy: {
+        updatedAt: 'asc',
+      },
+      include: {
+        personal: true,
+        travel: true,
+        work: true,
+        security: true,
+        business: true,
+        tourist: true,
+        student: true,
+      },
+    });
 
-    let form: VisaForm;
-    switch (application.type) {
-      case 'B1':
-        form = new B1Form(
-          application.personal!,
-          application.travel!,
-          application.work!,
-          application.security!,
-          application.business!
-        );
-        break;
-      case 'B2':
-        form = new B2Form(
-          application.personal!,
-          application.travel!,
-          application.work!,
-          application.security!,
-          application.tourist!
-        );
-        break;
-      case 'F1':
-        form = new F1Form(
-          application.personal!,
-          application.travel!,
-          application.work!,
-          application.security!,
-          application.student!
-        );
-        break;
-      default:
-        throw new Error('No existing VisaType');
-    }
+    return result.map((application) => {
+      const notes: ReviewerNotes = {
+        initial: {
+          reviewer: application.s1Reviewer,
+          notes: application.s1Notes,
+        },
+        interview: {
+          reviewer: application.s2Reviewer,
+          notes: application.s2Notes,
+        },
+        final: { reviewer: application.s3Reviewer, notes: application.s3Notes },
+      };
 
-    return new VisaApplication(
-      application.applicationNumber,
-      application.type,
-      application.status,
-      form,
-      notes,
-      application.createdAt,
-      application.updatedAt
-    );
-  });
+      let form: VisaForm;
+      switch (application.type) {
+        case 'B1':
+          form = new B1Form(
+            application.personal!,
+            application.travel!,
+            application.work!,
+            application.security!,
+            application.business!
+          );
+          break;
+        case 'B2':
+          form = new B2Form(
+            application.personal!,
+            application.travel!,
+            application.work!,
+            application.security!,
+            application.tourist!
+          );
+          break;
+        case 'F1':
+          form = new F1Form(
+            application.personal!,
+            application.travel!,
+            application.work!,
+            application.security!,
+            application.student!
+          );
+          break;
+        default:
+          throw new Error('No existing VisaType');
+      }
+
+      return new VisaApplication(
+        application.applicationNumber,
+        application.type,
+        application.status,
+        form,
+        notes,
+        application.createdAt,
+        application.updatedAt
+      );
+    });
+  } catch (error) {
+    throw error;
+  }
 };
 
 // UPDATE FUNCTIONS
