@@ -25,6 +25,8 @@ export class VisaSystem implements IVisaSystem {
   private initialQueue: VisaApplication[];
   private interviewQueue: VisaApplication[];
   private finalQueue: VisaApplication[];
+  private approvedApplications: VisaApplication[];
+  private rejectedApplications: VisaApplication[];
 
   // CONSTRUCTOR
 
@@ -33,6 +35,8 @@ export class VisaSystem implements IVisaSystem {
     this.initialQueue = [];
     this.interviewQueue = [];
     this.finalQueue = [];
+    this.approvedApplications = [];
+    this.rejectedApplications = [];
 
     this.initialize();
   }
@@ -42,6 +46,8 @@ export class VisaSystem implements IVisaSystem {
     this.initialQueue = await readVisaApplications('Initial');
     this.interviewQueue = await readVisaApplications('Interview');
     this.finalQueue = await readVisaApplications('Final');
+    this.approvedApplications = await readVisaApplications('Approved');
+    this.rejectedApplications = await readVisaApplications('Rejected');
   }
 
   // MAIN METHODS
@@ -56,6 +62,14 @@ export class VisaSystem implements IVisaSystem {
 
   getFinalQueue(): VisaApplication[] {
     return this.finalQueue;
+  }
+
+  getApproved(): VisaApplication[] {
+    return this.approvedApplications;
+  }
+
+  getRejected(): VisaApplication[] {
+    return this.rejectedApplications;
   }
 
   async addVisaApplication(form: VisaForm): Promise<number> {

@@ -15,11 +15,15 @@ export const test = async (_req: Request, res: Response) => {
   const initial = vs.getInitialQueue();
   const interview = vs.getInterviewQueue();
   const final = vs.getFinalQueue();
+  const approved = vs.getApproved();
+  const rejected = vs.getRejected();
 
   res.json({
-    initial: initial,
-    interview: interview,
-    final: final,
+    initial,
+    interview,
+    final,
+    approved,
+    rejected,
   });
 };
 

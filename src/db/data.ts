@@ -55,7 +55,7 @@ async function main() {
 
   // B1
 
-  const B1VisaApplication = await prisma.visaApplication.create({
+  const B1VisaApplication1 = await prisma.visaApplication.create({
     data: {
       type: 'B1',
       status: 'Interview',
@@ -68,7 +68,7 @@ async function main() {
 
   await prisma.personalSection.create({
     data: {
-      visaId: B1VisaApplication.applicationNumber,
+      visaId: B1VisaApplication1.applicationNumber,
       firstName: 'Alice',
       lastName: 'Johnson',
       email: 'alice.johnson@example.com',
@@ -84,7 +84,7 @@ async function main() {
 
   await prisma.travelSection.create({
     data: {
-      visaId: B1VisaApplication.applicationNumber,
+      visaId: B1VisaApplication1.applicationNumber,
       stayCity: 'Los Angeles',
       stayAddress: '456 Elm St',
       intendedArrivalDate: new Date('2025-06-01'),
@@ -94,7 +94,7 @@ async function main() {
 
   await prisma.workSection.create({
     data: {
-      visaId: B1VisaApplication.applicationNumber,
+      visaId: B1VisaApplication1.applicationNumber,
       occupation: 'Software Engineer',
       phone: '555-5678',
       city: 'San Francisco',
@@ -104,7 +104,7 @@ async function main() {
 
   await prisma.securitySection.create({
     data: {
-      visaId: B1VisaApplication.applicationNumber,
+      visaId: B1VisaApplication1.applicationNumber,
       communicableDisease: false,
       moneyLaundering: false,
       drugConspiracy: false,
@@ -115,7 +115,7 @@ async function main() {
 
   await prisma.businessSection.create({
     data: {
-      visaId: B1VisaApplication.applicationNumber,
+      visaId: B1VisaApplication1.applicationNumber,
       phone: '555-9876',
       city: 'Chicago',
       address: '101 Maple St',
@@ -125,7 +125,7 @@ async function main() {
 
   // B2
 
-  const B2VisaApplication = await prisma.visaApplication.create({
+  const B2VisaApplication1 = await prisma.visaApplication.create({
     data: {
       type: 'B2',
       status: 'Initial',
@@ -136,7 +136,7 @@ async function main() {
 
   await prisma.personalSection.create({
     data: {
-      visaId: B2VisaApplication.applicationNumber,
+      visaId: B2VisaApplication1.applicationNumber,
       firstName: 'Bob',
       lastName: 'Smith',
       email: 'bob.smith@example.com',
@@ -152,7 +152,7 @@ async function main() {
 
   await prisma.travelSection.create({
     data: {
-      visaId: B2VisaApplication.applicationNumber,
+      visaId: B2VisaApplication1.applicationNumber,
       stayCity: 'Orlando',
       stayAddress: '123 Disney St',
       intendedArrivalDate: new Date('2025-07-01'),
@@ -162,7 +162,7 @@ async function main() {
 
   await prisma.securitySection.create({
     data: {
-      visaId: B2VisaApplication.applicationNumber,
+      visaId: B2VisaApplication1.applicationNumber,
       communicableDisease: false,
       moneyLaundering: false,
       drugConspiracy: false,
@@ -173,7 +173,7 @@ async function main() {
 
   await prisma.touristSection.create({
     data: {
-      visaId: B2VisaApplication.applicationNumber,
+      visaId: B2VisaApplication1.applicationNumber,
       purpose: 'Vacation',
     },
   });
@@ -235,7 +235,7 @@ async function main() {
 
   // F1
 
-  const F1VisaApplication = await prisma.visaApplication.create({
+  const F1VisaApplication1 = await prisma.visaApplication.create({
     data: {
       type: 'F1',
       status: 'Final',
@@ -250,7 +250,7 @@ async function main() {
 
   await prisma.personalSection.create({
     data: {
-      visaId: F1VisaApplication.applicationNumber,
+      visaId: F1VisaApplication1.applicationNumber,
       firstName: 'Charlie',
       lastName: 'Brown',
       email: 'charlie.brown@example.com',
@@ -266,7 +266,7 @@ async function main() {
 
   await prisma.travelSection.create({
     data: {
-      visaId: F1VisaApplication.applicationNumber,
+      visaId: F1VisaApplication1.applicationNumber,
       stayCity: 'Cambridge',
       stayAddress: '789 University Ave',
       intendedArrivalDate: new Date('2025-08-15'),
@@ -276,7 +276,7 @@ async function main() {
 
   await prisma.securitySection.create({
     data: {
-      visaId: F1VisaApplication.applicationNumber,
+      visaId: F1VisaApplication1.applicationNumber,
       communicableDisease: false,
       moneyLaundering: false,
       drugConspiracy: false,
@@ -287,9 +287,134 @@ async function main() {
 
   await prisma.studentSection.create({
     data: {
-      visaId: F1VisaApplication.applicationNumber,
+      visaId: F1VisaApplication1.applicationNumber,
       enrolledSchool: 'Harvard University',
       schoolAddress: '1 Harvard Yard, Cambridge, MA',
+      enrollmentDate: new Date('2025-09-01'),
+    },
+  });
+
+  // APPROVED
+
+  const ApprovedVisaApplication1 = await prisma.visaApplication.create({
+    data: {
+      type: 'B1',
+      status: 'Approved', // Set status to Approved
+      s1Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
+      s1Notes: 'Initial review completed.',
+      s2Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
+      s2Notes: 'Interview successful.',
+      s3Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
+      s3Notes: 'Final review approved.',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  });
+
+  await prisma.personalSection.create({
+    data: {
+      visaId: ApprovedVisaApplication1.applicationNumber,
+      firstName: 'Sophia',
+      lastName: 'Williams',
+      email: 'sophia.williams@example.com',
+      phone: '555-9876',
+      city: 'Seattle',
+      address: '123 Green St',
+      passportNumber: 'E12345678',
+      country: 'Belize',
+      dob: new Date('1995-04-20'),
+      gender: 'Female',
+    },
+  });
+
+  await prisma.travelSection.create({
+    data: {
+      visaId: ApprovedVisaApplication1.applicationNumber,
+      stayCity: 'San Diego',
+      stayAddress: '789 Ocean Blvd',
+      intendedArrivalDate: new Date('2025-10-01'),
+      intendedLengthOfStay: 30,
+    },
+  });
+
+  await prisma.securitySection.create({
+    data: {
+      visaId: ApprovedVisaApplication1.applicationNumber,
+      communicableDisease: false,
+      moneyLaundering: false,
+      drugConspiracy: false,
+      arrestedConvicted: false,
+      mentalPhysicalDisorder: false,
+    },
+  });
+
+  await prisma.businessSection.create({
+    data: {
+      visaId: ApprovedVisaApplication1.applicationNumber,
+      phone: '555-1234',
+      city: 'San Francisco',
+      address: '456 Business St',
+      purpose: 'Conference Attendance',
+    },
+  });
+
+  // REJECTED
+
+  const RejectedVisaApplication1 = await prisma.visaApplication.create({
+    data: {
+      type: 'F1',
+      status: 'Rejected',
+      s1Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
+      s1Notes: 'Initial review completed.',
+      s3Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
+      s3Notes: 'Final review rejected.',
+      createdAt: new Date(),
+      updatedAt: new Date(),
+    },
+  });
+
+  await prisma.personalSection.create({
+    data: {
+      visaId: RejectedVisaApplication1.applicationNumber,
+      firstName: 'James',
+      lastName: 'Taylor',
+      email: 'james.taylor@example.com',
+      phone: '555-4321',
+      city: 'Houston',
+      address: '456 Maple Ave',
+      passportNumber: 'F12345678',
+      country: 'Belize',
+      dob: new Date('1988-07-15'),
+      gender: 'Male',
+    },
+  });
+
+  await prisma.travelSection.create({
+    data: {
+      visaId: RejectedVisaApplication1.applicationNumber,
+      stayCity: 'Las Vegas',
+      stayAddress: '123 Casino St',
+      intendedArrivalDate: new Date('2025-11-01'),
+      intendedLengthOfStay: 5,
+    },
+  });
+
+  await prisma.securitySection.create({
+    data: {
+      visaId: RejectedVisaApplication1.applicationNumber,
+      communicableDisease: false,
+      moneyLaundering: false,
+      drugConspiracy: false,
+      arrestedConvicted: true,
+      mentalPhysicalDisorder: false,
+    },
+  });
+
+  await prisma.studentSection.create({
+    data: {
+      visaId: RejectedVisaApplication1.applicationNumber,
+      enrolledSchool: 'Stanford University',
+      schoolAddress: '450 Serra Mall, Stanford, CA',
       enrollmentDate: new Date('2025-09-01'),
     },
   });
