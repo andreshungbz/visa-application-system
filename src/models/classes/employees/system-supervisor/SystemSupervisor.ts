@@ -6,7 +6,7 @@ import { ISystemSupervisor } from './ISystemSupervisor.js';
 import { EmployeeType } from '../../../../lib/enums/employee-type.js';
 import { VisaReviewer } from '../visa-reviewer/VisaReviewer.js';
 
-import { es, vs } from '../../../../app.js';
+import { es, vs } from '../../../../main.js';
 
 export class SystemSupervisor extends Employee implements ISystemSupervisor {
   // CONSTRUCTOR

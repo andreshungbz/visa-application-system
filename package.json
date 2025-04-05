@@ -15,12 +15,11 @@
   "type": "module",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf build",
     "build": "npm run clean && tsc",
-    "start": "npm run build && node build/app.js",
-    "dev": "tsc && concurrently -k -n \"TS,SERVER\" -c \"cyan,green\" \"tsc --watch\" \"wait-on build/app.js && node --watch build/app.js\"",
-    "dbsetup": "psql -U postgres -f script/setup.sql"
+    "start": "npm run build && node build/main.js",
+    "dev": "tsc && concurrently -k -n \"TS,SERVER\" -c \"cyan,green\" \"tsc --watch\" \"wait-on build/main.js && node --watch build/main.js\"",
+    "initiatedb": "psql --username=postgres --file=src/db/script/setup.sql && prisma db push && tsx src/db/data.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.5.0",
@@ -33,6 +32,7 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.13.10",
     "concurrently": "^9.1.2",
+    "tsx": "^4.19.3",
     "typescript": "^5.8.2",
     "wait-on": "^8.0.3"
   }

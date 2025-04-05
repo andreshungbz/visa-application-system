@@ -13,9 +13,19 @@ import {
   initializeEmployeeSystem,
 } from './utils/initialize.js';
 
+import { VisaSystem } from './models/systems/visa-system/VisaSystem.js';
+import { EmployeeSystem } from './models/systems/employee-system/EmployeeSystem.js';
+
 // load Visa System and export for use throughout application
-export const vs = initializeVisaSystem();
-export const es = initializeEmployeeSystem();
+export let vs: VisaSystem;
+export let es: EmployeeSystem;
+
+try {
+  vs = initializeVisaSystem();
+  es = initializeEmployeeSystem();
+} catch (error) {
+  console.error(error);
+}
 
 const app = express();
 
