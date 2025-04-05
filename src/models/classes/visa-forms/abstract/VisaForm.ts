@@ -2,10 +2,13 @@
 
 import { IVisaForm } from './IVisaForm.js';
 
-import { PersonalSection } from '../../../../lib/types/sections/PersonalSection.js';
-import { TravelSection } from '../../../../lib/types/sections/TravelSection.js';
-import { WorkSection } from '../../../../lib/types/sections/WorkSection.js';
-import { SecuritySection } from '../../../../lib/types/sections/SecuritySection.js';
+import {
+  PersonalSection,
+  TravelSection,
+  WorkSection,
+  SecuritySection,
+} from '@prisma/client';
+
 import { VisaFormSections } from '../../../../lib/types/VisaFormSections.js';
 
 import {

@@ -3,7 +3,7 @@
 import { Employee } from '../abstract/Employee.js';
 import { ISystemSupervisor } from './ISystemSupervisor.js';
 
-import { EmployeeType } from '../../../../lib/enums/employee-type.js';
+import { EmployeeType } from '@prisma/client';
 import { VisaReviewer } from '../visa-reviewer/VisaReviewer.js';
 
 import { es, vs } from '../../../../main.js';
@@ -35,7 +35,7 @@ export class SystemSupervisor extends Employee implements ISystemSupervisor {
   ): Promise<boolean> {
     let newEmployee: Employee | null = null;
 
-    if (type === EmployeeType.VisaReviwer) {
+    if (type === EmployeeType.VisaReviewer) {
       newEmployee = new VisaReviewer(
         employeeNumber,
         firstName,

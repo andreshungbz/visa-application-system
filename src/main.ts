@@ -15,6 +15,7 @@ import {
 
 import { VisaSystem } from './models/systems/visa-system/VisaSystem.js';
 import { EmployeeSystem } from './models/systems/employee-system/EmployeeSystem.js';
+import testRoute from './routes/visa-application-route.js';
 
 // load Visa System and export for use throughout application
 export let vs: VisaSystem;
@@ -41,9 +42,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(logger);
 
 // routes
-app.get('/', (_req, res) => {
-  res.send(`Visa Application System`);
-});
+app.use('/', testRoute);
 
 // server start
 app.listen(config.port, () => {

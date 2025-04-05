@@ -5,7 +5,8 @@ import { Employee } from './classes/employees/abstract/Employee.js';
 
 import { SystemSupervisor } from './classes/employees/system-supervisor/SystemSupervisor.js';
 import { VisaReviewer } from './classes/employees/visa-reviewer/VisaReviewer.js';
-import { EmployeeType } from '../lib/enums/employee-type.js';
+
+import { EmployeeType } from '@prisma/client';
 
 // CREATE FUNCTIONS
 
@@ -13,7 +14,7 @@ export const createEmployee = async (employee: Employee): Promise<boolean> => {
   let employeeType: EmployeeType | null;
 
   if (employee instanceof VisaReviewer) {
-    employeeType = EmployeeType.VisaReviwer;
+    employeeType = EmployeeType.VisaReviewer;
   } else if (employee instanceof SystemSupervisor) {
     employeeType = EmployeeType.SystemSupervisor;
   } else {

@@ -3,7 +3,7 @@
 import { Employee } from '../abstract/Employee.js';
 import { IVisaReviewer } from './IVisaReviewer.js';
 
-import { VisaStatus } from '../../../../lib/enums/visa-status.js';
+import { VisaStatus } from '@prisma/client';
 
 import { vs } from '../../../../main.js';
 
@@ -31,17 +31,17 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
     if (!application) return false;
 
     switch (application.getStatus()) {
-      case VisaStatus.InitialStage:
-        application.setStatus(VisaStatus.InterviewStage);
+      case VisaStatus.Initial:
+        application.setStatus(VisaStatus.Interview);
         application.setS1Reviewer(String(this.getEmployeeNumber()));
         application.setS1Notes(notes);
         break;
-      case VisaStatus.InterviewStage:
-        application.setStatus(VisaStatus.FinalStage);
+      case VisaStatus.Interview:
+        application.setStatus(VisaStatus.Final);
         application.setS2Reviewer(String(this.getEmployeeNumber()));
         application.setS2Notes(notes);
         break;
-      case VisaStatus.FinalStage:
+      case VisaStatus.Final:
         application.setStatus(VisaStatus.Approved);
         application.setS3Reviewer(String(this.getEmployeeNumber()));
         application.setS3Notes(notes);

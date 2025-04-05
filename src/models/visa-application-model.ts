@@ -1,7 +1,16 @@
 // Filename: visa-application-model.ts
 // functions that interface with the visa application database table
 
+import { PrismaClient, VisaStatus } from '@prisma/client';
+
 import { VisaApplication } from './classes/visa-application/VisaApplication.js';
+import { VisaForm } from './classes/visa-forms/abstract/VisaForm.js';
+import { ReviewerNotes } from '../lib/types/ReviwerNotes.js';
+import { B1Form } from './classes/visa-forms/B1/B1Form.js';
+import { B2Form } from './classes/visa-forms/B2/B2Form.js';
+import { F1Form } from './classes/visa-forms/F1/F1Form.js';
+
+const prisma = new PrismaClient();
 
 // CREATE FUNCTIONS
 
@@ -20,23 +29,90 @@ export const createVA = async (
 // READ FUNCTIONS
 
 export const readNextApplicationNumber = async (): Promise<number> => {
-  // TODO: read from database
-  return 1;
+  const result = await prisma.visaApplication.findMany({
+    orderBy: {
+      applicationNumber: 'desc',
+    },
+    take: 1,
+  });
+
+  return result.length > 0 ? result[0].applicationNumber + 1 : 1;
 };
 
-export const readS1VisaApplications = async (): Promise<VisaApplication[]> => {
-  // TODO: read from database
-  return [];
-};
+export const readVisaApplications = async (
+  status: VisaStatus
+): Promise<VisaApplication[]> => {
+  const result = await prisma.visaApplication.findMany({
+    where: {
+      status: status,
+    },
+    orderBy: {
+      updatedAt: 'asc',
+    },
+    include: {
+      personal: true,
+      travel: true,
+      work: true,
+      security: true,
+      business: true,
+      tourist: true,
+      student: true,
+    },
+  });
 
-export const readS2VisaApplications = async (): Promise<VisaApplication[]> => {
-  // TODO: read from database
-  return [];
-};
+  return result.map((application) => {
+    const notes: ReviewerNotes = {
+      initial: { reviewer: application.s1Reviewer, notes: application.s1Notes },
+      interview: {
+        reviewer: application.s2Reviewer,
+        notes: application.s2Notes,
+      },
+      final: { reviewer: application.s3Reviewer, notes: application.s3Notes },
+    };
 
-export const readS3VisaApplications = async (): Promise<VisaApplication[]> => {
-  // TODO: read from database
-  return [];
+    let form: VisaForm;
+    switch (application.type) {
+      case 'B1':
+        form = new B1Form(
+          application.personal!,
+          application.travel!,
+          application.work!,
+          application.security!,
+          application.business!
+        );
+        break;
+      case 'B2':
+        form = new B2Form(
+          application.personal!,
+          application.travel!,
+          application.work!,
+          application.security!,
+          application.tourist!
+        );
+        break;
+      case 'F1':
+        form = new F1Form(
+          application.personal!,
+          application.travel!,
+          application.work!,
+          application.security!,
+          application.student!
+        );
+        break;
+      default:
+        throw new Error('No existing VisaType');
+    }
+
+    return new VisaApplication(
+      application.applicationNumber,
+      application.type,
+      application.status,
+      form,
+      notes,
+      application.createdAt,
+      application.updatedAt
+    );
+  });
 };
 
 // UPDATE FUNCTIONS

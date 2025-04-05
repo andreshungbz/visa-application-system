@@ -3,11 +3,14 @@
 import { VisaForm } from '../abstract/VisaForm.js';
 import { IB2Form } from './IB2Form.js';
 
-import { PersonalSection } from '../../../../lib/types/sections/PersonalSection.js';
-import { TravelSection } from '../../../../lib/types/sections/TravelSection.js';
-import { WorkSection } from '../../../../lib/types/sections/WorkSection.js';
-import { SecuritySection } from '../../../../lib/types/sections/SecuritySection.js';
-import { TouristSection } from '../../../../lib/types/sections/TouristSection.js';
+import {
+  PersonalSection,
+  TravelSection,
+  WorkSection,
+  SecuritySection,
+  TouristSection,
+} from '@prisma/client';
+
 import { VisaFormSections } from '../../../../lib/types/VisaFormSections.js';
 import { createVFTourist } from '../../../../models/visa-form-model.js';
 

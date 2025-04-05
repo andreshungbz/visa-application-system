@@ -2,18 +2,15 @@
 
 import { IVisaSystem } from './IVisaSystem.js';
 
+import { VisaType, VisaStatus } from '@prisma/client';
+
 import { VisaApplication } from '../../classes/visa-application/VisaApplication.js';
 import { VisaForm } from '../../classes/visa-forms/abstract/VisaForm.js';
-
-import { VisaStatus } from '../../../lib/enums/visa-status.js';
-import { VisaType } from '../../../lib/enums/visa-type.js';
 
 import {
   createVA,
   readNextApplicationNumber,
-  readS1VisaApplications,
-  readS2VisaApplications,
-  readS3VisaApplications,
+  readVisaApplications,
   updateVA,
 } from '../../visa-application-model.js';
 
@@ -42,9 +39,9 @@ export class VisaSystem implements IVisaSystem {
 
   private async initialize() {
     this.nextApplicationNumber = await readNextApplicationNumber();
-    this.initialQueue = await readS1VisaApplications();
-    this.interviewQueue = await readS2VisaApplications();
-    this.finalQueue = await readS3VisaApplications();
+    this.initialQueue = await readVisaApplications('Initial');
+    this.interviewQueue = await readVisaApplications('Interview');
+    this.finalQueue = await readVisaApplications('Final');
   }
 
   // MAIN METHODS
@@ -81,7 +78,7 @@ export class VisaSystem implements IVisaSystem {
     const application = new VisaApplication(
       1,
       visaType,
-      VisaStatus.InitialStage,
+      VisaStatus.Initial,
       form
     );
 

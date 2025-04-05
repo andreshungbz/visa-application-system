@@ -2,7 +2,7 @@
 
 import { IEmployee } from '../abstract/IEmployee.js';
 
-import { EmployeeType } from '../../../../lib/enums/employee-type.js';
+import { EmployeeType } from '@prisma/client';
 
 export interface ISystemSupervisor extends IEmployee {
   // PROPERTIES (DATA MEMBERS)

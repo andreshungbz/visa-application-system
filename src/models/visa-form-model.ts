@@ -1,13 +1,21 @@
 // Filename: visa-form-model.ts
 // functions that interface with the form database tables
 
-import { PersonalSection } from '../lib/types/sections/PersonalSection.js';
-import { TravelSection } from '../lib/types/sections/TravelSection.js';
-import { WorkSection } from '../lib/types/sections/WorkSection.js';
-import { SecuritySection } from '../lib/types/sections/SecuritySection.js';
-import { BusinessSection } from '../lib/types/sections/BusinessSection.js';
-import { TouristSection } from '../lib/types/sections/TouristSection.js';
-import { StudentSection } from '../lib/types/sections/StudentSection.js';
+// import { PrismaClient } from '@prisma/client';
+
+import {
+  PersonalSection,
+  TravelSection,
+  WorkSection,
+  SecuritySection,
+  BusinessSection,
+  TouristSection,
+  StudentSection,
+} from '@prisma/client';
+
+// import { VisaForm } from './classes/visa-forms/abstract/VisaForm.js';
+
+// const prisma = new PrismaClient();
 
 // CREATE FUNCTIONS
 
@@ -83,103 +91,103 @@ export const createVFStudent = async (
 
 // READ FUNCTIONS
 
-export const readVFPersonal = async (
-  applicationNumber: number
-): Promise<PersonalSection> => {
-  // TODO: read from database
-  console.log(applicationNumber);
+// export const readVFPersonal = async (
+//   applicationNumber: number
+// ): Promise<PersonalSection> => {
+//   // TODO: read from database
+//   console.log(applicationNumber);
 
-  return {
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    city: '',
-    address: '',
-    passportNumber: '',
-    country: '',
-    dob: new Date(),
-    gender: '',
-  };
-};
+//   return {
+//     firstName: '',
+//     lastName: '',
+//     email: '',
+//     phone: '',
+//     city: '',
+//     address: '',
+//     passportNumber: '',
+//     country: '',
+//     dob: new Date(),
+//     gender: '',
+//   };
+// };
 
-export const readVFTravel = async (
-  applicationNumber: number
-): Promise<TravelSection> => {
-  // TODO: read from database
-  console.log(applicationNumber);
+// export const readVFTravel = async (
+//   applicationNumber: number
+// ): Promise<TravelSection> => {
+//   // TODO: read from database
+//   console.log(applicationNumber);
 
-  return {
-    stayCity: '',
-    stayAddress: '',
-    intendedArrivalDate: new Date(),
-    intendedLengthOfStay: 0,
-  };
-};
+//   return {
+//     stayCity: '',
+//     stayAddress: '',
+//     intendedArrivalDate: new Date(),
+//     intendedLengthOfStay: 0,
+//   };
+// };
 
-export const readVFWork = async (
-  applicationNumber: number
-): Promise<WorkSection> => {
-  // TODO: read from database
-  console.log(applicationNumber);
+// export const readVFWork = async (
+//   applicationNumber: number
+// ): Promise<WorkSection> => {
+//   // TODO: read from database
+//   console.log(applicationNumber);
 
-  return {
-    occupation: '',
-    phone: '',
-    city: '',
-    address: '',
-  };
-};
+//   return {
+//     occupation: '',
+//     phone: '',
+//     city: '',
+//     address: '',
+//   };
+// };
 
-export const readVFSecurity = async (
-  applicationNumber: number
-): Promise<SecuritySection> => {
-  // TODO: read from database
-  console.log(applicationNumber);
+// export const readVFSecurity = async (
+//   applicationNumber: number
+// ): Promise<SecuritySection> => {
+//   // TODO: read from database
+//   console.log(applicationNumber);
 
-  return {
-    communicableDisease: false,
-    moneyLaundering: false,
-    drugConspiracy: false,
-    arrestedConvicted: false,
-    mentalPhysicalDisorder: false,
-  };
-};
+//   return {
+//     communicableDisease: false,
+//     moneyLaundering: false,
+//     drugConspiracy: false,
+//     arrestedConvicted: false,
+//     mentalPhysicalDisorder: false,
+//   };
+// };
 
-export const readVFBusiness = async (
-  applicationNumber: number
-): Promise<BusinessSection> => {
-  // TODO: read from database
-  console.log(applicationNumber);
+// export const readVFBusiness = async (
+//   applicationNumber: number
+// ): Promise<BusinessSection> => {
+//   // TODO: read from database
+//   console.log(applicationNumber);
 
-  return {
-    phone: '',
-    city: '',
-    address: '',
-    purpose: '',
-  };
-};
+//   return {
+//     phone: '',
+//     city: '',
+//     address: '',
+//     purpose: '',
+//   };
+// };
 
-export const readVFTourist = async (
-  applicationNumber: number
-): Promise<TouristSection> => {
-  // TODO: read from database
-  console.log(applicationNumber);
+// export const readVFTourist = async (
+//   applicationNumber: number
+// ): Promise<TouristSection> => {
+//   // TODO: read from database
+//   console.log(applicationNumber);
 
-  return {
-    purpose: '',
-  };
-};
+//   return {
+//     purpose: '',
+//   };
+// };
 
-export const readVFStudent = async (
-  applicationNumber: number
-): Promise<StudentSection> => {
-  // TODO: read from database
-  console.log(applicationNumber);
+// export const readVFStudent = async (
+//   applicationNumber: number
+// ): Promise<StudentSection> => {
+//   // TODO: read from database
+//   console.log(applicationNumber);
 
-  return {
-    enrolledSchool: '',
-    schoolAddress: '',
-    enrollmentDate: new Date(),
-  };
-};
+//   return {
+//     enrolledSchool: '',
+//     schoolAddress: '',
+//     enrollmentDate: new Date(),
+//   };
+// };

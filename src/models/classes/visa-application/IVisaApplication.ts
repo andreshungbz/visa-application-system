@@ -1,7 +1,7 @@
 // Visa Application Interface (Header)
 
-import { VisaType } from '../../../lib/enums/visa-type.js';
-import { VisaStatus } from '../../../lib/enums/visa-status.js';
+import { VisaType, VisaStatus } from '@prisma/client';
+
 import { VisaForm } from '../visa-forms/abstract/VisaForm.js';
 import { VisaApplicationType } from '../../../lib/types/VisaApplicationType.js';
 

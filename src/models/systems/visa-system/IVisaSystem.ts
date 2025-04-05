@@ -1,8 +1,9 @@
 // Visa System Interface (Header)
 
+import { VisaStatus } from '@prisma/client';
+
 import { VisaApplication } from '../../classes/visa-application/VisaApplication.js';
 import { VisaForm } from '../../classes/visa-forms/abstract/VisaForm.js';
-import { VisaStatus } from '../../../lib/enums/visa-status.js';
 
 export interface IVisaSystem {
   // PROPERTIES (DATA MEMBERS)
