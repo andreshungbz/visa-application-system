@@ -15,7 +15,7 @@ import {
 
 import { VisaSystem } from './models/systems/visa-system/VisaSystem.js';
 import { EmployeeSystem } from './models/systems/employee-system/EmployeeSystem.js';
-import testRoute from './routes/visa-application-route.js';
+import testRoute from './routes/test-route.js';
 
 // load Visa System and export for use throughout application
 export let vs: VisaSystem;

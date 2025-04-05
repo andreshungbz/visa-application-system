@@ -1,7 +1,5 @@
-// Filename: visa-application-controller.ts
-
 import { Request, Response } from 'express';
-import { vs } from '../main.js';
+import { vs, es } from '../main.js';
 import {
   PersonalSection,
   TravelSection,
@@ -10,6 +8,7 @@ import {
   TouristSection,
 } from '@prisma/client';
 import { B2Form } from '../models/classes/visa-forms/B2/B2Form.js';
+import { VisaReviewer } from '../models/classes/employees/visa-reviewer/VisaReviewer.js';
 
 export const test = async (_req: Request, res: Response) => {
   const initial = vs.getInitialQueue();
@@ -17,6 +16,7 @@ export const test = async (_req: Request, res: Response) => {
   const final = vs.getFinalQueue();
   const approved = vs.getApproved();
   const rejected = vs.getRejected();
+  const employees = es.getEmployees();
 
   res.json({
     initial,
@@ -24,6 +24,7 @@ export const test = async (_req: Request, res: Response) => {
     final,
     approved,
     rejected,
+    employees,
   });
 };
 
@@ -91,4 +92,21 @@ export const testGetApplication = (req: Request, res: Response) => {
   const id = Number(req.params.id);
 
   res.json(vs.getFullVisaApplication(id));
+};
+
+export const testAddEmployee = async (_req: Request, res: Response) => {
+  const employeeID = es.nextEmployeeNumber;
+
+  const employee = new VisaReviewer(
+    employeeID,
+    'Jacky',
+    'Saul',
+    '434232',
+    'rough',
+    10000
+  );
+
+  await es.addEmployee(employee);
+
+  res.json(`${employeeID}`);
 };
