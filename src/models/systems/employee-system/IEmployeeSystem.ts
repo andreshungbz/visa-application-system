@@ -14,8 +14,8 @@ export interface IEmployeeSystem {
 
   authenticate(employeeNumber: number, password: string): Promise<boolean>;
   getEmployees(): Employee[];
-  addEmployee(employee: Employee): Promise<boolean>;
-  removeEmployee(employeeNumber: number): Promise<boolean>;
+  addEmployee(employee: Employee): Promise<void>;
+  removeEmployee(employeeNumber: number): Promise<void>;
 
   generateStatistics(): Promise<{}>;
 }

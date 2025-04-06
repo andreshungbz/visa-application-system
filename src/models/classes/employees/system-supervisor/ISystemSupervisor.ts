@@ -2,7 +2,7 @@
 
 import { IEmployee } from '../abstract/IEmployee.js';
 
-import { EmployeeType } from '@prisma/client';
+import { Employee } from '../abstract/Employee.js';
 
 export interface ISystemSupervisor extends IEmployee {
   // PROPERTIES (DATA MEMBERS)
@@ -12,17 +12,6 @@ export interface ISystemSupervisor extends IEmployee {
   // no additional properties
 
   // MAIN METHODS
-
-  addEmployee(
-    type: EmployeeType,
-    employeeNumber: number,
-    firstName: string,
-    lastName: string,
-    ssn: string,
-    password: string,
-    salary: number
-  ): Promise<boolean>;
-  removeEmployee(employeeNumber: number): Promise<boolean>;
 
   generateStatisticsReport(): Promise<{}>;
 }

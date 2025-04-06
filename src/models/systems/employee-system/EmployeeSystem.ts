@@ -53,31 +53,32 @@ export class EmployeeSystem implements IEmployeeSystem {
     return this.employees;
   }
 
-  async addEmployee(employee: Employee): Promise<boolean> {
-    // ADD TO CLASS MEMORY
-    this.employees.push(employee);
-    // WRITE TO DATABASE
-    await createEmployee(employee);
-
-    return true;
+  async addEmployee(employee: Employee) {
+    try {
+      // update in-memory array
+      this.employees.push(employee);
+      // wrtie to database
+      await createEmployee(employee);
+    } catch (error) {
+      console.error(error);
+    }
   }
 
-  async removeEmployee(employeeNumber: number): Promise<boolean> {
-    // REMOVE FROM CLASS MEMORY
+  async removeEmployee(employeeNumber: number) {
+    try {
+      // update in-memory arrray
+      const employeeIndex = this.employees.findIndex(
+        (e) => e.getEmployeeNumber() === employeeNumber
+      );
+      if (employeeIndex !== -1) {
+        this.employees.splice(employeeIndex, 1);
+      }
 
-    const employeeIndex = this.employees.findIndex(
-      (e) => e.getEmployeeNumber() === employeeNumber
-    );
-
-    if (employeeIndex !== -1) {
-      this.employees.splice(employeeIndex, 1);
-      return true;
+      // update database record
+      await deleteEmployee(employeeNumber);
+    } catch (error) {
+      console.error(error);
     }
-
-    // UPDATE DATABASE
-    await deleteEmployee(employeeNumber);
-
-    return false;
   }
 
   async generateStatistics(): Promise<{}> {
