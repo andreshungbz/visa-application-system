@@ -2,6 +2,7 @@
 // inserts example data to work with
 
 import { PrismaClient } from '@prisma/client';
+import argon2 from 'argon2';
 
 const prisma = new PrismaClient();
 
@@ -25,13 +26,14 @@ async function main() {
 
   // VISA REVIEWERS
 
+  const reviewerPassword = await argon2.hash('password');
   const reviewer = await prisma.employee.create({
     data: {
       role: 'VisaReviewer',
       firstName: 'Andres',
       lastName: 'Hung',
       ssn: '123-45-6789',
-      password: 'password',
+      password: reviewerPassword,
       salary: 50000,
       employed: true,
     },
@@ -39,13 +41,14 @@ async function main() {
 
   // SYSTEM SUPERVISORS
 
+  const supervisorPassword = await argon2.hash('password2');
   await prisma.employee.create({
     data: {
       role: 'SystemSupervisor',
       firstName: 'Darwin',
       lastName: 'Ramos',
       ssn: '987-65-4321',
-      password: 'password',
+      password: supervisorPassword,
       salary: 70000,
       employed: true,
     },
