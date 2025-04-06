@@ -144,3 +144,9 @@ export const testRemoveEmployee = async (_req: Request, res: Response) => {
 
   res.send('Removed');
 };
+
+export const testGetEmployee = async (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+
+  res.json(es.getEmployee(id));
+};

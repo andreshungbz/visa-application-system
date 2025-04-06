@@ -5,6 +5,7 @@ import {
   testAddEmployee,
   testApproveStage,
   testGetApplication,
+  testGetEmployee,
   testGetStatus,
   testRejectStage,
   testRemoveEmployee,
@@ -20,5 +21,6 @@ testRoute.get('/add-employee', testAddEmployee);
 testRoute.get('/approve', testApproveStage);
 testRoute.get('/reject', testRejectStage);
 testRoute.get('/remove-employee', testRemoveEmployee);
+testRoute.get('/employee/:id', testGetEmployee);
 
 export default testRoute;

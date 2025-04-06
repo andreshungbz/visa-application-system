@@ -81,6 +81,14 @@ export class EmployeeSystem implements IEmployeeSystem {
     }
   }
 
+  getEmployee(employeeNumber: number): Employee | null {
+    const employeeIndex = this.employees.findIndex(
+      (a) => employeeNumber === a.getEmployeeNumber()
+    );
+
+    return employeeIndex !== -1 ? this.employees[employeeIndex] : null;
+  }
+
   async generateStatistics(): Promise<{}> {
     return {};
   }
