@@ -2,8 +2,6 @@
 
 import { IEmployee } from '../abstract/IEmployee.js';
 
-import { Employee } from '../abstract/Employee.js';
-
 export interface ISystemSupervisor extends IEmployee {
   // PROPERTIES (DATA MEMBERS)
   // these are commented so that the implementation can apply protected/private access specifiers

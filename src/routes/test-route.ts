@@ -3,8 +3,11 @@ import {
   test,
   testAdd,
   testAddEmployee,
+  testApproveStage,
   testGetApplication,
   testGetStatus,
+  testRejectStage,
+  testRemoveEmployee,
 } from '../controllers/test-controller.js';
 
 const testRoute = express.Router();
@@ -14,5 +17,8 @@ testRoute.get('/add', testAdd);
 testRoute.get('/application/:id/status', testGetStatus);
 testRoute.get('/application/:id', testGetApplication);
 testRoute.get('/add-employee', testAddEmployee);
+testRoute.get('/approve', testApproveStage);
+testRoute.get('/reject', testRejectStage);
+testRoute.get('/remove-employee', testRemoveEmployee);
 
 export default testRoute;

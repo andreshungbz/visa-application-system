@@ -18,7 +18,7 @@ export abstract class Employee implements IEmployee {
   // MAIN METHODS
 
   getFullName(): string {
-    return `${this.getFirstName} ${this.getLastName}`;
+    return `${this.getFirstName()} ${this.getLastName()}`;
   }
 
   // GETTERS/SETTERS

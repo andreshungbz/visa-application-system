@@ -110,3 +110,37 @@ export const testAddEmployee = async (_req: Request, res: Response) => {
 
   res.json(`${employeeID}`);
 };
+
+export const testApproveStage = async (_req: Request, res: Response) => {
+  const employee = es.getEmployees()[0] as VisaReviewer;
+  const application = vs.getFullVisaApplication(1);
+
+  if (application) {
+    employee.approveApplicationStage(
+      application.getApplicationNumber(),
+      'Missing information.'
+    );
+  }
+
+  res.json(application);
+};
+
+export const testRejectStage = async (_req: Request, res: Response) => {
+  const employee = es.getEmployees()[0] as VisaReviewer;
+  const application = vs.getFullVisaApplication(2);
+
+  if (application) {
+    employee.rejectApplication(
+      application.getApplicationNumber(),
+      'Missing information.'
+    );
+  }
+
+  res.json(application);
+};
+
+export const testRemoveEmployee = async (_req: Request, res: Response) => {
+  await es.removeEmployee(1);
+
+  res.send('Removed');
+};

@@ -37,16 +37,46 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
           application.setStatus(VisaStatus.Interview);
           application.setS1Reviewer(this.getFullName());
           application.setS1Notes(notes);
+
+          // move application
+          vs.getInitialQueue().splice(
+            vs
+              .getInitialQueue()
+              .findIndex((a) => a.getApplicationNumber() === applicationNumber),
+            1
+          );
+          vs.getInterviewQueue().push(application);
+
           break;
         case VisaStatus.Interview:
           application.setStatus(VisaStatus.Final);
           application.setS2Reviewer(this.getFullName());
           application.setS2Notes(notes);
+
+          // move application
+          vs.getInterviewQueue().splice(
+            vs
+              .getInterviewQueue()
+              .findIndex((a) => a.getApplicationNumber() === applicationNumber),
+            1
+          );
+          vs.getFinalQueue().push(application);
+
           break;
         case VisaStatus.Final:
           application.setStatus(VisaStatus.Approved);
           application.setS3Reviewer(this.getFullName());
           application.setS3Notes(notes);
+
+          // move application
+          vs.getFinalQueue().splice(
+            vs
+              .getFinalQueue()
+              .findIndex((a) => a.getApplicationNumber() === applicationNumber),
+            1
+          );
+          vs.getApproved().push(application);
+
           break;
         default:
           throw new Error('Invalid Visa Status.');
@@ -63,6 +93,44 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
     try {
       const application = vs.getFullVisaApplication(applicationNumber);
       if (!application) throw new Error('Application not found.');
+
+      if (
+        application.getStatus() === VisaStatus.Approved ||
+        application.getStatus() === VisaStatus.Rejected
+      ) {
+        throw new Error('Invalid Visa Status.');
+      }
+
+      // move application
+      switch (application.getStatus()) {
+        case VisaStatus.Initial:
+          vs.getInitialQueue().splice(
+            vs
+              .getInitialQueue()
+              .findIndex((a) => a.getApplicationNumber() === applicationNumber),
+            1
+          );
+          break;
+        case VisaStatus.Interview:
+          vs.getInterviewQueue().splice(
+            vs
+              .getInterviewQueue()
+              .findIndex((a) => a.getApplicationNumber() === applicationNumber),
+            1
+          );
+          break;
+        case VisaStatus.Final:
+          vs.getFinalQueue().splice(
+            vs
+              .getFinalQueue()
+              .findIndex((a) => a.getApplicationNumber() === applicationNumber),
+            1
+          );
+          break;
+        default:
+          throw new Error('Invalid Visa Status.');
+      }
+      vs.getRejected().push(application);
 
       // update in-memory array
       application.setStatus(VisaStatus.Rejected);
