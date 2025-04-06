@@ -99,7 +99,7 @@ export const readEmployees = async (): Promise<Employee[]> => {
   }
 };
 
-// DELETE FUNCTIONS
+// UPDATE FUNCTIONS
 
 export const deleteEmployee = async (employeeNumber: number) => {
   try {

@@ -14,6 +14,7 @@ export interface IVisaReviewer extends IEmployee {
   approveApplicationStage(
     applicationNumber: number,
     notes: string
-  ): Promise<boolean>;
-  rejectApplication(applicationNumber: number, notes: string): Promise<boolean>;
+  ): Promise<void>;
+
+  rejectApplication(applicationNumber: number, notes: string): Promise<void>;
 }

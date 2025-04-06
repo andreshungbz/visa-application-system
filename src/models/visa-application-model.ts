@@ -141,11 +141,66 @@ export const readVisaApplications = async (
 
 // UPDATE FUNCTIONS
 
-export const updateVA = async (
-  application: VisaApplication
-): Promise<boolean> => {
-  // TODO: update database table
-  console.log(application);
-
-  return true;
+export const updateStatus = async (
+  status: VisaStatus,
+  applicationNumber: number,
+  name: string,
+  notes: string
+) => {
+  try {
+    switch (status) {
+      case 'Initial':
+        await prisma.visaApplication.update({
+          where: {
+            applicationNumber: applicationNumber,
+          },
+          data: {
+            s1Reviewer: name,
+            s1Notes: notes,
+            status: 'Interview',
+          },
+        });
+        break;
+      case 'Interview':
+        await prisma.visaApplication.update({
+          where: {
+            applicationNumber: applicationNumber,
+          },
+          data: {
+            s2Reviewer: name,
+            s2Notes: notes,
+            status: 'Final',
+          },
+        });
+        break;
+      case 'Final':
+        await prisma.visaApplication.update({
+          where: {
+            applicationNumber: applicationNumber,
+          },
+          data: {
+            s3Reviewer: name,
+            s3Notes: notes,
+            status: 'Approved',
+          },
+        });
+        break;
+      case 'Rejected':
+        await prisma.visaApplication.update({
+          where: {
+            applicationNumber: applicationNumber,
+          },
+          data: {
+            s3Reviewer: name,
+            s3Notes: notes,
+            status: 'Rejected',
+          },
+        });
+        break;
+      default:
+        throw new Error('Invalid Visa Status.');
+    }
+  } catch (error) {
+    throw error;
+  }
 };

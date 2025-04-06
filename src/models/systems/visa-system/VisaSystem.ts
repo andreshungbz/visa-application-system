@@ -11,7 +11,6 @@ import {
   createVisaApplication,
   readNextApplicationNumber,
   readVisaApplications,
-  updateVA,
 } from '../../visa-application-model.js';
 
 import { B1Form } from '../../classes/visa-forms/B1/B1Form.js';
@@ -156,11 +155,6 @@ export class VisaSystem implements IVisaSystem {
     }
 
     return null;
-  }
-
-  async updateVisaApplication(application: VisaApplication): Promise<boolean> {
-    await updateVA(application);
-    return true;
   }
 
   async generateStatistics(): Promise<{}> {
