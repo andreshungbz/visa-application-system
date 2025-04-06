@@ -42,11 +42,11 @@ export class VisaSystem implements IVisaSystem {
 
   private async initialize() {
     this.nextApplicationNumber = await readNextApplicationNumber();
-    this.initialQueue = await readVisaApplications('Initial');
-    this.interviewQueue = await readVisaApplications('Interview');
-    this.finalQueue = await readVisaApplications('Final');
-    this.approvedApplications = await readVisaApplications('Approved');
-    this.rejectedApplications = await readVisaApplications('Rejected');
+    this.initialQueue = await readVisaApplications(VisaStatus.Initial);
+    this.interviewQueue = await readVisaApplications(VisaStatus.Interview);
+    this.finalQueue = await readVisaApplications(VisaStatus.Final);
+    this.approvedApplications = await readVisaApplications(VisaStatus.Approved);
+    this.rejectedApplications = await readVisaApplications(VisaStatus.Rejected);
   }
 
   // MAIN METHODS

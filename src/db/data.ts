@@ -1,7 +1,12 @@
 // Filename: data.ts
 // inserts example data to work with
 
-import { PrismaClient } from '@prisma/client';
+import {
+  EmployeeType,
+  PrismaClient,
+  VisaStatus,
+  VisaType,
+} from '@prisma/client';
 import argon2 from 'argon2';
 
 const prisma = new PrismaClient();
@@ -29,7 +34,7 @@ async function main() {
   const reviewerPassword = await argon2.hash('password');
   const reviewer = await prisma.employee.create({
     data: {
-      role: 'VisaReviewer',
+      role: EmployeeType.VisaReviewer,
       firstName: 'Andres',
       lastName: 'Hung',
       ssn: '123-45-6789',
@@ -44,7 +49,7 @@ async function main() {
   const supervisorPassword = await argon2.hash('password2');
   await prisma.employee.create({
     data: {
-      role: 'SystemSupervisor',
+      role: EmployeeType.SystemSupervisor,
       firstName: 'Darwin',
       lastName: 'Ramos',
       ssn: '987-65-4321',
@@ -60,8 +65,8 @@ async function main() {
 
   const B1VisaApplication1 = await prisma.visaApplication.create({
     data: {
-      type: 'B1',
-      status: 'Interview',
+      type: VisaType.B1,
+      status: VisaStatus.Interview,
       s1Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
       s1Notes: 'Initial review seems fine.',
       createdAt: new Date(),
@@ -130,8 +135,8 @@ async function main() {
 
   const B2VisaApplication1 = await prisma.visaApplication.create({
     data: {
-      type: 'B2',
-      status: 'Initial',
+      type: VisaType.B2,
+      status: VisaStatus.Initial,
       createdAt: new Date(),
       updatedAt: new Date(),
     },
@@ -183,8 +188,8 @@ async function main() {
 
   const B2VisaApplication2 = await prisma.visaApplication.create({
     data: {
-      type: 'B2',
-      status: 'Interview',
+      type: VisaType.B2,
+      status: VisaStatus.Interview,
       s1Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
       s1Notes: 'Initial review completed. Proceeding to interview stage.',
       createdAt: new Date(),
@@ -240,8 +245,8 @@ async function main() {
 
   const F1VisaApplication1 = await prisma.visaApplication.create({
     data: {
-      type: 'F1',
-      status: 'Final',
+      type: VisaType.F1,
+      status: VisaStatus.Final,
       s1Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
       s1Notes: 'Student visa application seems fine.',
       s2Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
@@ -301,8 +306,8 @@ async function main() {
 
   const ApprovedVisaApplication1 = await prisma.visaApplication.create({
     data: {
-      type: 'B1',
-      status: 'Approved', // Set status to Approved
+      type: VisaType.B1,
+      status: VisaStatus.Approved, // Set status to Approved
       s1Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
       s1Notes: 'Initial review completed.',
       s2Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
@@ -365,8 +370,8 @@ async function main() {
 
   const RejectedVisaApplication1 = await prisma.visaApplication.create({
     data: {
-      type: 'F1',
-      status: 'Rejected',
+      type: VisaType.F1,
+      status: VisaStatus.Rejected,
       s1Reviewer: reviewer.firstName + ' ' + reviewer.lastName,
       s1Notes: 'Initial review completed.',
       s3Reviewer: reviewer.firstName + ' ' + reviewer.lastName,

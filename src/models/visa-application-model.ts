@@ -1,7 +1,7 @@
 // Filename: visa-application-model.ts
 // functions that interface with the visa application database table
 
-import { PrismaClient, VisaStatus } from '@prisma/client';
+import { PrismaClient, VisaStatus, VisaType } from '@prisma/client';
 
 import { VisaApplication } from './classes/visa-application/VisaApplication.js';
 import { VisaForm } from './classes/visa-forms/abstract/VisaForm.js';
@@ -93,7 +93,7 @@ export const readVisaApplications = async (
 
       let form: VisaForm;
       switch (application.type) {
-        case 'B1':
+        case VisaType.B1:
           form = new B1Form(
             application.personal!,
             application.travel!,
@@ -102,7 +102,7 @@ export const readVisaApplications = async (
             application.business!
           );
           break;
-        case 'B2':
+        case VisaType.B2:
           form = new B2Form(
             application.personal!,
             application.travel!,
@@ -111,7 +111,7 @@ export const readVisaApplications = async (
             application.tourist!
           );
           break;
-        case 'F1':
+        case VisaType.F1:
           form = new F1Form(
             application.personal!,
             application.travel!,
@@ -149,7 +149,7 @@ export const updateStatus = async (
 ) => {
   try {
     switch (status) {
-      case 'Initial':
+      case VisaStatus.Initial:
         await prisma.visaApplication.update({
           where: {
             applicationNumber: applicationNumber,
@@ -161,7 +161,7 @@ export const updateStatus = async (
           },
         });
         break;
-      case 'Interview':
+      case VisaStatus.Interview:
         await prisma.visaApplication.update({
           where: {
             applicationNumber: applicationNumber,
@@ -173,7 +173,7 @@ export const updateStatus = async (
           },
         });
         break;
-      case 'Final':
+      case VisaStatus.Final:
         await prisma.visaApplication.update({
           where: {
             applicationNumber: applicationNumber,
@@ -185,7 +185,7 @@ export const updateStatus = async (
           },
         });
         break;
-      case 'Rejected':
+      case VisaStatus.Rejected:
         await prisma.visaApplication.update({
           where: {
             applicationNumber: applicationNumber,
