@@ -4,9 +4,8 @@
 import express from 'express';
 import path from 'node:path';
 
-import { config } from './config/app.config.js';
-import { logger } from './middleware/logger.js';
-import { getLocalIPAddress } from './utils/getLocalIPAddress.js';
+import config from './config/app.config.js';
+import logger from './middleware/http-logger.js';
 
 import {
   initializeVisaSystem,
@@ -47,6 +46,6 @@ app.use('/', testRoute);
 // server start
 app.listen(config.port, () => {
   console.log(
-    `[VAS] Application started at http://${getLocalIPAddress()}:${config.port}`
+    `${config.abbreviation} ${config.name} started at http://${config.url}`
   );
 });

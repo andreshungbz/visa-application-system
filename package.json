@@ -13,13 +13,13 @@
   "license": "ISC",
   "author": "Andres Hung, Darwin Ramos",
   "type": "module",
-  "main": "app.js",
+  "main": "main.js",
   "scripts": {
     "clean": "rm -rf build",
     "build": "npm run clean && tsc",
     "start": "npm run build && node build/main.js",
-    "dev": "tsc && concurrently -k -n \"TS,SERVER\" -c \"cyan,green\" \"tsc --watch\" \"wait-on build/main.js && node --watch build/main.js\"",
-    "initiatedb": "psql --username=postgres --file=src/db/script/setup.sql && prisma db push && tsx src/db/data.ts"
+    "dev": "tsc && concurrently -k -n \"TS,NODE\" -c \"cyan,green\" \"tsc --watch\" \"wait-on build/main.js && node --watch build/main.js\"",
+    "dbinitiate": "psql --username=postgres --file=src/db/script/setup.sql && prisma db push && tsx src/db/data.ts"
   },
   "dependencies": {
     "@prisma/client": "^6.5.0",

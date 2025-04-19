@@ -1,9 +1,9 @@
-// Filename: getLocalIPAddress.ts
-// utility function that returns the host's local IP address or `localhost`
+// Filename: get-ipv4.ts
+// utility function that returns the host's IPv4 address or `localhost`
 
 import os from 'node:os';
 
-export const getLocalIPAddress = (): string => {
+const getIPv4 = (): string => {
   const interfaces = os.networkInterfaces();
   for (const name of Object.keys(interfaces)) {
     const ifaceList = interfaces[name];
@@ -17,3 +17,5 @@ export const getLocalIPAddress = (): string => {
   }
   return 'localhost';
 };
+
+export default getIPv4;

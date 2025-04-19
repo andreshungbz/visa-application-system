@@ -1,4 +1,4 @@
-// Filename: initiateVisaSystem.ts
+// Filename: initialize.ts
 // functions that creates VisaSystem instance
 
 import { EmployeeSystem } from '../models/systems/employee-system/EmployeeSystem.js';
