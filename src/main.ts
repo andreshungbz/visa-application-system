@@ -32,10 +32,10 @@ const app = express();
 
 // view engine configuration
 app.set('view engine', 'ejs');
-app.set('views', path.join(process.cwd(), 'views'));
+app.set('views', path.join(process.cwd(), 'src/views'));
 
 // static files
-app.use(express.static(path.join(process.cwd(), 'public')));
+app.use(express.static(path.join(process.cwd(), 'src/public')));
 
 // global middleware
 app.use(express.urlencoded({ extended: true }));
