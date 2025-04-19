@@ -45,7 +45,5 @@ app.use('/', testRoute);
 
 // server start
 app.listen(config.port, () => {
-  console.log(
-    `${config.abbreviation} ${config.name} started at http://${config.url}`
-  );
+  console.log(`${config.abbreviation} ${config.name} started at ${config.url}`);
 });
