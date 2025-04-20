@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta') %>
+    <title>Your Application was Successful!</title>
+  </head>
+  <body>
+    <div class="app">
+      <%- include('partials/header') %>
+      <main>
+        <h2>Success!</h2>
+        <p>
+          Your visa application was successfully submitted! Your application
+          number is <strong><%= id %></strong>.
+        </p>
+      </main>
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

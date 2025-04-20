@@ -7,6 +7,7 @@ import {
   getApplyB1,
   getApplyB2,
   getApplyF1,
+  postB1,
 } from '../controllers/apply-controller.js';
 
 const applyRoute = express.Router();
@@ -15,5 +16,7 @@ applyRoute.get('/', getApply);
 applyRoute.get('/b1', getApplyB1);
 applyRoute.get('/b2', getApplyB2);
 applyRoute.get('/f1', getApplyF1);
+
+applyRoute.post('/b1', postB1);
 
 export default applyRoute;
