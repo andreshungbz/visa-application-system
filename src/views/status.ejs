@@ -5,10 +5,13 @@
     <title>Status | Application #<%= id %></title>
   </head>
   <body>
-    <%- include('partials/header') %>
-    <main>
-      <h2>Status of Application #<%= id %></h2>
-      <p><%= status %></p>
-    </main>
+    <div class="app">
+      <%- include('partials/header') %>
+      <main>
+        <h2>Status of Application #<%= id %></h2>
+        <p><%= status %></p>
+      </main>
+      <%- include('partials/footer') %>
+    </div>
   </body>
 </html>

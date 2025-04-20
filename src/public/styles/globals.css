@@ -8,6 +8,16 @@ body {
   font-family: Arial, sans-serif;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app > main {
+  flex: 1;
+}
+
 /* Header */
 
 /* top banner */
@@ -68,10 +78,27 @@ body {
   text-decoration: underline;
 }
 
-.nav-links a.active {
-  border-bottom: 3px solid #e3b23c;
-  font-weight: bold;
-  color: black;
+/* Footer */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px 0;
+  background-color: white;
+  border-top: 2px solid #f0f0f0;
+  gap: 5px;
+}
+
+.footer a {
+  padding: 5px;
+  color: #1e73be;
+  text-align: center;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
 }
 
 /* Main */

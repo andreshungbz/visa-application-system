@@ -5,10 +5,13 @@
     <title>Error | <%= message %></title>
   </head>
   <body>
-    <%- include('partials/header') %>
-    <main>
-      <h2>Application Error</h2>
-      <p class="error-message"><%= message %></p>
-    </main>
+    <div class="app">
+      <%- include('partials/header') %>
+      <main>
+        <h2>Application Error</h2>
+        <p class="error-message"><%= message %></p>
+      </main>
+      <%- include('partials/footer') %>
+    </div>
   </body>
 </html>
