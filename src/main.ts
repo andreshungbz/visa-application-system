@@ -7,7 +7,7 @@ import path from 'node:path';
 import config from './config/app.config.js';
 import logger from './middleware/http-logger.js';
 
-import testRoute from './routes/test-route.js';
+import mainRoute from './routes/main-route.js';
 
 import { VisaSystem } from './models/systems/visa-system/VisaSystem.js';
 import { EmployeeSystem } from './models/systems/employee-system/EmployeeSystem.js';
@@ -16,6 +16,7 @@ import {
   initializeVisaSystem,
   initializeEmployeeSystem,
 } from './utils/initialize.js';
+import notFound from './middleware/not-found.js';
 
 // load Visa System and export for use throughout application
 export let vs: VisaSystem;
@@ -42,7 +43,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(logger);
 
 // routes
-app.use('/', testRoute);
+app.use('/', mainRoute);
+
+// handle undefined routes
+app.use(notFound);
 
 // server start
 app.listen(config.port, () => {
