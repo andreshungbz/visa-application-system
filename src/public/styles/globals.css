@@ -31,6 +31,7 @@ body {
   background: url('../images/door.jpg') no-repeat center center/cover;
   color: white;
   text-align: center;
+  padding: 10px;
 }
 
 .hero-overlay {
@@ -86,7 +87,8 @@ main {
   padding: 10px;
 }
 
-main h2 {
+main h2,
+main p {
   text-align: center;
 }
 

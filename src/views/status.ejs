@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <%- include('partials/meta') %>
-    <title>Error | <%= message %></title>
+    <title>Status | Application #<%= id %></title>
   </head>
   <body>
     <%- include('partials/header') %>
     <main>
-      <h2>Application Error</h2>
-      <p class="error-message"><%= message %></p>
+      <h2>Status of Application #<%= id %></h2>
+      <p><%= status %> Stage</p>
     </main>
   </body>
 </html>
