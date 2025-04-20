@@ -1,0 +1,34 @@
+<fieldset>
+  <legend>Travel Information</legend>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="stayCity">Stay City</label>
+      <input id="stayCity" name="stayCity" required />
+    </div>
+    <div class="form-group">
+      <label for="stayAddress">Stay Address</label>
+      <input id="stayAddress" name="stayAddress" required />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="intendedArrivalDate">Arrival Date</label>
+      <input
+        type="date"
+        id="intendedArrivalDate"
+        name="intendedArrivalDate"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="intendedLengthOfStay">Length of Stay (days)</label>
+      <input
+        type="number"
+        id="intendedLengthOfStay"
+        name="intendedLengthOfStay"
+        min="1"
+        required
+      />
+    </div>
+  </div>
+</fieldset>

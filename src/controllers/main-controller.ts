@@ -37,8 +37,3 @@ export const getStatus = (req: Request, res: Response) => {
 
   res.render('status', { id, status });
 };
-
-// renders apply page
-export const getApply = (_req: Request, res: Response) => {
-  res.render('apply');
-};
