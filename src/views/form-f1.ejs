@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta') %>
+    <link rel="stylesheet" href="/styles/form.css" />
+    <link rel="stylesheet" href="/styles/visa-form.css" />
+    <title>Apply | F1</title>
+  </head>
+  <body>
+    <div class="app">
+      <%- include('partials/header') %>
+      <main>
+        <h2>F1 Visa Application Form</h2>
+        <form method="POST" action="/apply/b1" class="visa-form">
+          <%- include('partials/form-sections/personal') %>
+          <%- include('partials/form-sections/travel') %>
+          <%- include('partials/form-sections/work') %>
+          <%- include('partials/form-sections/student') %>
+          <%- include('partials/form-sections/security') %>
+          <button type="submit">Submit Application</button>
+        </form>
+      </main>
+      <%- include('partials/footer') %>
+    </div>
+  </body>
+</html>

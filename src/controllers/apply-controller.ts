@@ -12,3 +12,13 @@ export const getApply = (_req: Request, res: Response) => {
 export const getApplyB1 = (_req: Request, res: Response) => {
   res.render('form-b1');
 };
+
+// renders b2 form
+export const getApplyB2 = (_req: Request, res: Response) => {
+  res.render('form-b2');
+};
+
+// renders f1 form
+export const getApplyF1 = (_req: Request, res: Response) => {
+  res.render('form-f1');
+};
