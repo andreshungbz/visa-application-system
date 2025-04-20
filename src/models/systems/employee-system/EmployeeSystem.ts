@@ -88,8 +88,4 @@ export class EmployeeSystem implements IEmployeeSystem {
 
     return employeeIndex !== -1 ? this.employees[employeeIndex] : null;
   }
-
-  async generateStatistics(): Promise<{}> {
-    return {};
-  }
 }

@@ -17,6 +17,4 @@ export interface IEmployeeSystem {
   addEmployee(employee: Employee): Promise<void>;
   removeEmployee(employeeNumber: number): Promise<void>;
   getEmployee(employeeNumber: number): Employee | null;
-
-  generateStatistics(): Promise<{}>;
 }

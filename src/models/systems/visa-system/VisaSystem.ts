@@ -156,8 +156,4 @@ export class VisaSystem implements IVisaSystem {
 
     return null;
   }
-
-  async generateStatistics(): Promise<{}> {
-    return {};
-  }
 }

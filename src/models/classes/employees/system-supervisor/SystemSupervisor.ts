@@ -3,8 +3,6 @@
 import { Employee } from '../abstract/Employee.js';
 import { ISystemSupervisor } from './ISystemSupervisor.js';
 
-import { es, vs } from '../../../../main.js';
-
 export class SystemSupervisor extends Employee implements ISystemSupervisor {
   // CONSTRUCTOR
 
@@ -22,9 +20,6 @@ export class SystemSupervisor extends Employee implements ISystemSupervisor {
   // MAIN FUNCTIONS
 
   async generateStatisticsReport(): Promise<{}> {
-    return {
-      vs: await vs.generateStatistics(),
-      es: await es.generateStatistics(),
-    };
+    return {};
   }
 }
