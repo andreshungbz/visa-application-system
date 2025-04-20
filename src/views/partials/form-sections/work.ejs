@@ -3,25 +3,45 @@
   <div class="form-row">
     <div class="form-group">
       <label for="occupation">Occupation</label>
-      <input id="occupation" name="occupation" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        id="occupation"
+        name="occupation"
+        required
+        value="<%= application.getForm().getSections().work.occupation || '' %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
     <div class="form-group">
       <label for="workPhone">Work Phone</label>
-      <input id="workPhone" name="workPhone" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        id="workPhone"
+        name="workPhone"
+        required
+        value="<%= application.getForm().getSections().work.workPhone || '' %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
   </div>
   <div class="form-row">
     <div class="form-group">
       <label for="workAddress">Work Address</label>
-      <input id="workAddress" name="workAddress" required <%= editable === false
-      ? 'disabled' : '' %> />
+      <input
+        id="workAddress"
+        name="workAddress"
+        required
+        value="<%= application.getForm().getSections().work.workAddress || '' %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
     <div class="form-group">
       <label for="workCity">Work City</label>
-      <input id="workCity" name="workCity" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        id="workCity"
+        name="workCity"
+        required
+        value="<%= application.getForm().getSections().work.workCity || '' %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
   </div>
 </fieldset>

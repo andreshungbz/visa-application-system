@@ -3,25 +3,48 @@
   <div class="form-row">
     <div class="form-group">
       <label for="stayCity">Stay City</label>
-      <input id="stayCity" name="stayCity" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        id="stayCity"
+        name="stayCity"
+        required
+        value="<%= application.getForm().getSections().travel.stayCity || '' %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
     <div class="form-group">
       <label for="stayAddress">Stay Address</label>
-      <input id="stayAddress" name="stayAddress" required <%= editable === false
-      ? 'disabled' : '' %> />
+      <input
+        id="stayAddress"
+        name="stayAddress"
+        required
+        value="<%= application.getForm().getSections().travel.stayAddress || '' %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
   </div>
   <div class="form-row">
     <div class="form-group">
       <label for="intendedArrivalDate">Arrival Date</label>
-      <input type="date" id="intendedArrivalDate" name="intendedArrivalDate"
-      required <%= editable === false ? 'disabled' : '' %> />
+      <input
+        type="date"
+        id="intendedArrivalDate"
+        name="intendedArrivalDate"
+        required
+        value="<%= application.getForm().getSections().travel.intendedArrivalDate.toISOString().slice(0, 10) %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
     <div class="form-group">
       <label for="intendedLengthOfStay">Length of Stay (days)</label>
-      <input type="number" id="intendedLengthOfStay" name="intendedLengthOfStay"
-      min="1" required <%= editable === false ? 'disabled' : '' %> />
+      <input
+        type="number"
+        id="intendedLengthOfStay"
+        name="intendedLengthOfStay"
+        min="1"
+        required
+        value="<%= application.getForm().getSections().travel.intendedLengthOfStay || '' %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
   </div>
 </fieldset>

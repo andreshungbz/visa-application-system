@@ -3,20 +3,36 @@
   <div class="form-row">
     <div class="form-group">
       <label for="enrolledSchool">Enrolled School</label>
-      <input id="enrolledSchool" name="enrolledSchool" required <%= editable ===
-      false ? 'disabled' : '' %> />
+      <input
+        id="enrolledSchool"
+        name="enrolledSchool"
+        required
+        value="<%= application.getForm().getSections().student.enrolledSchool || '' %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
     <div class="form-group">
       <label for="schoolAddress">School Address</label>
-      <input id="schoolAddress" name="schoolAddress" required <%= editable ===
-      false ? 'disabled' : '' %> />
+      <input
+        id="schoolAddress"
+        name="schoolAddress"
+        required
+        value="<%= application.getForm().getSections().student.schoolAddress || '' %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
   </div>
   <div class="form-row">
     <div class="form-group">
       <label for="enrollmentDate">Enrollment Date</label>
-      <input type="date" id="enrollmentDate" name="enrollmentDate" required <%=
-      editable === false ? 'disabled' : '' %> />
+      <input
+        type="date"
+        id="enrollmentDate"
+        name="enrollmentDate"
+        required
+        value="<%= application.getForm().getSections().student.enrollmentDate.toISOString().slice(0, 10) %>"
+        <%= editable === false ? 'disabled' : '' %>
+      />
     </div>
   </div>
 </fieldset>
