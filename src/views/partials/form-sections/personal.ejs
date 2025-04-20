@@ -3,62 +3,117 @@
   <div class="form-row">
     <div class="form-group">
       <label for="firstName">First Name</label>
-      <input id="firstName" name="firstName" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        id="firstName"
+        name="firstName"
+        required
+        value="<%= application.getForm().getSections().personal.firstName %>"
+        <%= editable === false ? 'disabled class="form-control disabled-style"' : 'class="form-control"' %>
+      />
     </div>
     <div class="form-group">
       <label for="lastName">Last Name</label>
-      <input id="lastName" name="lastName" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        id="lastName"
+        name="lastName"
+        required
+        value="<%= application.getForm().getSections().personal.lastName %>"
+        <%= editable === false ? 'disabled class="form-control disabled-style"' : 'class="form-control"' %>
+      />
     </div>
   </div>
+
   <div class="form-row">
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required <%= editable ===
-      false ? 'disabled' : '' %> />
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        value="<%= application.getForm().getSections().personal.email %>"
+        <%= editable === false ? 'disabled class="form-control disabled-style"' : 'class="form-control"' %>
+      />
     </div>
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input id="phone" name="phone" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        id="phone"
+        name="phone"
+        required
+        value="<%= application.getForm().getSections().personal.phone %>"
+        <%= editable === false ? 'disabled class="form-control disabled-style"' : 'class="form-control"' %>
+      />
     </div>
   </div>
+
   <div class="form-row">
     <div class="form-group">
       <label for="address">Address</label>
-      <input id="address" name="address" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        id="address"
+        name="address"
+        required
+        value="<%= application.getForm().getSections().personal.address %>"
+        <%= editable === false ? 'disabled class="form-control disabled-style"' : 'class="form-control"' %>
+      />
     </div>
     <div class="form-group">
       <label for="city">City</label>
-      <input id="city" name="city" required <%= editable === false ? 'disabled'
-      : '' %> />
+      <input
+        id="city"
+        name="city"
+        required
+        value="<%= application.getForm().getSections().personal.city %>"
+        <%= editable === false ? 'disabled class="form-control disabled-style"' : 'class="form-control"' %>
+      />
     </div>
   </div>
+
   <div class="form-row">
     <div class="form-group">
       <label for="country">Country</label>
-      <input id="country" name="country" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        id="country"
+        name="country"
+        required
+        value="<%= application.getForm().getSections().personal.country %>"
+        <%= editable === false ? 'disabled class="form-control disabled-style"' : 'class="form-control"' %>
+      />
     </div>
     <div class="form-group">
       <label for="passportNumber">Passport Number</label>
-      <input id="passportNumber" name="passportNumber" required <%= editable ===
-      false ? 'disabled' : '' %> />
+      <input
+        id="passportNumber"
+        name="passportNumber"
+        required
+        value="<%= application.getForm().getSections().personal.passportNumber %>"
+        <%= editable === false ? 'disabled class="form-control disabled-style"' : 'class="form-control"' %>
+      />
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group">
       <label for="dob">Date of Birth</label>
-      <input type="date" id="dob" name="dob" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        type="date"
+        id="dob"
+        name="dob"
+        required
+        value="<%= application.getForm().getSections().personal.dob.toISOString().slice(0, 10) %>"
+        <%= editable === false ? 'disabled class="form-control disabled-style"' : 'class="form-control"' %>
+      />
     </div>
     <div class="form-group">
       <label for="gender">Gender</label>
-      <input id="gender" name="gender" required <%= editable === false ?
-      'disabled' : '' %> />
+      <input
+        id="gender"
+        name="gender"
+        required
+        value="<%= application.getForm().getSections().personal.gender %>"
+        <%= editable === false ? 'disabled class="form-control disabled-style"' : 'class="form-control"' %>
+      />
     </div>
   </div>
 </fieldset>

@@ -2,6 +2,11 @@
 // controllers for apply-route.ts
 
 import { Request, Response } from 'express';
+import {
+  emptyB1Application,
+  emptyB2Application,
+  emptyF1Application,
+} from '../utils/empty.js';
 
 // renders apply page
 export const getApply = (_req: Request, res: Response) => {
@@ -10,15 +15,15 @@ export const getApply = (_req: Request, res: Response) => {
 
 // renders b1 form
 export const getApplyB1 = (_req: Request, res: Response) => {
-  res.render('form-b1', { editable: true });
+  res.render('form-b1', { application: emptyB1Application, editable: true });
 };
 
 // renders b2 form
 export const getApplyB2 = (_req: Request, res: Response) => {
-  res.render('form-b2', { editable: true });
+  res.render('form-b2', { application: emptyB2Application, editable: true });
 };
 
 // renders f1 form
 export const getApplyF1 = (_req: Request, res: Response) => {
-  res.render('form-f1', { editable: true });
+  res.render('form-f1', { application: emptyF1Application, editable: true });
 };
