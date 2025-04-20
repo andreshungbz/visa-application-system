@@ -56,3 +56,37 @@ export const postB1 = async (req: Request, res: Response) => {
     res.render('error', { message: 'Internal Server Error' });
   }
 };
+
+// adds b2 application form
+export const postB2 = async (req: Request, res: Response) => {
+  const form = validateForm(req, vs.nextApplicationNumber, VisaType.B2);
+
+  if (!form) {
+    return res.render('error', { message: 'Form Validation Error' });
+  }
+
+  try {
+    const newID = await vs.addVisaApplication(form);
+    res.render('apply/success', { id: newID });
+  } catch (error) {
+    console.error(error);
+    res.render('error', { message: 'Internal Server Error' });
+  }
+};
+
+// adds f1 application form
+export const postF1 = async (req: Request, res: Response) => {
+  const form = validateForm(req, vs.nextApplicationNumber, VisaType.F1);
+
+  if (!form) {
+    return res.render('error', { message: 'Form Validation Error' });
+  }
+
+  try {
+    const newID = await vs.addVisaApplication(form);
+    res.render('apply/success', { id: newID });
+  } catch (error) {
+    console.error(error);
+    res.render('error', { message: 'Internal Server Error' });
+  }
+};
