@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/meta') %>
+    <link rel="stylesheet" href="/styles/application-list.css" />
+    <title><%= stage %> Queue</title>
+  </head>
+  <body>
+    <div class="app">
+      <%- include('../partials/header') %>
+      <main>
+        <h2><%= stage %> Queue</h2>
+        <p><%= description %></p>
+        <p>
+          There are a total of <strong><%= total %></strong> pending
+          applications to review.
+        </p>
+        <div class="application-list">
+          <% applications.forEach(a => { %>
+          <a
+            href="/reviewer/process/<%= a.getApplicationNumber() %>"
+            class="application-card text-only"
+          >
+            <div class="application-card-details">
+              <h3><%= a.getType() %> Application</h3>
+              <p>Application Number: <%= a.getApplicationNumber() %></p>
+              <p>
+                Applicant Name: <%= a.getForm().p_getFirstName() %> <%=
+                a.getForm().p_getLastName() %>
+              </p>
+            </div>
+          </a>
+          <% }) %>
+        </div>
+      </main>
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+</html>
