@@ -1,0 +1,55 @@
+.visa-options {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.visa-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
+  background-color: #ededed;
+  padding: 20px;
+  border-radius: 12px;
+  width: 250px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.visa-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.visa-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.visa-card h3 {
+  margin: 10px 0 5px;
+  color: #1e73be;
+}
+
+.visa-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+/* Responsive behavior */
+@media screen and (max-width: 600px) {
+  .visa-options {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .visa-card {
+    width: 90%;
+  }
+}
