@@ -13,17 +13,17 @@ export const getApply = (_req: Request, res: Response) => {
   res.render('apply');
 };
 
-// renders b1 form
+// renders b1 application form
 export const getApplyB1 = (_req: Request, res: Response) => {
-  res.render('form-b1', { application: emptyB1Application, editable: true });
+  res.render('apply-b1', { application: emptyB1Application, editable: true });
 };
 
-// renders b2 form
+// renders b2 application form
 export const getApplyB2 = (_req: Request, res: Response) => {
-  res.render('form-b2', { application: emptyB2Application, editable: true });
+  res.render('apply-b2', { application: emptyB2Application, editable: true });
 };
 
-// renders f1 form
+// renders f1 application form
 export const getApplyF1 = (_req: Request, res: Response) => {
-  res.render('form-f1', { application: emptyF1Application, editable: true });
+  res.render('apply-f1', { application: emptyF1Application, editable: true });
 };
