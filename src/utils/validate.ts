@@ -182,6 +182,9 @@ export const validateForm = (
   switch (type) {
     case VisaType.B1:
       form.business = validateBusiness(req, id);
+      for (const v of Object.values(form)) {
+        if (v === null) return null;
+      }
       return new B1Form(
         form.personal!,
         form.travel!,
@@ -191,7 +194,10 @@ export const validateForm = (
       );
     case VisaType.B2:
       form.tourist = validateTourist(req, id);
-      new B2Form(
+      for (const v of Object.values(form)) {
+        if (v === null) return null;
+      }
+      return new B2Form(
         form.personal!,
         form.travel!,
         form.work!,
@@ -200,7 +206,10 @@ export const validateForm = (
       );
     case VisaType.F1:
       form.student = validateStudent(req, id);
-      new F1Form(
+      for (const v of Object.values(form)) {
+        if (v === null) return null;
+      }
+      return new F1Form(
         form.personal!,
         form.travel!,
         form.work!,
