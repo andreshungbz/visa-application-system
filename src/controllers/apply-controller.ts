@@ -13,22 +13,31 @@ import { VisaType } from '@prisma/client';
 
 // renders apply page
 export const getApply = (_req: Request, res: Response) => {
-  res.render('apply');
+  res.render('apply/types');
 };
 
 // renders b1 application form
 export const getApplyB1 = (_req: Request, res: Response) => {
-  res.render('apply-b1', { application: emptyB1Application, editable: true });
+  res.render('apply/application-b1', {
+    application: emptyB1Application,
+    editable: true,
+  });
 };
 
 // renders b2 application form
 export const getApplyB2 = (_req: Request, res: Response) => {
-  res.render('apply-b2', { application: emptyB2Application, editable: true });
+  res.render('apply/application-b2', {
+    application: emptyB2Application,
+    editable: true,
+  });
 };
 
 // renders f1 application form
 export const getApplyF1 = (_req: Request, res: Response) => {
-  res.render('apply-f1', { application: emptyF1Application, editable: true });
+  res.render('apply/application-f1', {
+    application: emptyF1Application,
+    editable: true,
+  });
 };
 
 // adds b1 application form
@@ -41,7 +50,7 @@ export const postB1 = async (req: Request, res: Response) => {
 
   try {
     const newID = await vs.addVisaApplication(form);
-    res.render('apply-success', { id: newID });
+    res.render('apply/success', { id: newID });
   } catch (error) {
     console.error(error);
     res.render('error', { message: 'Internal Server Error' });
