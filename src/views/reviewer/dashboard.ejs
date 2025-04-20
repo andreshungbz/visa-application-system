@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/meta') %>
+    <link rel="stylesheet" href="/styles/queues.css" />
+    <title>Reviewer Dashboard</title>
+  </head>
+  <body>
+    <div class="app">
+      <%- include('../partials/header') %>
+      <main>
+        <h2>Welcome back, Reviewer!</h2>
+        <p>
+          Get started with reviewing a visa application. Below are the queues
+          available for review.
+        </p>
+        <p>
+          There are a total of <strong><%= totalCount %></strong> pending
+          applications to review.
+        </p>
+        <div class="review-queues">
+          <a href="/reviewer/queue?stage=initial" class="queue-card">
+            <img src="/images/qml-video-recorder.png" alt="Initial Queue" />
+            <div class="card-info">
+              <h3>Initial Queue</h3>
+              <p>
+                Start reviewing new visa applications that haven't been
+                processed yet.
+              </p>
+              <p>Pending Applications: <strong><%= initialCount %></strong></p>
+            </div>
+          </a>
+          <a href="/reviewer/queue?stage=interview" class="queue-card">
+            <img src="/images/qml-video-recorder.png" alt="Interview Queue" />
+            <div class="card-info">
+              <h3>Interview Queue</h3>
+              <p>
+                Review applications that are pending or post-interview results.
+              </p>
+              <p>
+                Pending Applications: <strong><%= interviewCount %></strong>
+              </p>
+            </div>
+          </a>
+          <a href="/reviewer/queue?stage=final" class="queue-card">
+            <img src="/images/qml-video-recorder.png" alt="Final Queue" />
+            <div class="card-info">
+              <h3>Final Queue</h3>
+              <p>
+                Give final approval or rejection to applications ready for
+                closure.
+              </p>
+              <p>Pending Applications: <strong><%= finalCount %></strong></p>
+            </div>
+          </a>
+        </div>
+      </main>
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+</html>
