@@ -3,52 +3,62 @@
   <div class="form-row">
     <div class="form-group">
       <label for="firstName">First Name</label>
-      <input id="firstName" name="firstName" required />
+      <input id="firstName" name="firstName" required <%= editable === false ?
+      'disabled' : '' %> />
     </div>
     <div class="form-group">
       <label for="lastName">Last Name</label>
-      <input id="lastName" name="lastName" required />
+      <input id="lastName" name="lastName" required <%= editable === false ?
+      'disabled' : '' %> />
     </div>
   </div>
   <div class="form-row">
     <div class="form-group">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required />
+      <input type="email" id="email" name="email" required <%= editable ===
+      false ? 'disabled' : '' %> />
     </div>
     <div class="form-group">
       <label for="phone">Phone</label>
-      <input id="phone" name="phone" required />
+      <input id="phone" name="phone" required <%= editable === false ?
+      'disabled' : '' %> />
     </div>
   </div>
   <div class="form-row">
     <div class="form-group">
       <label for="address">Address</label>
-      <input id="address" name="address" required />
+      <input id="address" name="address" required <%= editable === false ?
+      'disabled' : '' %> />
     </div>
     <div class="form-group">
       <label for="city">City</label>
-      <input id="city" name="city" required />
+      <input id="city" name="city" required <%= editable === false ? 'disabled'
+      : '' %> />
     </div>
   </div>
   <div class="form-row">
     <div class="form-group">
       <label for="country">Country</label>
-      <input id="country" name="country" required />
+      <input id="country" name="country" required <%= editable === false ?
+      'disabled' : '' %> />
     </div>
     <div class="form-group">
       <label for="passportNumber">Passport Number</label>
-      <input id="passportNumber" name="passportNumber" required />
+      <input id="passportNumber" name="passportNumber" required <%= editable ===
+      false ? 'disabled' : '' %> />
     </div>
   </div>
 
   <div class="form-row">
     <div class="form-group">
       <label for="dob">Date of Birth</label>
-      <input type="date" id="dob" name="dob" required />
+      <input type="date" id="dob" name="dob" required <%= editable === false ?
+      'disabled' : '' %> />
     </div>
     <div class="form-group">
       <label for="gender">Gender</label>
-      <input id="gender" name="gender" required />
+      <input id="gender" name="gender" required <%= editable === false ?
+      'disabled' : '' %> />
     </div>
   </div>
 </fieldset>

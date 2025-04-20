@@ -3,24 +3,24 @@
   <div class="form-row">
     <div class="form-group">
       <label>
-        <input type="checkbox" name="communicableDisease" />
-        I have a communicable disease.
+        <input type="checkbox" name="communicableDisease" <%= editable === false
+        ? 'disabled' : '' %> /> I have a communicable disease.
       </label>
       <label>
-        <input type="checkbox" name="moneyLaundering" />
-        I have been involved in money laundering.
+        <input type="checkbox" name="moneyLaundering" <%= editable === false ?
+        'disabled' : '' %> /> I have been involved in money laundering.
       </label>
       <label>
-        <input type="checkbox" name="drugConspiracy" />
-        I have been involved in drug conspiracy.
+        <input type="checkbox" name="drugConspiracy" <%= editable === false ?
+        'disabled' : '' %> /> I have been involved in drug conspiracy.
       </label>
       <label>
-        <input type="checkbox" name="arrestedConvicted" />
-        I have been arrested/convicted before.
+        <input type="checkbox" name="arrestedConvicted" <%= editable === false ?
+        'disabled' : '' %> /> I have been arrested/convicted before.
       </label>
       <label>
-        <input type="checkbox" name="mentalPhysicalDisorder" />
-        I have a mental/physical disorder.
+        <input type="checkbox" name="mentalPhysicalDisorder" <%= editable ===
+        false ? 'disabled' : '' %> /> I have a mental/physical disorder.
       </label>
     </div>
   </div>

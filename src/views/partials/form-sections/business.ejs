@@ -3,21 +3,25 @@
   <div class="form-row">
     <div class="form-group">
       <label for="businessPhone">Business Phone</label>
-      <input id="businessPhone" name="businessPhone" required />
+      <input id="businessPhone" name="businessPhone" required <%= editable ===
+      false ? 'disabled' : '' %> />
     </div>
     <div class="form-group">
       <label for="businessCity">Business City</label>
-      <input id="businessCity" name="businessCity" required />
+      <input id="businessCity" name="businessCity" required <%= editable ===
+      false ? 'disabled' : '' %> />
     </div>
   </div>
   <div class="form-row">
     <div class="form-group">
       <label for="businessAddress">Business Address</label>
-      <input id="businessAddress" name="businessAddress" required />
+      <input id="businessAddress" name="businessAddress" required <%= editable
+      === false ? 'disabled' : '' %> />
     </div>
     <div class="form-group">
       <label for="businessPurpose">Purpose</label>
-      <input id="businessPurpose" name="businessPurpose" required />
+      <input id="businessPurpose" name="businessPurpose" required <%= editable
+      === false ? 'disabled' : '' %> />
     </div>
   </div>
 </fieldset>

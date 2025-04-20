@@ -55,6 +55,13 @@
   border: 0;
 }
 
+input:disabled {
+  background-color: #f5f5f5;
+  color: #888;
+  cursor: not-allowed;
+  border-color: #ccc;
+}
+
 @media screen and (max-width: 600px) {
   .status-form {
     flex-direction: column;

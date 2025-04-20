@@ -3,17 +3,20 @@
   <div class="form-row">
     <div class="form-group">
       <label for="enrolledSchool">Enrolled School</label>
-      <input id="enrolledSchool" name="enrolledSchool" required />
+      <input id="enrolledSchool" name="enrolledSchool" required <%= editable ===
+      false ? 'disabled' : '' %> />
     </div>
     <div class="form-group">
       <label for="schoolAddress">School Address</label>
-      <input id="schoolAddress" name="schoolAddress" required />
+      <input id="schoolAddress" name="schoolAddress" required <%= editable ===
+      false ? 'disabled' : '' %> />
     </div>
   </div>
   <div class="form-row">
     <div class="form-group">
       <label for="enrollmentDate">Enrollment Date</label>
-      <input type="date" id="enrollmentDate" name="enrollmentDate" required />
+      <input type="date" id="enrollmentDate" name="enrollmentDate" required <%=
+      editable === false ? 'disabled' : '' %> />
     </div>
   </div>
 </fieldset>
