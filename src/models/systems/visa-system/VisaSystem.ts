@@ -127,6 +127,20 @@ export class VisaSystem implements IVisaSystem {
       return this.finalQueue[applicationIndex].getStatus();
     }
 
+    applicationIndex = this.approvedApplications.findIndex(
+      (a) => applicationNumber === a.getApplicationNumber()
+    );
+    if (applicationIndex !== -1) {
+      return this.approvedApplications[applicationIndex].getStatus();
+    }
+
+    applicationIndex = this.rejectedApplications.findIndex(
+      (a) => applicationNumber === a.getApplicationNumber()
+    );
+    if (applicationIndex !== -1) {
+      return this.rejectedApplications[applicationIndex].getStatus();
+    }
+
     return null;
   }
 
@@ -152,6 +166,20 @@ export class VisaSystem implements IVisaSystem {
     );
     if (applicationIndex !== -1) {
       return this.finalQueue[applicationIndex];
+    }
+
+    applicationIndex = this.approvedApplications.findIndex(
+      (a) => applicationNumber === a.getApplicationNumber()
+    );
+    if (applicationIndex !== -1) {
+      return this.approvedApplications[applicationIndex];
+    }
+
+    applicationIndex = this.rejectedApplications.findIndex(
+      (a) => applicationNumber === a.getApplicationNumber()
+    );
+    if (applicationIndex !== -1) {
+      return this.rejectedApplications[applicationIndex];
     }
 
     return null;

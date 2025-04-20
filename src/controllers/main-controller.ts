@@ -2,7 +2,9 @@
 // controllers for main-route.ts
 
 import { Request, Response } from 'express';
+
 import { vs } from '../main.js';
+import { VisaStatus } from '@prisma/client';
 
 // renders home page
 export const getIndex = (_req: Request, res: Response) => {
@@ -18,12 +20,20 @@ export const getStatus = (req: Request, res: Response) => {
     });
   }
 
-  const status = vs.getVisaApplicationStatus(id);
-  if (!status) {
+  const applicationStatus = vs.getVisaApplicationStatus(id);
+  if (!applicationStatus) {
     return res.render('error', {
       message: `Application #${id} Not Found`,
     });
   }
+
+  const status =
+    applicationStatus +
+    (applicationStatus === VisaStatus.Initial ||
+    applicationStatus === VisaStatus.Interview ||
+    applicationStatus === VisaStatus.Final
+      ? ' Stage'
+      : '');
 
   res.render('status', { id, status });
 };
