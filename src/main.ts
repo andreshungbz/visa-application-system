@@ -16,9 +16,11 @@ import {
   initializeVisaSystem,
   initializeEmployeeSystem,
 } from './utils/initialize.js';
+
 import notFound from './middleware/not-found.js';
 import applyRoute from './routes/apply-route.js';
 import reviewerRoute from './routes/reviewer.route.js';
+import supervisorRoute from './routes/supervisor-route.js';
 
 // load Visa System and export for use throughout application
 export let vs: VisaSystem;
@@ -48,6 +50,7 @@ app.use(logger);
 app.use('/', mainRoute);
 app.use('/apply', applyRoute);
 app.use('/reviewer', reviewerRoute);
+app.use('/supervisor', supervisorRoute);
 
 // handle undefined routes
 app.use(notFound);

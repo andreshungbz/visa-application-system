@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/meta') %>
+    <link rel="stylesheet" href="/styles/queues.css" />
+    <title>System Supervisor Dashboard</title>
+  </head>
+  <body>
+    <div class="app">
+      <%- include('../partials/header') %>
+      <main>
+        <h2>Welcome back, System Supervisor!</h2>
+        <p>
+          You can examine approved and rejected applications, generate system
+          statistics, and add/remove reviewers.
+        </p>
+        <p>Get started by selecting one the options below.</p>
+        <div class="review-queues">
+          <a href="/supervisor/queue?status=approved" class="queue-card">
+            <img
+              src="/images/qml-video-recorder.png"
+              alt="Approved Visa Applications"
+            />
+            <div class="card-info">
+              <h3>Approved Visa Applications</h3>
+              <p>Examine visa applications that were fully approved.</p>
+            </div>
+          </a>
+          <a href="/supervisor/queue?status=rejected" class="queue-card">
+            <img
+              src="/images/qml-video-recorder.png"
+              alt="Rejected Visa Applications"
+            />
+            <div class="card-info">
+              <h3>Rejected Visa Applications</h3>
+              <p>Examine visa applications that were rejected.</p>
+            </div>
+          </a>
+          <a href="/supervisor/reviewers" class="queue-card">
+            <img src="/images/qml-video-recorder.png" alt="Reviewers List" />
+            <div class="card-info">
+              <h3>Reviewers List</h3>
+              <p>View the list of visa reviewers.</p>
+            </div>
+          </a>
+          <a href="/supervisor/statistics" class="queue-card">
+            <img
+              src="/images/qml-video-recorder.png"
+              alt="System Statistics Report"
+            />
+            <div class="card-info">
+              <h3>System Statistics Reports</h3>
+              <p>View database statistics of the system.</p>
+            </div>
+          </a>
+        </div>
+      </main>
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+</html>
