@@ -7,12 +7,12 @@ A Web Application that Simulates a Simplified Visa Application Process
 Copy and paste the following commands into your terminal to get started quickly. Make sure you have Node.js installed and have a PostgreSQL database server running with a `postgres` superuser. You may be asked for the postgres password during the setup process.
 
 ```
-git clone https://github.com/andreshungbz/visa-application-system.git   # clones the repository
-cd visa-application-system                                              # navigates into the directory
-cp .env.example .env                                                    # copies the example environment file
-npm install                                                             # installs the dependencies
-npm run dbinitiate                                                      # initializes the database
-npm run dev                                                             # starts the development server
+git clone https://github.com/andreshungbz/visa-application-system.git
+cd visa-application-system
+cp .env.example .env
+npm install
+npm run dbinitiate
+npm run dev
 ```
 
 ## Selenium Tests
