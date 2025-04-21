@@ -1,13 +1,12 @@
 // Filename: data.ts
 // inserts example data to work with
 
-import {
-  EmployeeType,
-  PrismaClient,
-  VisaStatus,
-  VisaType,
-} from '@prisma/client';
+import * as Prisma from '@prisma/client';
+
+import { PrismaClient } from '@prisma/client';
 import argon2 from 'argon2';
+
+const { EmployeeType, VisaStatus, VisaType } = Prisma;
 
 const prisma = new PrismaClient();
 
