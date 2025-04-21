@@ -118,4 +118,12 @@ export class VisaApplication implements IVisaApplication {
     this.notes.final.notes = s3Notes;
     return true;
   }
+  setCreatedAt(date: Date): boolean {
+    this.createdAt = date;
+    return true;
+  }
+  setUpdatedAt(date: Date): boolean {
+    this.updatedAt = date;
+    return true;
+  }
 }

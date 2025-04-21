@@ -2,8 +2,9 @@
 // controllers for reviewer-route.ts
 
 import { Request, Response } from 'express';
-import { vs } from '../main.js';
+import { es, vs } from '../main.js';
 import { VisaStatus, VisaType } from '@prisma/client';
+import { VisaReviewer } from '../models/classes/employees/visa-reviewer/VisaReviewer.js';
 
 // renders reviewer dashboard
 export const getReviewerDashboard = (_req: Request, res: Response) => {
@@ -94,4 +95,57 @@ export const getProcess = (req: Request, res: Response) => {
     isF1: application.getType() === VisaType.F1,
     editable: false,
   });
+};
+
+// moves application to the next stage
+export const postApproveApplication = async (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+
+  if (isNaN(id)) {
+    return res.render('error', { message: 'Invalid Application Number' });
+  }
+
+  const application = vs.getFullVisaApplication(id);
+
+  if (!application) {
+    return res.render('error', {
+      message: `Application with ID ${id} Not Found`,
+    });
+  }
+
+  const reviewerID = Number(req.body.reviewerID);
+
+  if (isNaN(reviewerID)) {
+    return res.render('error', { message: 'Invalid Reviewer ID' });
+  }
+
+  const reviewer = es.getEmployee(reviewerID);
+
+  if (!reviewer) {
+    return res.render('error', {
+      message: `Reviewer with ID ${id} Not Found`,
+    });
+  }
+
+  if (!(reviewer instanceof VisaReviewer)) {
+    return res.render('error', {
+      message: `ID ${id} Does Not Belong to a Visa Reviewer`,
+    });
+  }
+
+  const notes = req.body.notes;
+
+  if (!notes) {
+    return res.render('error', {
+      message: `Notes Empty`,
+    });
+  }
+
+  try {
+    await reviewer.approveApplicationStage(id, notes);
+    res.redirect('/reviewer/dashboard');
+  } catch (error) {
+    console.error(error);
+    res.render('error', { message: 'Internal Server Error' });
+  }
 };

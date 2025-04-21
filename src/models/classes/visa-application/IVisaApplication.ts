@@ -47,4 +47,6 @@ export interface IVisaApplication {
   setS2Notes(s2Notes: string): boolean;
   setS3Reviewer(s3Reviewer: string): boolean;
   setS3Notes(s3Notes: string): boolean;
+  setCreatedAt(date: Date): boolean;
+  setUpdatedAt(date: Date): boolean;
 }

@@ -37,6 +37,7 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
           application.setStatus(VisaStatus.Interview);
           application.setS1Reviewer(this.getFullName());
           application.setS1Notes(notes);
+          application.setUpdatedAt(new Date());
 
           // move application
           vs.getInitialQueue().splice(
@@ -52,6 +53,7 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
           application.setStatus(VisaStatus.Final);
           application.setS2Reviewer(this.getFullName());
           application.setS2Notes(notes);
+          application.setUpdatedAt(new Date());
 
           // move application
           vs.getInterviewQueue().splice(
@@ -67,6 +69,7 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
           application.setStatus(VisaStatus.Approved);
           application.setS3Reviewer(this.getFullName());
           application.setS3Notes(notes);
+          application.setUpdatedAt(new Date());
 
           // move application
           vs.getFinalQueue().splice(
@@ -136,6 +139,7 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
       application.setStatus(VisaStatus.Rejected);
       application.setS3Reviewer(this.getFullName());
       application.setS3Notes(notes);
+      application.setUpdatedAt(new Date());
 
       // update database record
       await updateStatus(
