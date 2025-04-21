@@ -4,6 +4,7 @@
 import express from 'express';
 import {
   getList,
+  getReviewers,
   getSupervisorDashboard,
   getView,
 } from '../controllers/supervisor-controller.js';
@@ -13,5 +14,7 @@ const supervisorRoute = express.Router();
 supervisorRoute.get('/dashboard', getSupervisorDashboard);
 supervisorRoute.get('/list', getList);
 supervisorRoute.get('/view/:id', getView);
+
+supervisorRoute.get('/reviewers', getReviewers);
 
 export default supervisorRoute;

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/meta') %>
+    <link rel="stylesheet" href="/styles/application-list.css" />
+    <link rel="stylesheet" href="/styles/reviewers.css" />
+    <title>Reviewers List</title>
+  </head>
+  <body>
+    <div class="app">
+      <%- include('../partials/header') %>
+      <main>
+        <h2>Reviewers List</h2>
+        <p>List of visa reviewers.</p>
+        <p>There are a total of <strong><%= total %></strong> reviewers.</p>
+        <div class="application-list">
+          <% reviewers.forEach(r => { %>
+          <div class="application-card text-only">
+            <div class="application-card-details">
+              <h3><%= r.getFullName() %></h3>
+              <p>Employee Number: <%= r.getEmployeeNumber() %></p>
+              <p>Social Security Number: <%= r.getSSN() %></p>
+              <p>Salary: <%= r.getSalary() %></p>
+              <form
+                method="POST"
+                action="/supervisor/remove/<%= r.getEmployeeNumber() %>"
+              >
+                <button type="submit" class="btn-reject">Remove</button>
+              </form>
+            </div>
+          </div>
+          <% }) %>
+        </div>
+        <div class="reviewer-form-wrapper space">
+          <h2>Add New Reviewer</h2>
+          <form
+            method="POST"
+            action="/supervisor/add-reviewer"
+            class="reviewer-form"
+          >
+            <div class="reviewer-group">
+              <label for="firstname">First Name</label>
+              <input type="text" id="firstname" name="firstname" required />
+            </div>
+            <div class="reviewer-group">
+              <label for="lastname">Last Name</label>
+              <input type="text" id="lastname" name="lastname" required />
+            </div>
+            <div class="reviewer-group">
+              <label for="ssn">Social Security Number</label>
+              <input type="text" id="ssn" name="ssn" required />
+            </div>
+            <div class="reviewer-group">
+              <label for="salary">Salary</label>
+              <input type="number" id="salary" name="salary" required />
+            </div>
+            <div class="reviewer-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <div class="reviewer-actions">
+              <button type="submit" class="btn-add">Add Reviewer</button>
+            </div>
+          </form>
+        </div>
+      </main>
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+</html>

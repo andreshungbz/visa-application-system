@@ -57,7 +57,7 @@ export class EmployeeSystem implements IEmployeeSystem {
     try {
       // update in-memory array
       this.employees.push(employee);
-      // wrtie to database
+      // write to database
       await createEmployee(employee);
     } catch (error) {
       console.error(error);

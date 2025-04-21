@@ -3,8 +3,9 @@
 
 import { Request, Response } from 'express';
 
-import { vs } from '../main.js';
+import { es, vs } from '../main.js';
 import { VisaStatus, VisaType } from '@prisma/client';
+import { VisaReviewer } from '../models/classes/employees/visa-reviewer/VisaReviewer.js';
 
 // renders supervisor dashboard
 export const getSupervisorDashboard = (_req: Request, res: Response) => {
@@ -95,4 +96,13 @@ export const getView = (req: Request, res: Response) => {
     s3Notes: application.getS3Notes(),
     editable: false,
   });
+};
+
+// renders reviewers list
+export const getReviewers = (_req: Request, res: Response) => {
+  const reviewers = es
+    .getEmployees()
+    .filter((employee) => employee instanceof VisaReviewer);
+
+  res.render('supervisor/reviewers', { reviewers, total: reviewers.length });
 };
