@@ -19,7 +19,7 @@ export class SystemSupervisor extends Employee implements ISystemSupervisor {
 
   // MAIN FUNCTIONS
 
-  async generateStatisticsReport(): Promise<{}> {
-    return {};
-  }
+  // async generateStatisticsReport(): Promise<{}> {
+  //   return {};
+  // }
 }

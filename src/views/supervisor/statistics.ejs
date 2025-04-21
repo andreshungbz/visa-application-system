@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/meta') %>
+    <link rel="stylesheet" href="/styles/statistics.css" />
+    <title>System Statistics</title>
+  </head>
+  <body>
+    <div class="app">
+      <%- include('../partials/header') %>
+      <main>
+        <h2>System Statistics</h2>
+        <p>
+          Below are statistics about the visa applications and employees stored
+          in the application.
+        </p>
+        <div class="stats-container">
+          <div class="stat-box">
+            <h3>Visa Application Statistics</h3>
+            <p><strong>Total Applications:</strong> <%= v.totalCount %></p>
+            <p><strong>Initial Review:</strong> <%= v.initialCount %></p>
+            <p><strong>Interview Stage:</strong> <%= v.interviewCount %></p>
+            <p><strong>Final Review:</strong> <%= v.finalCount %></p>
+            <p><strong>Approved:</strong> <%= v.approvedCount %></p>
+            <p><strong>Rejected:</strong> <%= v.rejectedCount %></p>
+          </div>
+          <div class="stat-box">
+            <h3>Employee Statistics</h3>
+            <p><strong>Total Employees:</strong> <%= e.totalCount %></p>
+            <p><strong>Reviewers:</strong> <%= e.reviewerCount %></p>
+            <p><strong>Supervisors:</strong> <%= e.supervisorCount %></p>
+          </div>
+        </div>
+      </main>
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+</html>

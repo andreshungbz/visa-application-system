@@ -4,6 +4,7 @@ import { VisaStatus } from '@prisma/client';
 
 import { VisaApplication } from '../../classes/visa-application/VisaApplication.js';
 import { VisaForm } from '../../classes/visa-forms/abstract/VisaForm.js';
+import { VStatistics } from '../../../lib/types/VStatistics.js';
 
 export interface IVisaSystem {
   // PROPERTIES (DATA MEMBERS)
@@ -25,4 +26,6 @@ export interface IVisaSystem {
   addVisaApplication(form: VisaForm): Promise<number>;
   getVisaApplicationStatus(applicationNumber: number): VisaStatus | null;
   getFullVisaApplication(applicationNumber: number): VisaApplication | null;
+
+  generateStatistics(): Promise<VStatistics>;
 }

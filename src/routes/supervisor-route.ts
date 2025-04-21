@@ -5,6 +5,7 @@ import express from 'express';
 import {
   getList,
   getReviewers,
+  getStatistics,
   getSupervisorDashboard,
   getView,
   postAddReviewer,
@@ -20,5 +21,7 @@ supervisorRoute.get('/view/:id', getView);
 supervisorRoute.get('/reviewers', getReviewers);
 supervisorRoute.post('/add-reviewer', postAddReviewer);
 supervisorRoute.post('/remove/:id', postRemoveReviewer);
+
+supervisorRoute.get('/statistics', getStatistics);
 
 export default supervisorRoute;

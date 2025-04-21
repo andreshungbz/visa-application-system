@@ -1,5 +1,6 @@
 // Employee System Interface (Header)
 
+import { EStatistics } from '../../../lib/types/EStatistics.js';
 import { Employee } from '../../classes/employees/abstract/Employee.js';
 
 export interface IEmployeeSystem {
@@ -17,4 +18,6 @@ export interface IEmployeeSystem {
   addEmployee(employee: Employee): Promise<void>;
   removeEmployee(employeeNumber: number): Promise<void>;
   getEmployee(employeeNumber: number): Employee | null;
+
+  generateStatistics(): Promise<EStatistics>;
 }

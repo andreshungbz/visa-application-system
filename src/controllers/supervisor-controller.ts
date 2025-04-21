@@ -165,3 +165,16 @@ export const postRemoveReviewer = async (req: Request, res: Response) => {
     res.render('error', { message: 'Internal Server Error' });
   }
 };
+
+// renders statistics page
+export const getStatistics = async (_req: Request, res: Response) => {
+  try {
+    const vStatistics = await vs.generateStatistics();
+    const eStatistics = await es.generateStatistics();
+
+    res.render('supervisor/statistics', { v: vStatistics, e: eStatistics });
+  } catch (error) {
+    console.error(error);
+    res.render('error', { message: 'Internal Server Error' });
+  }
+};

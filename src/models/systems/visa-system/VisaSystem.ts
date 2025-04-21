@@ -16,6 +16,7 @@ import {
 import { B1Form } from '../../classes/visa-forms/B1/B1Form.js';
 import { B2Form } from '../../classes/visa-forms/B2/B2Form.js';
 import { F1Form } from '../../classes/visa-forms/F1/F1Form.js';
+import { VStatistics } from '../../../lib/types/VStatistics.js';
 
 export class VisaSystem implements IVisaSystem {
   // PROPERTIES (DATA MEMBERS)
@@ -183,5 +184,21 @@ export class VisaSystem implements IVisaSystem {
     }
 
     return null;
+  }
+
+  async generateStatistics(): Promise<VStatistics> {
+    return {
+      totalCount:
+        this.initialQueue.length +
+        this.interviewQueue.length +
+        this.finalQueue.length +
+        this.approvedApplications.length +
+        this.rejectedApplications.length,
+      initialCount: this.initialQueue.length,
+      interviewCount: this.interviewQueue.length,
+      finalCount: this.finalQueue.length,
+      approvedCount: this.approvedApplications.length,
+      rejectedCount: this.rejectedApplications.length,
+    };
   }
 }

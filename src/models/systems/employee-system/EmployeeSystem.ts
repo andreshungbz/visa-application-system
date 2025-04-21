@@ -11,6 +11,9 @@ import {
   readEmployees,
   readNextEmployeeNumber,
 } from '../../employee-model.js';
+import { EStatistics } from '../../../lib/types/EStatistics.js';
+import { VisaReviewer } from '../../classes/employees/visa-reviewer/VisaReviewer.js';
+import { SystemSupervisor } from '../../classes/employees/system-supervisor/SystemSupervisor.js';
 
 export class EmployeeSystem implements IEmployeeSystem {
   // PROPERTIES (DATA MEMBERS)
@@ -87,5 +90,18 @@ export class EmployeeSystem implements IEmployeeSystem {
     );
 
     return employeeIndex !== -1 ? this.employees[employeeIndex] : null;
+  }
+
+  async generateStatistics(): Promise<EStatistics> {
+    const reviewers = this.employees.filter((e) => e instanceof VisaReviewer);
+    const supervisors = this.employees.filter(
+      (e) => e instanceof SystemSupervisor
+    );
+
+    return {
+      totalCount: this.employees.length,
+      reviewerCount: reviewers.length,
+      supervisorCount: supervisors.length,
+    };
   }
 }
