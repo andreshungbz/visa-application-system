@@ -2,6 +2,7 @@
 // controllers for supervisor-route.ts
 
 import { Request, Response } from 'express';
+import argon2 from 'argon2';
 
 import { es, vs } from '../main.js';
 import { VisaStatus, VisaType } from '@prisma/client';
@@ -105,4 +106,31 @@ export const getReviewers = (_req: Request, res: Response) => {
     .filter((employee) => employee instanceof VisaReviewer);
 
   res.render('supervisor/reviewers', { reviewers, total: reviewers.length });
+};
+
+// adds new reviewer
+export const postAddReviewer = async (req: Request, res: Response) => {
+  const { firstName, lastName, ssn, salary, password } = req.body;
+
+  if (!firstName || !lastName || !ssn || isNaN(Number(salary)) || !password) {
+    return res.render('error', { message: 'Field Was Missing' });
+  }
+
+  try {
+    const hashedPassword = await argon2.hash(password);
+    const newReviewer = new VisaReviewer(
+      es.nextEmployeeNumber++,
+      firstName,
+      lastName,
+      ssn,
+      hashedPassword,
+      Number(salary)
+    );
+
+    await es.addEmployee(newReviewer);
+    res.redirect('/supervisor/reviewers');
+  } catch (error) {
+    console.error(error);
+    res.render('error', { message: 'Internal Server Error' });
+  }
 };
