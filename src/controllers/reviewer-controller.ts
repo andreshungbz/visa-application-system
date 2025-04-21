@@ -25,9 +25,9 @@ export const getQueue = (req: Request, res: Response) => {
 
   switch (stage) {
     case 'initial':
-      const queue = vs.getInitialQueue();
+      const initialQueue = vs.getInitialQueue();
 
-      queue.sort(
+      initialQueue.sort(
         (a, b) => a.getUpdatedAt().getTime() - b.getUpdatedAt().getTime()
       );
 
@@ -35,13 +35,37 @@ export const getQueue = (req: Request, res: Response) => {
         stage: VisaStatus.Initial,
         description:
           'These are the initial applications submitted by individuals. Check for errors and inconsistencies.',
-        total: queue.length,
-        applications: queue,
+        total: initialQueue.length,
+        applications: initialQueue,
       });
     case 'interview':
-      return res.render('reviewer/queue');
+      const interviewQueue = vs.getInterviewQueue();
+
+      interviewQueue.sort(
+        (a, b) => a.getUpdatedAt().getTime() - b.getUpdatedAt().getTime()
+      );
+
+      return res.render('reviewer/queue', {
+        stage: VisaStatus.Interview,
+        description:
+          'These applications are to be reviewed after the applicant conducts their interview at the embassy.',
+        total: interviewQueue.length,
+        applications: interviewQueue,
+      });
     case 'final':
-      return res.render('reviewer/queue');
+      const finalQueue = vs.getFinalQueue();
+
+      finalQueue.sort(
+        (a, b) => a.getUpdatedAt().getTime() - b.getUpdatedAt().getTime()
+      );
+
+      return res.render('reviewer/queue', {
+        stage: VisaStatus.Final,
+        description:
+          'This is the last step before approval. Review the overall application one final time.',
+        total: finalQueue.length,
+        applications: finalQueue,
+      });
     default:
       return res.render('error', { message: 'Invalid Queue' });
   }
