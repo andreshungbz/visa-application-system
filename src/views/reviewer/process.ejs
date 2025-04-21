@@ -4,6 +4,7 @@
     <%- include('../partials/meta') %>
     <link rel="stylesheet" href="/styles/form.css" />
     <link rel="stylesheet" href="/styles/visa-form.css" />
+    <link rel="stylesheet" href="/styles/status-decision.css" />
     <title>
       Process | Application <%= application.getApplicationNumber() %>
     </title>
@@ -14,19 +15,39 @@
       <main>
         <h2>Process Application <%= application.getApplicationNumber() %></h2>
         <form class="visa-form">
-          <%- include('../partials/form-sections/personal') %> 
-          <%- include('../partials/form-sections/travel') %>
-          <%- include('../partials/form-sections/work') %> 
-          <% if (isB1) { %>
-            <%- include('../partials/form-sections/business') %> 
-          <% } %>
-          <% if (isB2) { %>
-            <%- include('../partials/form-sections/tourist') %> 
-          <% } %>
-          <% if (isF1) { %>
-            <%- include('../partials/form-sections/student') %> 
-          <% } %>
-          <%- include('../partials/form-sections/security') %>
+          <%- include('../partials/form-sections/personal') %> <%-
+          include('../partials/form-sections/travel') %> <%-
+          include('../partials/form-sections/work') %> <% if (isB1) { %> <%-
+          include('../partials/form-sections/business') %> <% } %> <% if (isB2)
+          { %> <%- include('../partials/form-sections/tourist') %> <% } %> <% if
+          (isF1) { %> <%- include('../partials/form-sections/student') %> <% }
+          %> <%- include('../partials/form-sections/security') %>
+        </form>
+        <form class="decision-form" method="POST">
+          <div class="decision-group">
+            <label for="reviwerID">Reviewer ID</label>
+            <input type="number" id="reviwerID" name="reviwerID" required />
+          </div>
+          <div class="decision-group">
+            <label for="notes">Notes</label>
+            <textarea id="notes" name="notes" rows="4" required></textarea>
+          </div>
+          <div class="decision-actions">
+            <button
+              type="submit"
+              formaction="/reviewer/reject/<%= application.getApplicationNumber() %>"
+              class="btn-reject"
+            >
+              Reject
+            </button>
+            <button
+              type="submit"
+              formaction="/reviewer/approve/<%= application.getApplicationNumber() %>"
+              class="btn-accept"
+            >
+              Accept
+            </button>
+          </div>
         </form>
       </main>
       <%- include('../partials/footer') %>

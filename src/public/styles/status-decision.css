@@ -1,0 +1,73 @@
+.decision-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: 20px;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  background-color: #fafafa;
+}
+
+.decision-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.decision-group label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #333;
+}
+
+.decision-group input,
+.decision-group textarea {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.decision-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+.btn-reject,
+.btn-accept {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-reject {
+  background-color: #cc3333;
+}
+
+.btn-reject:hover {
+  background-color: #a82828;
+}
+
+.btn-accept {
+  background-color: #1e73be;
+}
+
+.btn-accept:hover {
+  background-color: #155a96;
+}
+
+@media (max-width: 600px) {
+  .decision-actions {
+    flex-direction: column;
+  }
+
+  .btn-reject,
+  .btn-accept {
+    width: 100%;
+  }
+}
