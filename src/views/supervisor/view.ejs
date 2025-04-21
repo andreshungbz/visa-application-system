@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/meta') %>
+    <link rel="stylesheet" href="/styles/form.css" />
+    <link rel="stylesheet" href="/styles/visa-form.css" />
+    <link rel="stylesheet" href="/styles/status-decision.css" />
+    <title>View | Application <%= application.getApplicationNumber() %></title>
+  </head>
+  <body>
+    <div class="app">
+      <%- include('../partials/header') %>
+      <main>
+        <h2>Process Application <%= application.getApplicationNumber() %></h2>
+        <p class="space">
+          <a href="/supervisor/list?status=<%= prev %>" class="btn-accept"
+            >Return to Queue</a
+          >
+        </p>
+        <form class="visa-form">
+          <%- include('../partials/form-sections/personal') %> <%-
+          include('../partials/form-sections/travel') %> <%-
+          include('../partials/form-sections/work') %> <% if (isB1) { %> <%-
+          include('../partials/form-sections/business') %> <% } %> <% if (isB2)
+          { %> <%- include('../partials/form-sections/tourist') %> <% } %> <% if
+          (isF1) { %> <%- include('../partials/form-sections/student') %> <% }
+          %> <%- include('../partials/form-sections/security') %>
+        </form>
+        <%- include('../partials/form-sections/disabled-notes') %>
+      </main>
+      <%- include('../partials/footer') %>
+    </div>
+  </body>
+</html>
