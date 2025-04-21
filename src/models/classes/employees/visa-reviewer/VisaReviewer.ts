@@ -133,17 +133,17 @@ export class VisaReviewer extends Employee implements IVisaReviewer {
         default:
           throw new Error('Invalid Visa Status.');
       }
-      vs.getRejected().push(application);
 
       // update in-memory array
       application.setStatus(VisaStatus.Rejected);
       application.setS3Reviewer(this.getFullName());
       application.setS3Notes(notes);
       application.setUpdatedAt(new Date());
+      vs.getRejected().push(application);
 
       // update database record
       await updateStatus(
-        VisaStatus.Initial,
+        VisaStatus.Rejected,
         applicationNumber,
         this.getFullName(),
         notes

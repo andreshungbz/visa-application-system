@@ -7,6 +7,7 @@ import {
   getQueue,
   getReviewerDashboard,
   postApproveApplication,
+  postRejectApplication,
 } from '../controllers/reviewer-controller.js';
 
 const reviewerRoute = express.Router();
@@ -16,6 +17,6 @@ reviewerRoute.get('/queue', getQueue);
 reviewerRoute.get('/process/:id', getProcess);
 
 reviewerRoute.post('/approve/:id', postApproveApplication);
-// reviewerRoute.post('/reject/:id');
+reviewerRoute.post('/reject/:id', postRejectApplication);
 
 export default reviewerRoute;
