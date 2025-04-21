@@ -29,13 +29,7 @@
           %> <%- include('../partials/form-sections/security') %>
         </form>
         
-        <% if (isInterview) { %>
-          <%- include('../partials/form-sections/disabled-notes') %>
-        <% } %>
-
-        <% if (isFinal) { %>
-          <%- include('../partials/form-sections/disabled-notes') %>
-        <% } %>
+        <%- include('../partials/form-sections/disabled-notes') %>
 
         <form class="decision-form" method="POST">
           <div class="decision-group">
