@@ -8,6 +8,7 @@ import {
   getSupervisorDashboard,
   getView,
   postAddReviewer,
+  postRemoveReviewer,
 } from '../controllers/supervisor-controller.js';
 
 const supervisorRoute = express.Router();
@@ -18,5 +19,6 @@ supervisorRoute.get('/view/:id', getView);
 
 supervisorRoute.get('/reviewers', getReviewers);
 supervisorRoute.post('/add-reviewer', postAddReviewer);
+supervisorRoute.post('/remove/:id', postRemoveReviewer);
 
 export default supervisorRoute;

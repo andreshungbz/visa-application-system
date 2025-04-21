@@ -134,3 +134,34 @@ export const postAddReviewer = async (req: Request, res: Response) => {
     res.render('error', { message: 'Internal Server Error' });
   }
 };
+
+// removes reviewer
+export const postRemoveReviewer = async (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+
+  if (isNaN(id)) {
+    return res.render('error', { message: 'Invalid Application Number' });
+  }
+
+  const reviewer = es.getEmployee(id);
+
+  if (!reviewer) {
+    return res.render('error', {
+      message: `Reviewer with ID ${id} Not Found`,
+    });
+  }
+
+  if (!(reviewer instanceof VisaReviewer)) {
+    return res.render('error', {
+      message: `ID ${id} Does Not Belong to a Visa Reviewer`,
+    });
+  }
+
+  try {
+    await es.removeEmployee(id);
+    res.redirect('/supervisor/reviewers');
+  } catch (error) {
+    console.error(error);
+    res.render('error', { message: 'Internal Server Error' });
+  }
+};
