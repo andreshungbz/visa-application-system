@@ -1,0 +1,1358 @@
+{
+  "id": "417793f9-95db-4905-8527-580778d72559",
+  "version": "2.0",
+  "name": "cmps2232-vas",
+  "url": "http://localhost:3000/",
+  "tests": [{
+    "id": "be8583c9-3fd6-4e3a-ade0-f718f89ab54f",
+    "name": "add-b1",
+    "commands": [{
+      "id": "670c500b-d9ad-4638-b62f-931bea8655f9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8d9974a0-8aeb-4a31-b813-98739f6be7a6",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x875",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7e91ca4a-ba96-4d6f-91b8-7b0fc67a2186",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Apply",
+      "targets": [
+        ["linkText=Apply", "linkText"],
+        ["css=a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Apply')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/apply')]", "xpath:href"],
+        ["xpath=//nav/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8c06257-2cad-4ed1-bc45-b933db33e294",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Apply",
+      "targets": [
+        ["linkText=Apply", "linkText"],
+        ["css=a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Apply')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/apply')]", "xpath:href"],
+        ["xpath=//nav/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "da141d27-fad7-4061-adbd-3000102aefc7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.visa-card:nth-child(1)",
+      "targets": [
+        ["css=.visa-card:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(@href, '/apply/b1')]", "xpath:href"],
+        ["xpath=//div/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "60da812f-08e2-4d15-aee5-17ce6019eaf3",
+      "comment": "",
+      "command": "click",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6e749345-fd7d-4a3a-bbde-01c3b0414a1d",
+      "comment": "",
+      "command": "type",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Saul"
+    }, {
+      "id": "13abbd0d-a155-4814-8b52-c1ae19b0dd63",
+      "comment": "",
+      "command": "type",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lastName", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Goodman"
+    }, {
+      "id": "8768f530-fde9-4e59-a0ec-7891d854c38a",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "saulgoodman@example.com"
+    }, {
+      "id": "526b4b42-03f0-4ca7-b255-ce5a606101a0",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [
+        ["id=phone", "id"],
+        ["name=phone", "name"],
+        ["css=#phone", "css:finder"],
+        ["xpath=//input[@id='phone']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "666-6666"
+    }, {
+      "id": "55455d12-7533-43d8-99e8-76573e9b2598",
+      "comment": "",
+      "command": "type",
+      "target": "id=address",
+      "targets": [
+        ["id=address", "id"],
+        ["name=address", "name"],
+        ["css=#address", "css:finder"],
+        ["xpath=//input[@id='address']", "xpath:attributes"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "34 Oak Road"
+    }, {
+      "id": "43505274-0435-4b18-b8a3-dedf3ce45e8e",
+      "comment": "",
+      "command": "type",
+      "target": "id=city",
+      "targets": [
+        ["id=city", "id"],
+        ["name=city", "name"],
+        ["css=#city", "css:finder"],
+        ["xpath=//input[@id='city']", "xpath:attributes"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Albuquerque"
+    }, {
+      "id": "afc2271d-36aa-4bec-9d31-52f89a67b3ec",
+      "comment": "",
+      "command": "type",
+      "target": "id=country",
+      "targets": [
+        ["id=country", "id"],
+        ["name=country", "name"],
+        ["css=#country", "css:finder"],
+        ["xpath=//input[@id='country']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "United States of America"
+    }, {
+      "id": "74f672ff-259e-4146-862d-a334d539db04",
+      "comment": "",
+      "command": "type",
+      "target": "id=passportNumber",
+      "targets": [
+        ["id=passportNumber", "id"],
+        ["name=passportNumber", "name"],
+        ["css=#passportNumber", "css:finder"],
+        ["xpath=//input[@id='passportNumber']", "xpath:attributes"],
+        ["xpath=//div[4]/div[2]/input", "xpath:position"]
+      ],
+      "value": "C12345678"
+    }, {
+      "id": "fdecce58-88d8-4e24-a3de-ef0d6e169fbc",
+      "comment": "",
+      "command": "type",
+      "target": "id=dob",
+      "targets": [
+        ["id=dob", "id"],
+        ["name=dob", "name"],
+        ["css=#dob", "css:finder"],
+        ["xpath=//input[@id='dob']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "2025-01-21"
+    }, {
+      "id": "bbfbf8cf-2037-44de-bb8a-19cff093c884",
+      "comment": "",
+      "command": "type",
+      "target": "id=dob",
+      "targets": [
+        ["id=dob", "id"],
+        ["name=dob", "name"],
+        ["css=#dob", "css:finder"],
+        ["xpath=//input[@id='dob']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "2025-01-01"
+    }, {
+      "id": "68eadea7-3e32-44a2-bef6-7c71f11d8c47",
+      "comment": "",
+      "command": "type",
+      "target": "id=dob",
+      "targets": [
+        ["id=dob", "id"],
+        ["name=dob", "name"],
+        ["css=#dob", "css:finder"],
+        ["xpath=//input[@id='dob']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "1981-01-01"
+    }, {
+      "id": "c8d41a10-1842-4895-b336-4b75f71f3970",
+      "comment": "",
+      "command": "type",
+      "target": "id=gender",
+      "targets": [
+        ["id=gender", "id"],
+        ["name=gender", "name"],
+        ["css=#gender", "css:finder"],
+        ["xpath=//input[@id='gender']", "xpath:attributes"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Male"
+    }, {
+      "id": "4e940a43-7cea-4e37-a509-13a1b2683fa7",
+      "comment": "",
+      "command": "type",
+      "target": "id=stayCity",
+      "targets": [
+        ["id=stayCity", "id"],
+        ["name=stayCity", "name"],
+        ["css=#stayCity", "css:finder"],
+        ["xpath=//input[@id='stayCity']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "New York City"
+    }, {
+      "id": "8fa7df03-6ddf-4fa2-af25-83918fccbd7f",
+      "comment": "",
+      "command": "type",
+      "target": "id=stayAddress",
+      "targets": [
+        ["id=stayAddress", "id"],
+        ["name=stayAddress", "name"],
+        ["css=#stayAddress", "css:finder"],
+        ["xpath=//input[@id='stayAddress']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "34 Summer Avenue"
+    }, {
+      "id": "8217197b-b2cc-4298-9e3b-c849ed605953",
+      "comment": "",
+      "command": "type",
+      "target": "id=intendedArrivalDate",
+      "targets": [
+        ["id=intendedArrivalDate", "id"],
+        ["name=intendedArrivalDate", "name"],
+        ["css=#intendedArrivalDate", "css:finder"],
+        ["xpath=//input[@id='intendedArrivalDate']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2025-05-21"
+    }, {
+      "id": "be834715-7731-4ed6-9042-b65eefb507e0",
+      "comment": "",
+      "command": "type",
+      "target": "id=intendedArrivalDate",
+      "targets": [
+        ["id=intendedArrivalDate", "id"],
+        ["name=intendedArrivalDate", "name"],
+        ["css=#intendedArrivalDate", "css:finder"],
+        ["xpath=//input[@id='intendedArrivalDate']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2025-05-15"
+    }, {
+      "id": "316ec0dc-c61c-44e2-82d1-b008b3c5ed4f",
+      "comment": "",
+      "command": "type",
+      "target": "id=intendedLengthOfStay",
+      "targets": [
+        ["id=intendedLengthOfStay", "id"],
+        ["name=intendedLengthOfStay", "name"],
+        ["css=#intendedLengthOfStay", "css:finder"],
+        ["xpath=//input[@id='intendedLengthOfStay']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "30"
+    }, {
+      "id": "8ce8438a-ec80-4f5c-86d0-0b9ef8405882",
+      "comment": "",
+      "command": "type",
+      "target": "id=occupation",
+      "targets": [
+        ["id=occupation", "id"],
+        ["name=occupation", "name"],
+        ["css=#occupation", "css:finder"],
+        ["xpath=//input[@id='occupation']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div/div/input", "xpath:position"]
+      ],
+      "value": "Lawyer"
+    }, {
+      "id": "eb191c0c-39a4-4f7a-8e46-60f0e2a0c20c",
+      "comment": "",
+      "command": "type",
+      "target": "id=workPhone",
+      "targets": [
+        ["id=workPhone", "id"],
+        ["name=workPhone", "name"],
+        ["css=#workPhone", "css:finder"],
+        ["xpath=//input[@id='workPhone']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "666-6667"
+    }, {
+      "id": "3db19582-0f73-4348-a7c2-9d98b82b1c5c",
+      "comment": "",
+      "command": "type",
+      "target": "id=workAddress",
+      "targets": [
+        ["id=workAddress", "id"],
+        ["name=workAddress", "name"],
+        ["css=#workAddress", "css:finder"],
+        ["xpath=//input[@id='workAddress']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "23 Liberty Avenue"
+    }, {
+      "id": "df5a639e-292e-47b5-b9a5-196d0baa9383",
+      "comment": "",
+      "command": "type",
+      "target": "id=workCity",
+      "targets": [
+        ["id=workCity", "id"],
+        ["name=workCity", "name"],
+        ["css=#workCity", "css:finder"],
+        ["xpath=//input[@id='workCity']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Albuquerque"
+    }, {
+      "id": "b0bc5336-5273-4194-bfb0-6b34dcf718fa",
+      "comment": "",
+      "command": "type",
+      "target": "id=businessPhone",
+      "targets": [
+        ["id=businessPhone", "id"],
+        ["name=businessPhone", "name"],
+        ["css=#businessPhone", "css:finder"],
+        ["xpath=//input[@id='businessPhone']", "xpath:attributes"],
+        ["xpath=//fieldset[4]/div/div/input", "xpath:position"]
+      ],
+      "value": "666-6667"
+    }, {
+      "id": "ca738374-bf83-478a-a0f4-a1bbee1b8c3c",
+      "comment": "",
+      "command": "type",
+      "target": "id=businessCity",
+      "targets": [
+        ["id=businessCity", "id"],
+        ["name=businessCity", "name"],
+        ["css=#businessCity", "css:finder"],
+        ["xpath=//input[@id='businessCity']", "xpath:attributes"],
+        ["xpath=//fieldset[4]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "New York City"
+    }, {
+      "id": "8c3f6568-4cdc-43ca-b0fa-5c5043ee3e48",
+      "comment": "",
+      "command": "type",
+      "target": "id=businessAddress",
+      "targets": [
+        ["id=businessAddress", "id"],
+        ["name=businessAddress", "name"],
+        ["css=#businessAddress", "css:finder"],
+        ["xpath=//input[@id='businessAddress']", "xpath:attributes"],
+        ["xpath=//fieldset[4]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "3 Queen Street"
+    }, {
+      "id": "d33c6f40-799f-421d-822a-5a57e91e2e91",
+      "comment": "",
+      "command": "type",
+      "target": "id=businessPurpose",
+      "targets": [
+        ["id=businessPurpose", "id"],
+        ["name=businessPurpose", "name"],
+        ["css=#businessPurpose", "css:finder"],
+        ["xpath=//input[@id='businessPurpose']", "xpath:attributes"],
+        ["xpath=//fieldset[4]/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Lawyer Conference"
+    }, {
+      "id": "a82a2c23-9f64-4a0c-a533-de8adf6a0266",
+      "comment": "",
+      "command": "click",
+      "target": "name=moneyLaundering",
+      "targets": [
+        ["name=moneyLaundering", "name"],
+        ["css=label:nth-child(2) > input", "css:finder"],
+        ["xpath=//input[@name='moneyLaundering']", "xpath:attributes"],
+        ["xpath=//label[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3ce8ab9b-9085-48a6-bd0a-adff559bfb76",
+      "comment": "",
+      "command": "click",
+      "target": "name=drugConspiracy",
+      "targets": [
+        ["name=drugConspiracy", "name"],
+        ["css=label:nth-child(3) > input", "css:finder"],
+        ["xpath=//input[@name='drugConspiracy']", "xpath:attributes"],
+        ["xpath=//label[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e897c33-98b8-4a04-933e-2e058e96f838",
+      "comment": "",
+      "command": "click",
+      "target": "name=arrestedConvicted",
+      "targets": [
+        ["name=arrestedConvicted", "name"],
+        ["css=label:nth-child(4) > input", "css:finder"],
+        ["xpath=//input[@name='arrestedConvicted']", "xpath:attributes"],
+        ["xpath=//label[4]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc7d3242-a8dd-4978-81c4-f48c73fc376f",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit Application')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "eb59ec61-a604-4212-85f1-7202e4f408f7",
+    "name": "add-b2",
+    "commands": [{
+      "id": "3a3d9214-343c-4832-8e41-7ace6389cc2c",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a3c39768-ab59-4c23-bd80-0a8d2116f24f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x875",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c00e7ca2-d29a-4308-9666-ae3a5ebed792",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Apply",
+      "targets": [
+        ["linkText=Apply", "linkText"],
+        ["css=a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Apply')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/apply')]", "xpath:href"],
+        ["xpath=//nav/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "03e2e32b-565e-4093-8cc9-e3dca6479ab8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.visa-card:nth-child(2) > img",
+      "targets": [
+        ["css=.visa-card:nth-child(2) > img", "css:finder"],
+        ["xpath=//img[@alt='B2 Visa']", "xpath:img"],
+        ["xpath=//a[2]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4c15106-b7f5-4966-b08d-a4be16b853ac",
+      "comment": "",
+      "command": "click",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0f9562cc-335e-4757-baac-2daa905f2031",
+      "comment": "",
+      "command": "type",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Jorge"
+    }, {
+      "id": "09e993f2-0fd9-4ef0-8ed4-15859e871f05",
+      "comment": "",
+      "command": "type",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lastName", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "De Guzman"
+    }, {
+      "id": "239a3801-2105-42b3-adba-d540ae06bc8a",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "jorge@example.com"
+    }, {
+      "id": "3cb1aa9f-7cd0-4509-aca7-199746c11199",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [
+        ["id=phone", "id"],
+        ["name=phone", "name"],
+        ["css=#phone", "css:finder"],
+        ["xpath=//input[@id='phone']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "123-4545"
+    }, {
+      "id": "f6797de5-adab-457e-9ad0-5c7f847c22bf",
+      "comment": "",
+      "command": "type",
+      "target": "id=address",
+      "targets": [
+        ["id=address", "id"],
+        ["name=address", "name"],
+        ["css=#address", "css:finder"],
+        ["xpath=//input[@id='address']", "xpath:attributes"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "23 Old Road"
+    }, {
+      "id": "103fdd41-8ebc-488e-8a23-8ea34d91a9bd",
+      "comment": "",
+      "command": "type",
+      "target": "id=city",
+      "targets": [
+        ["id=city", "id"],
+        ["name=city", "name"],
+        ["css=#city", "css:finder"],
+        ["xpath=//input[@id='city']", "xpath:attributes"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Belize City"
+    }, {
+      "id": "4a46ba63-9e30-416b-adab-64235d2a90ac",
+      "comment": "",
+      "command": "type",
+      "target": "id=country",
+      "targets": [
+        ["id=country", "id"],
+        ["name=country", "name"],
+        ["css=#country", "css:finder"],
+        ["xpath=//input[@id='country']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "Belize"
+    }, {
+      "id": "69ee5994-4cb3-4fd0-a530-b6437e0741cb",
+      "comment": "",
+      "command": "type",
+      "target": "id=passportNumber",
+      "targets": [
+        ["id=passportNumber", "id"],
+        ["name=passportNumber", "name"],
+        ["css=#passportNumber", "css:finder"],
+        ["xpath=//input[@id='passportNumber']", "xpath:attributes"],
+        ["xpath=//div[4]/div[2]/input", "xpath:position"]
+      ],
+      "value": "P12121212"
+    }, {
+      "id": "515fa86e-e41c-413e-be77-ad0eeb33a68c",
+      "comment": "",
+      "command": "type",
+      "target": "id=dob",
+      "targets": [
+        ["id=dob", "id"],
+        ["name=dob", "name"],
+        ["css=#dob", "css:finder"],
+        ["xpath=//input[@id='dob']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "2025-06-21"
+    }, {
+      "id": "a4c429a4-eb46-442e-bcd7-b3adcecbd52d",
+      "comment": "",
+      "command": "type",
+      "target": "id=dob",
+      "targets": [
+        ["id=dob", "id"],
+        ["name=dob", "name"],
+        ["css=#dob", "css:finder"],
+        ["xpath=//input[@id='dob']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "2025-06-07"
+    }, {
+      "id": "ca303300-19d8-47bf-8ca7-92e70ec36918",
+      "comment": "",
+      "command": "type",
+      "target": "id=dob",
+      "targets": [
+        ["id=dob", "id"],
+        ["name=dob", "name"],
+        ["css=#dob", "css:finder"],
+        ["xpath=//input[@id='dob']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "1980-06-07"
+    }, {
+      "id": "06f2471f-b749-4f5a-a2e6-4188f0ac4363",
+      "comment": "",
+      "command": "type",
+      "target": "id=gender",
+      "targets": [
+        ["id=gender", "id"],
+        ["name=gender", "name"],
+        ["css=#gender", "css:finder"],
+        ["xpath=//input[@id='gender']", "xpath:attributes"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Male"
+    }, {
+      "id": "acf316fc-0b54-4dc1-a9d2-b7d38a947f83",
+      "comment": "",
+      "command": "type",
+      "target": "id=stayCity",
+      "targets": [
+        ["id=stayCity", "id"],
+        ["name=stayCity", "name"],
+        ["css=#stayCity", "css:finder"],
+        ["xpath=//input[@id='stayCity']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "Miami"
+    }, {
+      "id": "54b22668-87dc-473a-a01b-65c800da940e",
+      "comment": "",
+      "command": "type",
+      "target": "id=stayAddress",
+      "targets": [
+        ["id=stayAddress", "id"],
+        ["name=stayAddress", "name"],
+        ["css=#stayAddress", "css:finder"],
+        ["xpath=//input[@id='stayAddress']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "45 Teal Street"
+    }, {
+      "id": "5a9153c4-17cc-4ff8-94cd-f01ccfa9464b",
+      "comment": "",
+      "command": "type",
+      "target": "id=intendedArrivalDate",
+      "targets": [
+        ["id=intendedArrivalDate", "id"],
+        ["name=intendedArrivalDate", "name"],
+        ["css=#intendedArrivalDate", "css:finder"],
+        ["xpath=//input[@id='intendedArrivalDate']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2025-06-21"
+    }, {
+      "id": "4279402d-b8ae-4228-a690-765aa0643a27",
+      "comment": "",
+      "command": "type",
+      "target": "id=intendedArrivalDate",
+      "targets": [
+        ["id=intendedArrivalDate", "id"],
+        ["name=intendedArrivalDate", "name"],
+        ["css=#intendedArrivalDate", "css:finder"],
+        ["xpath=//input[@id='intendedArrivalDate']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2025-06-01"
+    }, {
+      "id": "d6d11837-4daf-45ec-b8d1-fe211a7cde8d",
+      "comment": "",
+      "command": "type",
+      "target": "id=intendedLengthOfStay",
+      "targets": [
+        ["id=intendedLengthOfStay", "id"],
+        ["name=intendedLengthOfStay", "name"],
+        ["css=#intendedLengthOfStay", "css:finder"],
+        ["xpath=//input[@id='intendedLengthOfStay']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "120"
+    }, {
+      "id": "effee53e-c9dc-46ff-a9de-95655e44cc79",
+      "comment": "",
+      "command": "type",
+      "target": "id=occupation",
+      "targets": [
+        ["id=occupation", "id"],
+        ["name=occupation", "name"],
+        ["css=#occupation", "css:finder"],
+        ["xpath=//input[@id='occupation']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div/div/input", "xpath:position"]
+      ],
+      "value": "Cook"
+    }, {
+      "id": "8f5db1f0-108a-43fc-aad1-4d631142ce00",
+      "comment": "",
+      "command": "type",
+      "target": "id=workPhone",
+      "targets": [
+        ["id=workPhone", "id"],
+        ["name=workPhone", "name"],
+        ["css=#workPhone", "css:finder"],
+        ["xpath=//input[@id='workPhone']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "454-3334"
+    }, {
+      "id": "1d6bcdc0-58c3-40b8-8b60-a06eb61a51ce",
+      "comment": "",
+      "command": "type",
+      "target": "id=workAddress",
+      "targets": [
+        ["id=workAddress", "id"],
+        ["name=workAddress", "name"],
+        ["css=#workAddress", "css:finder"],
+        ["xpath=//input[@id='workAddress']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "12 Rally Street"
+    }, {
+      "id": "1635463d-9128-4ff9-bc6c-1903588f1091",
+      "comment": "",
+      "command": "type",
+      "target": "id=workCity",
+      "targets": [
+        ["id=workCity", "id"],
+        ["name=workCity", "name"],
+        ["css=#workCity", "css:finder"],
+        ["xpath=//input[@id='workCity']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Belize City"
+    }, {
+      "id": "c35bdce7-ee86-4492-918f-40c0e08a3897",
+      "comment": "",
+      "command": "type",
+      "target": "id=purpose",
+      "targets": [
+        ["id=purpose", "id"],
+        ["name=purpose", "name"],
+        ["css=#purpose", "css:finder"],
+        ["xpath=//input[@id='purpose']", "xpath:attributes"],
+        ["xpath=//fieldset[4]/div/div/input", "xpath:position"]
+      ],
+      "value": "Just a vacation."
+    }, {
+      "id": "ff55f4c9-3081-4732-bfa6-99f89406116f",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit Application')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "812e7606-c008-4666-bc8c-81d084a96fa1",
+    "name": "add-f1",
+    "commands": [{
+      "id": "365c9a4a-9314-4663-965d-771e1ae9864c",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e7b488a7-4401-4f2e-a9a7-d98952f51108",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x875",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1eec8234-b465-4d70-af3d-07928efd795a",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Apply",
+      "targets": [
+        ["linkText=Apply", "linkText"],
+        ["css=a:nth-child(1)", "css:finder"],
+        ["xpath=//a[contains(text(),'Apply')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/apply')]", "xpath:href"],
+        ["xpath=//nav/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5c0d81c-b07b-40cb-8c44-090406ef8026",
+      "comment": "",
+      "command": "click",
+      "target": "css=.visa-card:nth-child(3) > img",
+      "targets": [
+        ["css=.visa-card:nth-child(3) > img", "css:finder"],
+        ["xpath=//img[@alt='F1 Visa']", "xpath:img"],
+        ["xpath=//a[3]/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ed15408b-613f-4f5b-b75f-9ef756c74301",
+      "comment": "",
+      "command": "click",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "47ec25e2-4192-4574-95c5-cf4b2c860f45",
+      "comment": "",
+      "command": "type",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Maria"
+    }, {
+      "id": "eebde98f-b3bf-409a-8238-fa7680ffa1f4",
+      "comment": "",
+      "command": "type",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lastName", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Garcia"
+    }, {
+      "id": "bb1f1bec-6ace-428f-ae35-92becc942bf7",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//div[2]/div/input", "xpath:position"]
+      ],
+      "value": "mariagarcia@example.com"
+    }, {
+      "id": "253b9074-9bd4-499c-a4de-37ebece639e5",
+      "comment": "",
+      "command": "type",
+      "target": "id=phone",
+      "targets": [
+        ["id=phone", "id"],
+        ["name=phone", "name"],
+        ["css=#phone", "css:finder"],
+        ["xpath=//input[@id='phone']", "xpath:attributes"],
+        ["xpath=//div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "334-2232"
+    }, {
+      "id": "7fdc5b4d-14dc-4dad-bfd6-baea8094cf9b",
+      "comment": "",
+      "command": "type",
+      "target": "id=address",
+      "targets": [
+        ["id=address", "id"],
+        ["name=address", "name"],
+        ["css=#address", "css:finder"],
+        ["xpath=//input[@id='address']", "xpath:attributes"],
+        ["xpath=//div[3]/div/input", "xpath:position"]
+      ],
+      "value": "5 Mango Street"
+    }, {
+      "id": "f4d025f3-6f43-4a57-9264-0062d8301f3e",
+      "comment": "",
+      "command": "type",
+      "target": "id=city",
+      "targets": [
+        ["id=city", "id"],
+        ["name=city", "name"],
+        ["css=#city", "css:finder"],
+        ["xpath=//input[@id='city']", "xpath:attributes"],
+        ["xpath=//div[3]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Belmopan"
+    }, {
+      "id": "c38cf9cf-cbb9-4e8a-9a8d-96f0007f6d3e",
+      "comment": "",
+      "command": "type",
+      "target": "id=country",
+      "targets": [
+        ["id=country", "id"],
+        ["name=country", "name"],
+        ["css=#country", "css:finder"],
+        ["xpath=//input[@id='country']", "xpath:attributes"],
+        ["xpath=//div[4]/div/input", "xpath:position"]
+      ],
+      "value": "Belize"
+    }, {
+      "id": "cf01a1fa-a307-42db-ae62-e6e1f9b15ab2",
+      "comment": "",
+      "command": "type",
+      "target": "id=passportNumber",
+      "targets": [
+        ["id=passportNumber", "id"],
+        ["name=passportNumber", "name"],
+        ["css=#passportNumber", "css:finder"],
+        ["xpath=//input[@id='passportNumber']", "xpath:attributes"],
+        ["xpath=//div[4]/div[2]/input", "xpath:position"]
+      ],
+      "value": "P00224455"
+    }, {
+      "id": "424838b2-a109-47ac-89b4-8e44b3dcad57",
+      "comment": "",
+      "command": "type",
+      "target": "id=dob",
+      "targets": [
+        ["id=dob", "id"],
+        ["name=dob", "name"],
+        ["css=#dob", "css:finder"],
+        ["xpath=//input[@id='dob']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "2025-02-21"
+    }, {
+      "id": "357b6f68-f0e2-4c01-8d75-0d50f3c41e2c",
+      "comment": "",
+      "command": "type",
+      "target": "id=dob",
+      "targets": [
+        ["id=dob", "id"],
+        ["name=dob", "name"],
+        ["css=#dob", "css:finder"],
+        ["xpath=//input[@id='dob']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "2025-02-02"
+    }, {
+      "id": "3c02a7b5-e94a-41dd-b509-5b9ad13b1a9a",
+      "comment": "",
+      "command": "type",
+      "target": "id=dob",
+      "targets": [
+        ["id=dob", "id"],
+        ["name=dob", "name"],
+        ["css=#dob", "css:finder"],
+        ["xpath=//input[@id='dob']", "xpath:attributes"],
+        ["xpath=//div[5]/div/input", "xpath:position"]
+      ],
+      "value": "2000-02-02"
+    }, {
+      "id": "97ad35d7-86d0-44de-8ad5-5373ad60ba56",
+      "comment": "",
+      "command": "type",
+      "target": "id=gender",
+      "targets": [
+        ["id=gender", "id"],
+        ["name=gender", "name"],
+        ["css=#gender", "css:finder"],
+        ["xpath=//input[@id='gender']", "xpath:attributes"],
+        ["xpath=//div[5]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Female"
+    }, {
+      "id": "f17b6cdb-a32b-466b-a31f-4f7268a597d2",
+      "comment": "",
+      "command": "type",
+      "target": "id=stayCity",
+      "targets": [
+        ["id=stayCity", "id"],
+        ["name=stayCity", "name"],
+        ["css=#stayCity", "css:finder"],
+        ["xpath=//input[@id='stayCity']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div/div/input", "xpath:position"]
+      ],
+      "value": "Springfield"
+    }, {
+      "id": "55b1f587-940f-4ea4-a534-3aaeb3cf08a9",
+      "comment": "",
+      "command": "type",
+      "target": "id=stayAddress",
+      "targets": [
+        ["id=stayAddress", "id"],
+        ["name=stayAddress", "name"],
+        ["css=#stayAddress", "css:finder"],
+        ["xpath=//input[@id='stayAddress']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "2 Orchid Road"
+    }, {
+      "id": "4a6aed35-1092-450d-bc36-7ccbc7139cb3",
+      "comment": "",
+      "command": "type",
+      "target": "id=intendedArrivalDate",
+      "targets": [
+        ["id=intendedArrivalDate", "id"],
+        ["name=intendedArrivalDate", "name"],
+        ["css=#intendedArrivalDate", "css:finder"],
+        ["xpath=//input[@id='intendedArrivalDate']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2025-09-21"
+    }, {
+      "id": "4e9fc9ec-d5b1-4598-aaa1-199bcd74e3fa",
+      "comment": "",
+      "command": "type",
+      "target": "id=intendedArrivalDate",
+      "targets": [
+        ["id=intendedArrivalDate", "id"],
+        ["name=intendedArrivalDate", "name"],
+        ["css=#intendedArrivalDate", "css:finder"],
+        ["xpath=//input[@id='intendedArrivalDate']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2025-09-01"
+    }, {
+      "id": "c181ba20-6992-4c9b-8e37-c317024c9549",
+      "comment": "",
+      "command": "type",
+      "target": "id=intendedLengthOfStay",
+      "targets": [
+        ["id=intendedLengthOfStay", "id"],
+        ["name=intendedLengthOfStay", "name"],
+        ["css=#intendedLengthOfStay", "css:finder"],
+        ["xpath=//input[@id='intendedLengthOfStay']", "xpath:attributes"],
+        ["xpath=//fieldset[2]/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "150"
+    }, {
+      "id": "bb1fb6ea-ab05-47ce-bba5-b95c2e860399",
+      "comment": "",
+      "command": "type",
+      "target": "id=occupation",
+      "targets": [
+        ["id=occupation", "id"],
+        ["name=occupation", "name"],
+        ["css=#occupation", "css:finder"],
+        ["xpath=//input[@id='occupation']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div/div/input", "xpath:position"]
+      ],
+      "value": "Student"
+    }, {
+      "id": "f2816641-e230-4d3c-a863-f44de2d4d436",
+      "comment": "",
+      "command": "type",
+      "target": "id=workPhone",
+      "targets": [
+        ["id=workPhone", "id"],
+        ["name=workPhone", "name"],
+        ["css=#workPhone", "css:finder"],
+        ["xpath=//input[@id='workPhone']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "334-2232"
+    }, {
+      "id": "8d3abd06-24e5-456d-b52c-dccd632c2504",
+      "comment": "",
+      "command": "type",
+      "target": "id=workAddress",
+      "targets": [
+        ["id=workAddress", "id"],
+        ["name=workAddress", "name"],
+        ["css=#workAddress", "css:finder"],
+        ["xpath=//input[@id='workAddress']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "Hummingbird Avenue"
+    }, {
+      "id": "af948367-aaef-47b5-94a5-455c8649b918",
+      "comment": "",
+      "command": "type",
+      "target": "id=workCity",
+      "targets": [
+        ["id=workCity", "id"],
+        ["name=workCity", "name"],
+        ["css=#workCity", "css:finder"],
+        ["xpath=//input[@id='workCity']", "xpath:attributes"],
+        ["xpath=//fieldset[3]/div[2]/div[2]/input", "xpath:position"]
+      ],
+      "value": "Belmopan"
+    }, {
+      "id": "2fd94481-4139-4e20-b7c7-c0cf84655d70",
+      "comment": "",
+      "command": "type",
+      "target": "id=enrolledSchool",
+      "targets": [
+        ["id=enrolledSchool", "id"],
+        ["name=enrolledSchool", "name"],
+        ["css=#enrolledSchool", "css:finder"],
+        ["xpath=//input[@id='enrolledSchool']", "xpath:attributes"],
+        ["xpath=//fieldset[4]/div/div/input", "xpath:position"]
+      ],
+      "value": "University of American Samoa"
+    }, {
+      "id": "53d2c996-5d17-48b6-9b0b-12570e3270ae",
+      "comment": "",
+      "command": "type",
+      "target": "id=schoolAddress",
+      "targets": [
+        ["id=schoolAddress", "id"],
+        ["name=schoolAddress", "name"],
+        ["css=#schoolAddress", "css:finder"],
+        ["xpath=//input[@id='schoolAddress']", "xpath:attributes"],
+        ["xpath=//fieldset[4]/div/div[2]/input", "xpath:position"]
+      ],
+      "value": "4400 Corner Road"
+    }, {
+      "id": "29629d3f-1d98-43c2-8f1f-7583a17e513f",
+      "comment": "",
+      "command": "type",
+      "target": "id=enrollmentDate",
+      "targets": [
+        ["id=enrollmentDate", "id"],
+        ["name=enrollmentDate", "name"],
+        ["css=#enrollmentDate", "css:finder"],
+        ["xpath=//input[@id='enrollmentDate']", "xpath:attributes"],
+        ["xpath=//fieldset[4]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2025-09-21"
+    }, {
+      "id": "7a35f9b5-b5dc-4e63-9949-3eb8949742be",
+      "comment": "",
+      "command": "type",
+      "target": "id=enrollmentDate",
+      "targets": [
+        ["id=enrollmentDate", "id"],
+        ["name=enrollmentDate", "name"],
+        ["css=#enrollmentDate", "css:finder"],
+        ["xpath=//input[@id='enrollmentDate']", "xpath:attributes"],
+        ["xpath=//fieldset[4]/div[2]/div/input", "xpath:position"]
+      ],
+      "value": "2025-09-01"
+    }, {
+      "id": "a4e55a07-29d0-4c45-811f-a000a9f9ea52",
+      "comment": "",
+      "command": "click",
+      "target": "css=button",
+      "targets": [
+        ["css=button", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//button", "xpath:position"],
+        ["xpath=//button[contains(.,'Submit Application')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "2d589a96-60c3-4938-81ae-9da4922aa4bc",
+    "name": "add-reviewer",
+    "commands": [{
+      "id": "2037a9a4-3602-4fc9-a843-9e09ce5cecac",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "936c27e1-8028-4406-a70d-f933357c772b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1400x836",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76b76eb4-792b-4683-b579-13f7f3d9d5e4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Supervisor Dashboard",
+      "targets": [
+        ["linkText=Supervisor Dashboard", "linkText"],
+        ["css=a:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(text(),'Supervisor Dashboard')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/supervisor/dashboard')]", "xpath:href"],
+        ["xpath=//a[3]", "xpath:position"],
+        ["xpath=//a[contains(.,'Supervisor Dashboard')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "a6731cb9-5246-487c-bdec-520620317439",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.queue-card:nth-child(4) h3",
+      "targets": [
+        ["css=.queue-card:nth-child(4) h3", "css:finder"],
+        ["xpath=//a[4]/div/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'System Statistics Reports')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4562deb3-fb26-4850-b1eb-300211a48810",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.queue-card:nth-child(4) h3",
+      "targets": [
+        ["css=.queue-card:nth-child(4) h3", "css:finder"],
+        ["xpath=//a[4]/div/h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'System Statistics Reports')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "33adb685-3c0a-49bc-827a-15a8647664a1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.queue-card:nth-child(3)",
+      "targets": [
+        ["css=.queue-card:nth-child(3)", "css:finder"],
+        ["xpath=//a[contains(@href, '/supervisor/reviewers')]", "xpath:href"],
+        ["xpath=//div/a[3]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "74b11671-b799-4a28-b964-daf7f2545d5d",
+      "comment": "",
+      "command": "click",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f5cb8ee0-196e-42ba-a9a4-7ba29e801913",
+      "comment": "",
+      "command": "type",
+      "target": "id=firstName",
+      "targets": [
+        ["id=firstName", "id"],
+        ["name=firstName", "name"],
+        ["css=#firstName", "css:finder"],
+        ["xpath=//input[@id='firstName']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Wally"
+    }, {
+      "id": "c033e763-46ae-43e0-b617-a38f7a262c56",
+      "comment": "",
+      "command": "type",
+      "target": "id=lastName",
+      "targets": [
+        ["id=lastName", "id"],
+        ["name=lastName", "name"],
+        ["css=#lastName", "css:finder"],
+        ["xpath=//input[@id='lastName']", "xpath:attributes"],
+        ["xpath=//div[2]/input", "xpath:position"]
+      ],
+      "value": "Lester"
+    }, {
+      "id": "21dea698-0c42-4b56-9a4d-13ce5c826098",
+      "comment": "",
+      "command": "type",
+      "target": "id=ssn",
+      "targets": [
+        ["id=ssn", "id"],
+        ["name=ssn", "name"],
+        ["css=#ssn", "css:finder"],
+        ["xpath=//input[@id='ssn']", "xpath:attributes"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "546-7567-45"
+    }, {
+      "id": "372e12c3-9217-418a-b310-aa0605766ba1",
+      "comment": "",
+      "command": "type",
+      "target": "id=salary",
+      "targets": [
+        ["id=salary", "id"],
+        ["name=salary", "name"],
+        ["css=#salary", "css:finder"],
+        ["xpath=//input[@id='salary']", "xpath:attributes"],
+        ["xpath=//div[4]/input", "xpath:position"]
+      ],
+      "value": "12345"
+    }, {
+      "id": "fb6c6781-5df6-4c8a-82ca-99b64c2b45e6",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=password", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//div[5]/input", "xpath:position"]
+      ],
+      "value": "securepassword"
+    }, {
+      "id": "5f34a94b-afdb-4936-b672-72da35cbe9cf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-add",
+      "targets": [
+        ["css=.btn-add", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[6]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Reviewer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "43c1aa7c-30dd-45ec-b4d9-bb56dabc8a6c",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["be8583c9-3fd6-4e3a-ade0-f718f89ab54f"]
+  }],
+  "urls": ["http://192.168.18.4:3000/", "http://localhost:3000/"],
+  "plugins": []
+}
