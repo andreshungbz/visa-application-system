@@ -55,10 +55,15 @@
 
 .btn-accept {
   background-color: #1e73be;
+  text-decoration: none;
 }
 
 .btn-accept:hover {
   background-color: #155a96;
+}
+
+.space {
+  margin-top: 30px;
 }
 
 @media (max-width: 600px) {

@@ -14,6 +14,11 @@
       <%- include('../partials/header') %>
       <main>
         <h2>Process Application <%= application.getApplicationNumber() %></h2>
+        <p class="space">
+          <a href="/reviewer/queue?stage=<%= prev %>" class="btn-accept"
+            >Return to Queue</a
+          >
+        </p>
         <form class="visa-form">
           <%- include('../partials/form-sections/personal') %> <%-
           include('../partials/form-sections/travel') %> <%-

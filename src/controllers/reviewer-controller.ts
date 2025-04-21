@@ -88,8 +88,24 @@ export const getProcess = (req: Request, res: Response) => {
     });
   }
 
+  let prevStatus: string;
+  switch (application.getStatus()) {
+    case VisaStatus.Initial:
+      prevStatus = 'initial';
+      break;
+    case VisaStatus.Interview:
+      prevStatus = 'interview';
+      break;
+    case VisaStatus.Final:
+      prevStatus = 'final';
+      break;
+    default:
+      return res.render('error', { message: 'Invalid Visa Status' });
+  }
+
   res.render('reviewer/process', {
     application,
+    prev: prevStatus,
     isB1: application.getType() === VisaType.B1,
     isB2: application.getType() === VisaType.B2,
     isF1: application.getType() === VisaType.F1,
