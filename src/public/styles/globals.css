@@ -122,6 +122,10 @@ main p {
   text-align: center;
 }
 
+h3 {
+  margin: 0;
+}
+
 /* Responsive Styling */
 
 @media screen and (max-width: 600px) {

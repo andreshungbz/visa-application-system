@@ -103,12 +103,25 @@ export const getProcess = (req: Request, res: Response) => {
       return res.render('error', { message: 'Invalid Visa Status' });
   }
 
+  console.log(application.getS1Reviewer());
+
   res.render('reviewer/process', {
     application,
     prev: prevStatus,
     isB1: application.getType() === VisaType.B1,
     isB2: application.getType() === VisaType.B2,
     isF1: application.getType() === VisaType.F1,
+    isInterview: application.getStatus() === VisaStatus.Interview,
+    isFinal: application.getStatus() === VisaStatus.Final,
+    isFinished:
+      application.getStatus() === VisaStatus.Approved ||
+      application.getStatus() === VisaStatus.Rejected,
+    s1Reviewer: application.getS1Reviewer(),
+    s1Notes: application.getS1Notes(),
+    s2Reviewer: application.getS2Reviewer(),
+    s2Notes: application.getS2Notes(),
+    s3Reviewer: application.getS3Reviewer(),
+    s3Notes: application.getS3Notes(),
     editable: false,
   });
 };

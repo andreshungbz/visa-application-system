@@ -1,0 +1,74 @@
+<% if (isInterview) { %>
+  <form class="decision-form" method="POST">
+    <h3>Initial Stage Notes</h3>
+    <div class="decision-group">
+      <label for="reviewerID">Reviewer</label>
+      <input type="text" id="reviewerID" name="reviewerID" value="<%= s1Reviewer %>" required disabled />
+    </div>
+    <div class="decision-group">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="4" required disabled><%= s1Notes %></textarea>
+    </div>
+  </form>
+<% } %>
+
+<% if (isFinal) { %>
+  <form class="decision-form" method="POST">
+    <h3>Initial Stage Notes</h3>
+    <div class="decision-group">
+      <label for="reviewerID">Reviewer</label>
+      <input type="text" id="reviewerID" name="reviewerID" value="<%= s1Reviewer %>" required disabled />
+    </div>
+    <div class="decision-group">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="4" required disabled><%= s1Notes %></textarea>
+    </div>
+  </form>
+  <form class="decision-form" method="POST">
+    <h3>Interview Stage Notes</h3>
+    <div class="decision-group">
+      <label for="reviewerID">Reviewer</label>
+      <input type="text" id="reviewerID" name="reviewerID" value="<%= s2Reviewer %>" required disabled />
+    </div>
+    <div class="decision-group">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="4" required disabled><%= s2Notes %></textarea>
+    </div>
+  </form>
+<% } %>
+
+<% if (isFinished) { %>
+  <form class="decision-form" method="POST">
+    <h3>Initial Stage Notes</h3>
+    <div class="decision-group">
+      <label for="reviewerID">Reviewer</label>
+      <input type="text" id="reviewerID" name="reviewerID" value="<%= s1Reviewer %>" required disabled />
+    </div>
+    <div class="decision-group">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="4" required disabled><%= s1Notes %></textarea>
+    </div>
+  </form>
+  <form class="decision-form" method="POST">
+    <h3>Interview Stage Notes</h3>
+    <div class="decision-group">
+      <label for="reviewerID">Reviewer</label>
+      <input type="text" id="reviewerID" name="reviewerID" value="<%= s2Reviewer %>" required disabled />
+    </div>
+    <div class="decision-group">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="4" required disabled><%= s2Notes %></textarea>
+    </div>
+  </form>
+  <form class="decision-form" method="POST">
+    <h3>Final Stage Notes</h3>
+    <div class="decision-group">
+      <label for="reviewerID">Reviewer</label>
+      <input type="text" id="reviewerID" name="reviewerID" value="<%= s3Reviewer %>" required disabled />
+    </div>
+    <div class="decision-group">
+      <label for="notes">Notes</label>
+      <textarea id="notes" name="notes" rows="4" required disabled><%= s3Notes %></textarea>
+    </div>
+  </form>
+<% } %>
