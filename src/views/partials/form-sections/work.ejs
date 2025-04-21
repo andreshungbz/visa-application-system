@@ -17,7 +17,7 @@
         id="workPhone"
         name="workPhone"
         required
-        value="<%= application.getForm().getSections().work.workPhone || '' %>"
+        value="<%= application.getForm().getSections().work.phone || '' %>"
         <%= editable === false ? 'disabled' : '' %>
       />
     </div>
@@ -29,7 +29,7 @@
         id="workAddress"
         name="workAddress"
         required
-        value="<%= application.getForm().getSections().work.workAddress || '' %>"
+        value="<%= application.getForm().getSections().work.address || '' %>"
         <%= editable === false ? 'disabled' : '' %>
       />
     </div>
@@ -39,7 +39,7 @@
         id="workCity"
         name="workCity"
         required
-        value="<%= application.getForm().getSections().work.workCity || '' %>"
+        value="<%= application.getForm().getSections().work.city || '' %>"
         <%= editable === false ? 'disabled' : '' %>
       />
     </div>

@@ -3,7 +3,7 @@
 
 import { Request, Response } from 'express';
 import { vs } from '../main.js';
-import { VisaStatus } from '@prisma/client';
+import { VisaStatus, VisaType } from '@prisma/client';
 
 // renders reviewer dashboard
 export const getReviewerDashboard = (_req: Request, res: Response) => {
@@ -69,4 +69,29 @@ export const getQueue = (req: Request, res: Response) => {
     default:
       return res.render('error', { message: 'Invalid Queue' });
   }
+};
+
+// renders application process page
+export const getProcess = (req: Request, res: Response) => {
+  const id = Number(req.params.id);
+
+  if (isNaN(id)) {
+    return res.render('error', { message: 'Invalid Application Number' });
+  }
+
+  const application = vs.getFullVisaApplication(id);
+
+  if (!application) {
+    return res.render('error', {
+      message: `Application with ID ${id} Not Found`,
+    });
+  }
+
+  res.render('reviewer/process', {
+    application,
+    isB1: application.getType() === VisaType.B1,
+    isB2: application.getType() === VisaType.B2,
+    isF1: application.getType() === VisaType.F1,
+    editable: false,
+  });
 };
