@@ -113,7 +113,7 @@ async function main() {
   await prisma.securitySection.create({
     data: {
       visaId: B1VisaApplication1.applicationNumber,
-      communicableDisease: false,
+      communicableDisease: true,
       moneyLaundering: false,
       drugConspiracy: false,
       arrestedConvicted: false,
@@ -168,11 +168,21 @@ async function main() {
     },
   });
 
+  await prisma.workSection.create({
+    data: {
+      visaId: B2VisaApplication1.applicationNumber,
+      occupation: 'Cave Spelunker',
+      phone: '112-4345',
+      city: 'Belmopan',
+      address: '76 Crevice St',
+    },
+  });
+
   await prisma.securitySection.create({
     data: {
       visaId: B2VisaApplication1.applicationNumber,
       communicableDisease: false,
-      moneyLaundering: false,
+      moneyLaundering: true,
       drugConspiracy: false,
       arrestedConvicted: false,
       mentalPhysicalDisorder: false,
@@ -223,12 +233,22 @@ async function main() {
     },
   });
 
+  await prisma.workSection.create({
+    data: {
+      visaId: B2VisaApplication2.applicationNumber,
+      occupation: 'Singer',
+      phone: '675-3433',
+      city: 'Belize City',
+      address: '1 Queen St',
+    },
+  });
+
   await prisma.securitySection.create({
     data: {
       visaId: B2VisaApplication2.applicationNumber,
       communicableDisease: false,
       moneyLaundering: false,
-      drugConspiracy: false,
+      drugConspiracy: true,
       arrestedConvicted: false,
       mentalPhysicalDisorder: false,
     },
@@ -282,13 +302,23 @@ async function main() {
     },
   });
 
+  await prisma.workSection.create({
+    data: {
+      visaId: F1VisaApplication1.applicationNumber,
+      occupation: 'Student',
+      phone: '873-6573',
+      city: 'Belmopan City',
+      address: '90 Mango St',
+    },
+  });
+
   await prisma.securitySection.create({
     data: {
       visaId: F1VisaApplication1.applicationNumber,
       communicableDisease: false,
       moneyLaundering: false,
       drugConspiracy: false,
-      arrestedConvicted: false,
+      arrestedConvicted: true,
       mentalPhysicalDisorder: false,
     },
   });
@@ -345,6 +375,16 @@ async function main() {
     },
   });
 
+  await prisma.workSection.create({
+    data: {
+      visaId: ApprovedVisaApplication1.applicationNumber,
+      occupation: 'Procurement Specialist',
+      phone: '777-6666',
+      city: 'Placencia',
+      address: '9 Teal St',
+    },
+  });
+
   await prisma.securitySection.create({
     data: {
       visaId: ApprovedVisaApplication1.applicationNumber,
@@ -352,7 +392,7 @@ async function main() {
       moneyLaundering: false,
       drugConspiracy: false,
       arrestedConvicted: false,
-      mentalPhysicalDisorder: false,
+      mentalPhysicalDisorder: true,
     },
   });
 
@@ -407,14 +447,24 @@ async function main() {
     },
   });
 
+  await prisma.workSection.create({
+    data: {
+      visaId: RejectedVisaApplication1.applicationNumber,
+      occupation: 'Teacher',
+      phone: '775-9800',
+      city: 'Belmopan City',
+      address: '5 Belize St',
+    },
+  });
+
   await prisma.securitySection.create({
     data: {
       visaId: RejectedVisaApplication1.applicationNumber,
-      communicableDisease: false,
+      communicableDisease: true,
       moneyLaundering: false,
       drugConspiracy: false,
-      arrestedConvicted: true,
-      mentalPhysicalDisorder: false,
+      arrestedConvicted: false,
+      mentalPhysicalDisorder: true,
     },
   });
 
