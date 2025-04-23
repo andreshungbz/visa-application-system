@@ -19,7 +19,8 @@
     "build": "npm run clean && tsc",
     "start": "npm run build && node build/main.js",
     "dev": "tsc && concurrently -k -n \"TS,NODE\" -c \"cyan,green\" \"tsc --watch\" \"wait-on build/main.js && node --watch build/main.js\"",
-    "dbinitiate": "prisma db push && tsx src/db/data.ts"
+    "dbinitiate": "prisma db push && tsx src/db/data.ts",
+    "dbreset": "psql --username=postgres --dbname=postgres --file=src/db/scripts/setup.sql && npm run dbinitiate"
   },
   "dependencies": {
     "@prisma/client": "^6.5.0",

@@ -5,6 +5,8 @@
 
 \echo '\n\033[1;31m[PSQL] Dropping Database cmps2232_2024_2_vas\033[0m'
 DROP DATABASE IF EXISTS cmps2232_2024_2_vas;
+DROP USER IF EXISTS vas_user;
 
 \echo '\033[1;34m[PSQL] Creating Database cmps2232_2024_2_vas\033[0m'
-CREATE DATABASE cmps2232_2024_2_vas;
+CREATE USER vas_user WITH CREATEDB PASSWORD 'swordfish';
+CREATE DATABASE cmps2232_2024_2_vas OWNER vas_user;
