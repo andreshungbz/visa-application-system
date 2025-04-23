@@ -12,6 +12,7 @@ This assumes you have the `postgres` superuser and `postgres` default database t
 DROP DATABASE IF EXISTS cmps2232_2024_2_vas;
 DROP USER IF EXISTS vas_user;
 CREATE USER vas_user WITH CREATEDB PASSWORD 'swordfish';
+CREATE DATABASE cmps2232_2024_2_vas OWNER vas_user;
 ```
 
 2. Exit `psql`:
