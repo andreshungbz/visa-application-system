@@ -12,6 +12,7 @@ import {
 } from '@prisma/client';
 
 import { createVFBusiness } from '../../../visa-form-model.js';
+import { VisaFormSections } from '../../../../lib/types/VisaFormSections.js';
 
 export class B1Form extends VisaForm implements IB1Form {
   // CONSTRUCTOR
@@ -28,7 +29,7 @@ export class B1Form extends VisaForm implements IB1Form {
 
   // MAIN METHODS (OVERRIDE)
 
-  getSections() {
+  getSections(): VisaFormSections {
     return {
       personal: this.personal,
       travel: this.travel,
