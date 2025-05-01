@@ -13,7 +13,10 @@
     <div class="app">
       <%- include('../partials/header') %>
       <main>
-        <h2>Process Application <%= application.getApplicationNumber() %></h2>
+        <h2>
+          Process <%= application.getStatus() %> Application <%=
+          application.getApplicationNumber() %>
+        </h2>
         <p class="space">
           <a href="/reviewer/queue?stage=<%= prev %>" class="btn-accept"
             >Return to Queue</a
@@ -28,7 +31,7 @@
           (isF1) { %> <%- include('../partials/form-sections/student') %> <% }
           %> <%- include('../partials/form-sections/security') %>
         </form>
-        
+
         <%- include('../partials/form-sections/disabled-notes') %>
 
         <form class="decision-form" method="POST">
