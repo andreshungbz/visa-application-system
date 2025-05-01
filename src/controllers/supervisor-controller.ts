@@ -78,8 +78,6 @@ export const getView = (req: Request, res: Response) => {
       return res.render('error', { message: 'Invalid Visa Status' });
   }
 
-  console.log(application.getS1Reviewer());
-
   res.render('supervisor/view', {
     application,
     prev: prevStatus,
