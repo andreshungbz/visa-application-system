@@ -37,9 +37,6 @@ A full-stack web application that allows users to apply for **B1**, **B2**, or *
 
 ---
 
-## 📦 Installation
-
-
 ## Quickstart
 
 This assumes you have the `postgres` superuser and `postgres` default database that most installations of PostgreSQL create by default. If you have a different setup, you may need to adjust the database connection settings in the `.env` file.
