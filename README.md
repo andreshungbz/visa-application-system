@@ -33,17 +33,7 @@ A full-stack web application that allows users to apply for **B1**, **B2**, or *
   - Monitor reviewer activity.
 - View **system statistics**:
   - Visa Application Statistics
-  - Employee Statistic
-
----
-
-## 🏗️ Tech Stack
-
-- **Frontend**: HTML, CSS, JavaScript (or your framework of choice)
-- **Backend**: Node.js / Express (or preferred backend language)
-- **Database**: PostgreSQL / MongoDB / SQLite (based on implementation)
-- **Authentication**: Session or JWT (optional for reviewers/supervisor)
-- **Version Control**: Git + GitHub
+  - Employee Statistics
 
 ---
 
