@@ -23,18 +23,18 @@
     "dbreset": "psql --username=postgres --dbname=postgres --file=src/db/script/setup.sql && npm run dbinitiate"
   },
   "dependencies": {
-    "@prisma/client": "^6.5.0",
-    "argon2": "^0.41.1",
-    "ejs": "^3.1.10",
-    "express": "^4.22.2",
-    "prisma": "^6.5.0"
+    "@prisma/client": "^7.10.1",
+    "argon2": "^0.45.1",
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "prisma": "^7.10.1"
   },
   "devDependencies": {
-    "@types/express": "^5.0.0",
-    "@types/node": "^22.13.10",
-    "concurrently": "^9.2.5",
-    "tsx": "^4.22.4",
-    "typescript": "^5.8.2",
-    "wait-on": "^8.0.3"
+    "@types/express": "^5.0.6",
+    "@types/node": "^26.6.5",
+    "concurrently": "^10.0.6",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "wait-on": "^9.5.1"
   }
 }
